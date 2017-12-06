@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ef3-7O-6ax">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ef3-7O-6ax">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Stream-->
         <scene sceneID="hBh-V7-UFr">
@@ -26,19 +31,16 @@
             </objects>
             <point key="canvasLocation" x="516" y="300"/>
         </scene>
-        <!--Map-->
+        <!--Announcements-->
         <scene sceneID="0dT-KF-emb">
             <objects>
-                <viewController id="hLc-Zb-d9V" sceneMemberID="viewController">
+                <viewController title="Announcements" id="hLc-Zb-d9V" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h1T-wM-xQC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gJE-gA-Tee">
-                                <rect key="frame" x="0.0" y="64" width="375" height="285"/>
-                            </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wEb-cP-NaP">
-                                <rect key="frame" x="0.0" y="357" width="375" height="261"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wEb-cP-NaP">
+                                <rect key="frame" x="0.0" y="110" width="375" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="261" id="MF0-HL-WHP"/>
@@ -47,37 +49,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gJE-gA-Tee" firstAttribute="leading" secondItem="h1T-wM-xQC" secondAttribute="leading" id="Pb9-dT-sB9"/>
-                            <constraint firstItem="gJE-gA-Tee" firstAttribute="trailing" secondItem="wEb-cP-NaP" secondAttribute="trailing" id="YaV-wV-OGi"/>
                             <constraint firstItem="wEb-cP-NaP" firstAttribute="bottom" secondItem="Wca-oS-kzD" secondAttribute="bottom" id="Zkb-9p-Heh"/>
-                            <constraint firstAttribute="trailing" secondItem="gJE-gA-Tee" secondAttribute="trailing" id="iZ0-oC-aaL"/>
-                            <constraint firstItem="gJE-gA-Tee" firstAttribute="top" secondItem="Wca-oS-kzD" secondAttribute="top" id="iaU-bg-snJ"/>
-                            <constraint firstItem="wEb-cP-NaP" firstAttribute="top" secondItem="gJE-gA-Tee" secondAttribute="bottom" constant="8" symbolic="YES" id="okz-9S-Ky6"/>
-                            <constraint firstItem="gJE-gA-Tee" firstAttribute="leading" secondItem="wEb-cP-NaP" secondAttribute="leading" id="wZT-uF-rmB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wca-oS-kzD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="RTb-cW-G4q"/>
+                    <tabBarItem key="tabBarItem" title="Announcements" id="RTb-cW-G4q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NK5-4F-ZlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="626.39999999999998" y="1017.84107946027"/>
         </scene>
-        <!--Planner-->
+        <!--QRU-->
         <scene sceneID="hx7-AV-0Qa">
             <objects>
                 <viewController id="hLF-4n-Uvw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xO4-tO-D2J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-QY-Kh8">
+                                <rect key="frame" x="67" y="133" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="x2C-Tm-h5E"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Planner" id="0oH-zI-VZe"/>
+                    <tabBarItem key="tabBarItem" title="QRU" id="0oH-zI-VZe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiS-Hc-4KR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="1782"/>
+            <point key="canvasLocation" x="516" y="1781.5592203898052"/>
         </scene>
         <!--Events-->
         <scene sceneID="q75-YD-9Cn">
@@ -111,10 +113,35 @@
             </objects>
             <point key="canvasLocation" x="-1391" y="-34"/>
         </scene>
-        <!--Map-->
+        <!--Countdown-->
+        <scene sceneID="0jr-pu-1KF">
+            <objects>
+                <viewController title="Countdown" id="3yk-cS-KGT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhu-h2-whX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COUNTDOWN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boA-1D-WLE">
+                                <rect key="frame" x="97" y="306" width="181" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="PGq-O8-3lv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Countdown" id="v7S-sL-oYV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-ek-7fA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-436" y="-734.48275862068976"/>
+        </scene>
+        <!--Base-->
         <scene sceneID="KYE-K0-ofs">
             <objects>
-                <tabBarController id="bYs-yi-Swv" customClass="Map" sceneMemberID="viewController">
+                <tabBarController title="Base" id="bYs-yi-Swv" customClass="Map" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yOd-a7-Moy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qvJ-df-OEy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -126,6 +153,7 @@
                         <segue destination="LGQ-Px-dyV" kind="relationship" relationship="viewControllers" id="ePh-cW-hL7"/>
                         <segue destination="hLF-4n-Uvw" kind="relationship" relationship="viewControllers" id="XLy-ZA-Zcg"/>
                         <segue destination="hLc-Zb-d9V" kind="relationship" relationship="viewControllers" id="ffe-EV-tBK"/>
+                        <segue destination="3yk-cS-KGT" kind="relationship" relationship="viewControllers" id="7Zj-wf-9av"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8a-FJ-2P6" userLabel="First Responder" sceneMemberID="firstResponder"/>
