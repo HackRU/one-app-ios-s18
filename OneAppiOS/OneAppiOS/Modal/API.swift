@@ -7,33 +7,43 @@
 //
 
 import Foundation
+import Alamofire
 
-var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
+var baseURL = ""
 
 
 
 public class Authenticator{
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
+    var jsonData: Data = Data()
     
     public init(email: String, password: String){
         
         jsonObject.setValue(email, forKey: "email")
         jsonObject.setValue(password, forKey: "password")
         
-        let jsonData: NSData
-        
         do {
-            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as NSData
-            let jsonString = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
+            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
+            let jsonString = NSString(data: jsonData , encoding: String.Encoding.utf8.rawValue)! as String
             print("json string = \(jsonString)")
-            
         } catch _ {
             print ("JSON Failure")
         }
+        
     }
     
     func authenticate(){
         
+        var request = URLRequest(url: URL(string: baseURL + "/authorize")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        Alamofire.request(request).responseJSON { (response) in
+            
+            print(response)
+            
+        }
     
     }
     

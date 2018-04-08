@@ -32,7 +32,7 @@ extension String {
 	}
 }
 
-let groupName = "group.com.MPowered.MHacks"
+let groupName = "group.com.HackRU.OneAppiOS"
 let defaults = UserDefaults(suiteName: groupName)!
 let container = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupName)!.appendingPathComponent("Library", isDirectory: true).appendingPathComponent("Application Support", isDirectory: true)
 
@@ -44,12 +44,17 @@ let remoteNotificationTokenKey = "remote_notification_token"
 let remoteNotificationPreferencesKey = "remote_notification_preferences"
 
 // MARK: - Color constants
-struct MHacksColor
+struct HackRUColor
 {
 	static var blue: UIColor
 	{
-		return UIColor(red: 0.0 / 255.0, green: 188.0 / 255.0, blue: 212.0 / 255.0, alpha: 1.0)
+		return UIColor(red: 31.0 / 255.0, green: 74.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0)
 	}
+    static var lightBlue: UIColor
+    {
+        return UIColor(red: 35.0 / 255.0, green: 169.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
+    }
+    
 	static var red: UIColor
 	{
 		return UIColor.red

@@ -25,7 +25,7 @@ final class Configuration : Serializable, Equatable {
     private static let startDateKey = "start_date_ts"
     private static let endDateKey = "end_date_ts"
 
-    init(startDate: Date = Date(timeIntervalSince1970: 1523145480), endDate: Date = Date(timeIntervalSince1970:  1523145540)) {
+    init(startDate: Date = Date(timeIntervalSince1970: 1523176392), endDate: Date = Date(timeIntervalSince1970: 1523176492)) {
         self.startDate = startDate
         self.endDate = endDate
     }

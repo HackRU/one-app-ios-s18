@@ -29,6 +29,9 @@
 		96025ADA2079BE3100F6EFEB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AD22079BE3100F6EFEB /* Configuration.swift */; };
 		96025ADB2079BE3100F6EFEB /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AD32079BE3100F6EFEB /* Floor.swift */; };
 		96025ADE2079CC7600F6EFEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ADD2079CC7600F6EFEB /* API.swift */; };
+		966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C292079D8B100472C03 /* MyMLH.swift */; };
+		966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2B207A070800472C03 /* EventsViewController.swift */; };
+		966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2D207A0A0100472C03 /* TabsViewController.swift */; };
 		969856081FCE4ACF00A1D84C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969856071FCE4ACF00A1D84C /* AppDelegate.swift */; };
 		9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969856091FCE4ACF00A1D84C /* ViewController.swift */; };
 		9698560D1FCE4ACF00A1D84C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9698560B1FCE4ACF00A1D84C /* Main.storyboard */; };
@@ -80,6 +83,9 @@
 		96025AD22079BE3100F6EFEB /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		96025AD32079BE3100F6EFEB /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		96025ADD2079CC7600F6EFEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		966B5C292079D8B100472C03 /* MyMLH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMLH.swift; sourceTree = "<group>"; };
+		966B5C2B207A070800472C03 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		966B5C2D207A0A0100472C03 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		969856041FCE4ACF00A1D84C /* OneAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969856071FCE4ACF00A1D84C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		969856091FCE4ACF00A1D84C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 		96025AC02079BA4E00F6EFEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				966B5C2B207A070800472C03 /* EventsViewController.swift */,
+				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
+				966B5C292079D8B100472C03 /* MyMLH.swift */,
 				969856091FCE4ACF00A1D84C /* ViewController.swift */,
 				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
 			);
@@ -404,10 +413,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -476,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96025AC82079BAC000F6EFEB /* CoalescedCallbacks.swift in Sources */,
+				966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */,
 				96025AB32079B92E00F6EFEB /* CountdownViewController.swift in Sources */,
 				96025ABD2079B9FF00F6EFEB /* CircularProgressIndicator.swift in Sources */,
 				96025ADA2079BE3100F6EFEB /* Configuration.swift in Sources */,
@@ -484,6 +506,7 @@
 				96025AD62079BE3100F6EFEB /* EventOrganizer.swift in Sources */,
 				9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */,
 				96025AD42079BE3100F6EFEB /* Location.swift in Sources */,
+				966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */,
 				96025AD82079BE3100F6EFEB /* Event.swift in Sources */,
 				96025AC92079BAC000F6EFEB /* MHacksArray.swift in Sources */,
 				96025AB72079B94F00F6EFEB /* APIManager.swift in Sources */,
@@ -493,6 +516,7 @@
 				96025AD92079BE3100F6EFEB /* Announcement.swift in Sources */,
 				96025AD72079BE3100F6EFEB /* ScannedDataField.swift in Sources */,
 				96025ACA2079BAC000F6EFEB /* KeychainWrapper.swift in Sources */,
+				966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */,
 				96025AD52079BE3100F6EFEB /* ScanEvent.swift in Sources */,
 				96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */,
 				96025AB62079B94F00F6EFEB /* APIManager+UIKit.swift in Sources */,

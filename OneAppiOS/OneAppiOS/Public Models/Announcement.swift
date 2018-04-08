@@ -62,15 +62,15 @@ struct Announcement: SerializableElementWithIdentifier {
 		var color: UIColor {
 			
 			if contains(.emergency) {
-				return MHacksColor.red
+				return HackRUColor.red
 			} else if contains(.logistics) {
-				return MHacksColor.orange
+				return HackRUColor.orange
 			} else if contains(.food) {
-				return MHacksColor.yellow
+				return HackRUColor.yellow
 			} else if contains(.events) {
-				return MHacksColor.blue
+				return HackRUColor.blue
 			} else {
-				return MHacksColor.plain
+				return HackRUColor.plain
 			}
 		}
 	}
