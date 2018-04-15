@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.7.1)
+  - Alamofire-Synchronous (4.0.0):
+    - Alamofire (~> 4.0)
+  - Floaty (3.0.1)
   - MaterialComponents (53.0.0):
     - MaterialComponents/ActivityIndicator (= 53.0.0)
     - "MaterialComponents/ActivityIndicator+Extensions (= 53.0.0)"
@@ -388,30 +391,40 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
+  - RippleEffectView (1.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Alamofire-Synchronous (~> 4.0)
+  - Floaty (~> 3.0.0)
   - MaterialComponents
+  - RippleEffectView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Alamofire-Synchronous
+    - Floaty
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
     - MotionAnimator
     - MotionInterchange
     - MotionTransitioning
+    - RippleEffectView
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire-Synchronous: eedf1e6e961c3795a63c74990b3f7d9fbfac7e50
+  Floaty: bb7a353deee9ddcc14c584ca9c538efdc19669f2
   MaterialComponents: 1b487cfa216c62fb695d42a7eb150cefbaa5d553
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
+  RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
 
-PODFILE CHECKSUM: ead5ef20733d2327fb07081bf387fcbd2f12e2cc
+PODFILE CHECKSUM: 28f7660b1d4bd0a43c24bcc10d99fae21b6410e3
 
 COCOAPODS: 1.5.0

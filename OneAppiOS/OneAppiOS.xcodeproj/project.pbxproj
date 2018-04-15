@@ -29,6 +29,8 @@
 		96025ADA2079BE3100F6EFEB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AD22079BE3100F6EFEB /* Configuration.swift */; };
 		96025ADB2079BE3100F6EFEB /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AD32079BE3100F6EFEB /* Floor.swift */; };
 		96025ADE2079CC7600F6EFEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ADD2079CC7600F6EFEB /* API.swift */; };
+		9612AB2120830C7200A158CF /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9612AB2020830C7200A158CF /* login.js */; };
+		9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644C8E5207D883E0021A445 /* SplashViewController.swift */; };
 		966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C292079D8B100472C03 /* MyMLH.swift */; };
 		966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2B207A070800472C03 /* EventsViewController.swift */; };
 		966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2D207A0A0100472C03 /* TabsViewController.swift */; };
@@ -83,6 +85,8 @@
 		96025AD22079BE3100F6EFEB /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		96025AD32079BE3100F6EFEB /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		96025ADD2079CC7600F6EFEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9612AB2020830C7200A158CF /* login.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = login.js; sourceTree = "<group>"; };
+		9644C8E5207D883E0021A445 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		966B5C292079D8B100472C03 /* MyMLH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMLH.swift; sourceTree = "<group>"; };
 		966B5C2B207A070800472C03 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		966B5C2D207A0A0100472C03 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				96025ABA2079B9FF00F6EFEB /* CircleView.swift */,
 				96025ABB2079B9FF00F6EFEB /* CircularProgressIndicator.swift */,
+				9644C8E5207D883E0021A445 /* SplashViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,9 +173,11 @@
 		96025AC02079BA4E00F6EFEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9644C888207D7CF00021A445 /* Transitions */,
 				966B5C2B207A070800472C03 /* EventsViewController.swift */,
 				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
 				966B5C292079D8B100472C03 /* MyMLH.swift */,
+				9612AB2020830C7200A158CF /* login.js */,
 				969856091FCE4ACF00A1D84C /* ViewController.swift */,
 				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
 			);
@@ -201,6 +208,13 @@
 				96025ACC2079BE3100F6EFEB /* Location.swift */,
 			);
 			path = "Public Models";
+			sourceTree = "<group>";
+		};
+		9644C888207D7CF00021A445 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		969855FB1FCE4ACF00A1D84C = {
@@ -382,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9612AB2120830C7200A158CF /* login.js in Resources */,
 				969856121FCE4ACF00A1D84C /* LaunchScreen.storyboard in Resources */,
 				9698560F1FCE4ACF00A1D84C /* Assets.xcassets in Resources */,
 				9698560D1FCE4ACF00A1D84C /* Main.storyboard in Resources */,
@@ -413,22 +428,28 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/RippleEffectView/RippleEffectView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RippleEffectView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -505,6 +526,7 @@
 				96025AC72079BAC000F6EFEB /* Serializable.swift in Sources */,
 				96025AD62079BE3100F6EFEB /* EventOrganizer.swift in Sources */,
 				9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */,
+				9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */,
 				96025AD42079BE3100F6EFEB /* Location.swift in Sources */,
 				966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */,
 				96025AD82079BE3100F6EFEB /* Event.swift in Sources */,
@@ -692,6 +714,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M8DY28XM67;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneAppiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = QasimAbbas.OneAppiOS;
@@ -708,6 +734,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M8DY28XM67;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneAppiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = QasimAbbas.OneAppiOS;

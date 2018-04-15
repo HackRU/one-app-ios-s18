@@ -55,6 +55,12 @@ struct HackRUColor
         return UIColor(red: 35.0 / 255.0, green: 169.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
     }
     
+    static var cloudBlue: UIColor{
+        
+        return UIColor(red: 232.0 / 255.0, green: 246.0 / 255.0, blue: 252.0 / 255.0, alpha: 1.0)
+    
+    }
+    
 	static var red: UIColor
 	{
 		return UIColor.red

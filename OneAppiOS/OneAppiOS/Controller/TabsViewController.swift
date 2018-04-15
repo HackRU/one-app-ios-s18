@@ -13,7 +13,9 @@ class TabsViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedIndex = 2
+        self.selectedIndex = 1
+        
+        //self.tabBar.barTintColor = HackRUColor.lightBlue
         // Do any additional setup after loading the view.
     }
 
