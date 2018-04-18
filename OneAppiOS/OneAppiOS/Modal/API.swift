@@ -12,8 +12,6 @@ import Alamofire_Synchronous
 
 var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
 
-
-
 public class Authenticator{
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
     var jsonData: Data = Data()
@@ -129,6 +127,32 @@ extension UIAlertAction {
         set(image) {
             self.setValue(image, forKey: "image")
         }
+    }
+}
+
+extension UIImage {
+    
+    func maskWithColor( color:UIColor) -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        color.setFill()
+        
+        context.translateBy(x: 0, y: self.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        
+        let rect = CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height)
+        context.draw(self.cgImage!, in: rect)
+        
+        context.setBlendMode(CGBlendMode.sourceIn)
+        context.addRect(rect)
+        context.drawPath(using: CGPathDrawingMode.fill)
+        
+        let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return coloredImage!
     }
 }
 

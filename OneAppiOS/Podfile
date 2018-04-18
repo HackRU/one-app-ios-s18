@@ -12,6 +12,7 @@ target 'OneAppiOS' do
   pod 'Floaty', '~> 3.0.0' # Use version 4.0.0 for Swift 4.0
   pod 'SwiftyJSON', '~> 4.0'
   pod 'QRCodeReader.swift', '~> 8.1.1'
+  pod 'QRCode', '~> 2.0'
   
   # Pods for OneAppiOS
 

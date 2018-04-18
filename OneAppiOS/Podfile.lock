@@ -391,14 +391,18 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
+  - QRCodeReader.swift (8.1.1)
   - RippleEffectView (1.0.2)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Alamofire-Synchronous (~> 4.0)
   - Floaty (~> 3.0.0)
   - MaterialComponents
+  - QRCodeReader.swift (~> 8.1.1)
   - RippleEffectView
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -411,7 +415,9 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
     - MotionTransitioning
+    - QRCodeReader.swift
     - RippleEffectView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
@@ -423,8 +429,10 @@ SPEC CHECKSUMS:
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
+  QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
   RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 28f7660b1d4bd0a43c24bcc10d99fae21b6410e3
+PODFILE CHECKSUM: 0caaebcd6a5f9005011722f63347a894ad94f8d3
 
 COCOAPODS: 1.5.0

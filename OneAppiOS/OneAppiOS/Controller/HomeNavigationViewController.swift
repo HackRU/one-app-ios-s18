@@ -1,26 +1,28 @@
 //
-//  EventsViewController.swift
+//  HomeNavigationViewController.swift
 //  OneAppiOS
 //
-//  Created by Qasim Abbas on 4/8/18.
+//  Created by Qasim Abbas on 4/17/18.
 //  Copyright © 2018 Qasim Abbas. All rights reserved.
 //
 
 import UIKit
 
-class EventsViewController: UIViewController {
+class HomeNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationBar.barTintColor = HackRUColor.lightBlue
+        
+        //self.navigationItem.title = "HackRU"
+        self.navigationController?.title = "HackRU"
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        
     }
     
 

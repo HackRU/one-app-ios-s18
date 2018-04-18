@@ -30,9 +30,10 @@
 		96025ADB2079BE3100F6EFEB /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AD32079BE3100F6EFEB /* Floor.swift */; };
 		96025ADE2079CC7600F6EFEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ADD2079CC7600F6EFEB /* API.swift */; };
 		9612AB2120830C7200A158CF /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9612AB2020830C7200A158CF /* login.js */; };
+		961AD92E20868E500098BDD3 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */; };
+		962375062083341E0053F81D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962375052083341E0053F81D /* ScannerViewController.swift */; };
 		9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644C8E5207D883E0021A445 /* SplashViewController.swift */; };
 		966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C292079D8B100472C03 /* MyMLH.swift */; };
-		966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2B207A070800472C03 /* EventsViewController.swift */; };
 		966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2D207A0A0100472C03 /* TabsViewController.swift */; };
 		969856081FCE4ACF00A1D84C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969856071FCE4ACF00A1D84C /* AppDelegate.swift */; };
 		9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969856091FCE4ACF00A1D84C /* ViewController.swift */; };
@@ -86,9 +87,10 @@
 		96025AD32079BE3100F6EFEB /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		96025ADD2079CC7600F6EFEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9612AB2020830C7200A158CF /* login.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = login.js; sourceTree = "<group>"; };
+		961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		962375052083341E0053F81D /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		9644C8E5207D883E0021A445 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		966B5C292079D8B100472C03 /* MyMLH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMLH.swift; sourceTree = "<group>"; };
-		966B5C2B207A070800472C03 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		966B5C2D207A0A0100472C03 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		969856041FCE4ACF00A1D84C /* OneAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969856071FCE4ACF00A1D84C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,12 +175,13 @@
 		96025AC02079BA4E00F6EFEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
 				9644C888207D7CF00021A445 /* Transitions */,
-				966B5C2B207A070800472C03 /* EventsViewController.swift */,
 				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
 				966B5C292079D8B100472C03 /* MyMLH.swift */,
 				9612AB2020830C7200A158CF /* login.js */,
 				969856091FCE4ACF00A1D84C /* ViewController.swift */,
+				962375052083341E0053F81D /* ScannerViewController.swift */,
 				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
 			);
 			path = Controller;
@@ -358,6 +361,11 @@
 					969856031FCE4ACF00A1D84C = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					969856171FCE4ACF00A1D84C = {
 						CreatedOnToolsVersion = 9.1;
@@ -436,7 +444,9 @@
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/RippleEffectView/RippleEffectView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -449,7 +459,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RippleEffectView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -526,9 +538,9 @@
 				96025AC72079BAC000F6EFEB /* Serializable.swift in Sources */,
 				96025AD62079BE3100F6EFEB /* EventOrganizer.swift in Sources */,
 				9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */,
+				961AD92E20868E500098BDD3 /* HomeNavigationViewController.swift in Sources */,
 				9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */,
 				96025AD42079BE3100F6EFEB /* Location.swift in Sources */,
-				966B5C2C207A070800472C03 /* EventsViewController.swift in Sources */,
 				96025AD82079BE3100F6EFEB /* Event.swift in Sources */,
 				96025AC92079BAC000F6EFEB /* MHacksArray.swift in Sources */,
 				96025AB72079B94F00F6EFEB /* APIManager.swift in Sources */,
@@ -540,6 +552,7 @@
 				96025ACA2079BAC000F6EFEB /* KeychainWrapper.swift in Sources */,
 				966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */,
 				96025AD52079BE3100F6EFEB /* ScanEvent.swift in Sources */,
+				962375062083341E0053F81D /* ScannerViewController.swift in Sources */,
 				96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */,
 				96025AB62079B94F00F6EFEB /* APIManager+UIKit.swift in Sources */,
 			);

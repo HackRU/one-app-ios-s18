@@ -9,8 +9,9 @@
 import UIKit
 import MaterialComponents
 import Alamofire
+import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
 
     
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtPass.delegate = self
+        
         
         self.view.backgroundColor = HackRUColor.lightBlue
         
@@ -36,7 +39,6 @@ class ViewController: UIViewController {
         
         //btnSubmit.layer.borderColor = HackRUColor.lightBlue.cgColor
         btnMLH.layer.borderColor = HackRUColor.lightBlue.cgColor
-        txtPass.isSecureTextEntry = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -50,6 +52,18 @@ class ViewController: UIViewController {
         auth()
         
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if touch.phase == .began{
+                txtPass.resignFirstResponder()
+                txtEmail.resignFirstResponder()
+            }
+        }
+    }
+    
+    
     
     func setJson(){
         
@@ -76,14 +90,52 @@ class ViewController: UIViewController {
         
         Alamofire.request(request).responseJSON { (response) in
             
+            let swiftJsonVar = JSON(response.result.value!)
+            print(swiftJsonVar)
+            if let status = swiftJsonVar["statusCode"].int {
+                if(status as Int? == 200){
+                    print("success!")
+                
+                    if let body = JSON(parseJSON: swiftJsonVar["body"].string!).dictionary!["auth"]{
+                        
+                        let user = UserDefaults.standard
+                        
+                        if let auth = body["token"].string{
+                                print(auth)
+                            user.set(auth, forKey: "auth")
+                        }
+                        
+                        if let email = body["email"].string{
+                            print(email)
+                            user.set(email, forKey: "email")
+                        }
+                        
+                        
+                        
+                        self.performSegue(withIdentifier: "segueHome", sender: nil)
+                        
+                    }
+                }else if(status as Int? == 403){
+                    
+                    if let body = swiftJsonVar["body"].string {
+                        let alert = UIAlertController(title: "Oops Invalid Email/Password!", message: body, preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                }
+            }
             
-            let responseJSON = response.result.value as! [String:AnyObject]
-            print(responseJSON)
-        
+            
+            
         }
        
         
     }
+    
+
 
     
 

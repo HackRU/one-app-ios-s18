@@ -23,38 +23,19 @@ class CountdownViewController: UIViewController {
 	
 	// MARK: - Lifecycle
     
-    func setFloaty(){
-        let floaty = Floaty()
-       floaty.openAnimationType = .fade
-        floaty.buttonColor = HackRUColor.lightBlue
-        floaty.plusColor = .white
-        floaty.addItem(title: "Hello, World!")
-        
-        floaty.addItem("QR", icon: UIImage(named: "qr"), handler: { item in
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            alert.view.sizeThatFits(CGSize(width: self.view.bounds.width, height: self.view.bounds.width))
-            //alert.addAction(UIAlertAction(title: "QR", style: .default, image: !))
-            
-            var img = UIImage(named: "qr")
-            img = img?.imageWithSize(CGSize(width: alert.view.bounds.width * 0.6, height: alert.view.bounds.width * 0.6))
-            
-            alert.addAction(UIAlertAction(title: "QR", style: .default, image: img!))
-        
-            self.present(alert, animated: true, completion: nil)
-        })
-        
-        self.view.addSubview(floaty)
-        
-    }
+   
 	
 	override func viewDidLoad() {
         
-       setFloaty()
+       //setFloaty()
         
 		super.viewDidLoad()
         
         configuration = Configuration()
-		
+        
+        self.tabBarItem.badgeColor = .white
+        
+       
 		// Uncomment this for screenshots
 		//progressIndicator.progressColor = UIColor.clear
         //progressIndicator.progressColor = MHacksColor.blue

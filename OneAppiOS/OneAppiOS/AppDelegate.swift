@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        Floaty.global.button.addItem(title: "Hello, World!")
 //        Floaty.global.show()
+     
         
+        //user.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
         
         return true
     }
