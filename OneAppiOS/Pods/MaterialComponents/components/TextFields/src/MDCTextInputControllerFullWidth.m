@@ -71,11 +71,13 @@ static inline UIColor *MDCTextInputControllerFullWidthErrorColorDefault() {
 #pragma mark - Class Properties
 
 static BOOL _mdc_adjustsFontForContentSizeCategoryDefault = NO;
+static UIColor *_backgroundColorDefault;
 static UIColor *_errorColorDefault;
 static UIColor *_inlinePlaceholderColorDefault;
 static UIColor *_trailingUnderlineLabelTextColorDefault;
 
 static UIFont *_inlinePlaceholderFontDefault;
+static UIFont *_textInputFontDefault;
 static UIFont *_trailingUnderlineLabelFontDefault;
 
 @interface MDCTextInputControllerFullWidth () {
@@ -83,11 +85,13 @@ static UIFont *_trailingUnderlineLabelFontDefault;
 
   MDCTextInputAllCharactersCounter *_characterCounter;
 
+  UIColor *_backgroundColor;
   UIColor *_errorColor;
   UIColor *_inlinePlaceholderColor;
   UIColor *_trailingUnderlineLabelTextColor;
 
   UIFont *_inlinePlaceholderFont;
+  UIFont *_textInputFont;
   UIFont *_trailingUnderlineLabelFont;
 }
 
@@ -117,6 +121,7 @@ static UIFont *_trailingUnderlineLabelFontDefault;
 
 @implementation MDCTextInputControllerFullWidth
 
+@synthesize backgroundColor = _backgroundColor;
 @synthesize characterCountMax = _characterCountMax;
 @synthesize characterCountViewMode = _characterCountViewMode;
 @synthesize textInput = _textInput;
@@ -330,6 +335,18 @@ static UIFont *_trailingUnderlineLabelFontDefault;
   }
 }
 
+#pragma  mark - TextInput Customization
+
+- (void)updateTextInput {
+  UIFont *font = self.textInputFont;
+  if (self.mdc_adjustsFontForContentSizeCategory) {
+    font =
+        [font mdc_fontSizedForMaterialTextStyle:MDCFontTextStyleBody1
+                           scaledForDynamicType:_mdc_adjustsFontForContentSizeCategory];
+  }
+  self.textInput.font = font;
+}
+
 #pragma mark - Leading Label Customization
 
 - (void)updateLeadingUnderlineLabel {
@@ -350,6 +367,7 @@ static UIFont *_trailingUnderlineLabelFontDefault;
 
   self.textInput.placeholderLabel.font = placeHolderFont;
   self.textInput.placeholderLabel.textColor = self.inlinePlaceholderColor;
+  self.textInput.placeholderLabel.backgroundColor = self.backgroundColor;
 }
 
 #pragma mark - Trailing Label Customization
@@ -389,6 +407,7 @@ static UIFont *_trailingUnderlineLabelFontDefault;
   }
 
   self.textInput.trailingUnderlineLabel.textColor = textColor;
+  self.textInput.trailingUnderlineLabel.backgroundColor = self.backgroundColor;
 }
 
 - (NSString *)characterCountText {
@@ -431,6 +450,30 @@ static UIFont *_trailingUnderlineLabelFontDefault;
 
 + (void)setActiveColorDefault:(__unused UIColor *)activeColorDefault {
   // Not implemented. Underline is always clear.
+}
+
+- (UIColor *)backgroundColor {
+  if (!_backgroundColor) {
+    _backgroundColor = [self class].backgroundColorDefault;
+  }
+  return _backgroundColor;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+  if (_backgroundColor != backgroundColor) {
+    _backgroundColor = backgroundColor ?: [self class].backgroundColorDefault;
+  }
+}
+
++ (UIColor *)backgroundColorDefault {
+  if (!_backgroundColorDefault) {
+    _backgroundColorDefault = [UIColor clearColor];
+  }
+  return _backgroundColorDefault;
+}
+
++ (void)setBackgroundColorDefault:(UIColor *)backgroundColorDefault {
+  _backgroundColorDefault = backgroundColorDefault ?: [UIColor clearColor];
 }
 
 - (void)setCharacterCountViewMode:(UITextFieldViewMode)characterCountViewMode {
@@ -666,6 +709,28 @@ static UIFont *_trailingUnderlineLabelFontDefault;
   }
 }
 
+- (UIFont *)textInputFont {
+  if (_textInputFont) {
+    return _textInputFont;
+  }
+  return [self class].textInputFontDefault ?: self.textInput.font;
+}
+
+- (void)setTextInputFont:(UIFont *)textInputFont {
+  if (![_textInputFont isEqual:textInputFont]) {
+    _textInputFont = textInputFont;
+    [self updateLayout];
+  }
+}
+
++ (UIFont *)textInputFontDefault {
+  return _textInputFontDefault;
+}
+
++ (void)setTextInputFontDefault:(UIFont *)textInputFontDefault {
+  _textInputFontDefault = textInputFontDefault;
+}
+
 - (UIFont *)trailingUnderlineLabelFont {
   return _trailingUnderlineLabelFont ?: [self class].trailingUnderlineLabelFontDefault;
 }
@@ -780,6 +845,7 @@ static UIFont *_trailingUnderlineLabelFontDefault;
   [self updatePlaceholder];
   [self updateLeadingUnderlineLabel];
   [self updateTrailingUnderlineLabel];
+  [self updateTextInput];
   [self updateUnderline];
   [self updateConstraints];
 }

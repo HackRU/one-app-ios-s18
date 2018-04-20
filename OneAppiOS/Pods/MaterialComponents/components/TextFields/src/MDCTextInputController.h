@@ -37,6 +37,19 @@
 @property(class, nonatomic, null_resettable, strong) UIColor *activeColorDefault;
 
 /**
+ Color for background for the various views making up a text field.
+
+ Default is backgroundColorDefault.
+ */
+@property(nonatomic, null_resettable, strong) UIColor *backgroundColor;
+
+/**
+ Default value for backgroundColor.
+ */
+@property(class, nonatomic, null_resettable, strong) UIColor *backgroundColorDefault;
+
+
+/**
  The character counter. Override to use a custom character counter.
 
  Default is an internal instance MDCTextInputAllCharactersCounter. Setting this property to null
@@ -111,6 +124,18 @@
 
 /** Default value for inlinePlaceholderColor. */
 @property(class, nonatomic, null_resettable, strong) UIColor *inlinePlaceholderColorDefault;
+
+/**
+ The font applied to the text input.
+
+ Default or in case this property is nil, the value will be textInputFontDefault.
+ If textInputFontDefault is nil, textInput.font would be the fallback.
+ */
+@property(nonatomic, null_resettable, strong) UIFont *textInputFont;
+
+/** Default value for textInputFontDefault. If nil, textInput.font would be the fallback.  */
+@property(class, nonatomic, nullable, strong) UIFont *textInputFontDefault;
+
 
 /**
  The font applied to the placeholder when inline (not floating).

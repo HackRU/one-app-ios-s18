@@ -11,7 +11,7 @@ import MaterialComponents
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UITextViewDelegate {
+class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         txtPass.delegate = self
-        
+        txtEmail.delegate = self
         
         self.view.backgroundColor = HackRUColor.lightBlue
         
@@ -41,6 +41,16 @@ class ViewController: UIViewController, UITextViewDelegate {
         btnMLH.layer.borderColor = HackRUColor.lightBlue.cgColor
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
+        txtPass.resignFirstResponder()
+        
+        textField.resignFirstResponder()
+        
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -134,22 +144,14 @@ class ViewController: UIViewController, UITextViewDelegate {
        
         
     }
-    
-
-
-    
 
     @IBAction func btnActionMyMLH(_ sender: Any) {
         
         performSegue(withIdentifier: "segueMLH", sender: nil)
+        
+
     
     }
     
-    
-    
-    
-    
-    
-
 }
 

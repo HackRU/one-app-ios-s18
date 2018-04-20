@@ -8,6 +8,8 @@
 
 import UIKit
 import Floaty
+import Firebase
+import SwiftyJSON
 
 class CountdownViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class CountdownViewController: UIViewController {
 	@IBOutlet weak var endLabel: UILabel!
     
     var configuration: Configuration?
+     var ref: DatabaseReference!
 	
 	// Delays the initial filling animation by second
 	var firstAppearanceDate: Date?
@@ -29,21 +32,53 @@ class CountdownViewController: UIViewController {
         
        //setFloaty()
         
-		super.viewDidLoad()
+        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         
-        configuration = Configuration()
+        self.navigationController?.navigationItem.title = "HackRU"
         
-        self.tabBarItem.badgeColor = .white
         
-       
-		// Uncomment this for screenshots
-		//progressIndicator.progressColor = UIColor.clear
-        //progressIndicator.progressColor = MHacksColor.blue
+        ref = Database.database().reference()
+        ref.observe(.value, with: { snapshot in
+            print(snapshot.value!)
+            
+            let swiftJson = JSON(snapshot.value!)
+            
+            super.viewDidLoad()
+            
+            
+            if let deadline = swiftJson["deadline"].int{
+                //Configuration.endDateEpoch = deadline/1000
+                print(deadline)
+                Configuration.endDateEpoch = deadline/1000
+                
+                
+               // Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+                Configuration.startDateEpoch = Date().timeIntervalSince1970.exponent
+                if(Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400){
+                    Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+                }
+                
+                self.configuration = Configuration()
+                
+                self.tabBarItem.badgeColor = .white
+                
+                
+                // Uncomment this for screenshots
+                //progressIndicator.progressColor = UIColor.clear
+                //progressIndicator.progressColor = MHacksColor.blue
+                
+                self.countdownLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 120.0, weight: UIFont.Weight.thin)
+                
+                
+                //APIManager.shared.updateConfiguration()
+            }
+            
+            
+          
+        })
+        
 		
-        countdownLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 120.0, weight: UIFont.Weight.thin)
-    
-        
-		//APIManager.shared.updateConfiguration()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

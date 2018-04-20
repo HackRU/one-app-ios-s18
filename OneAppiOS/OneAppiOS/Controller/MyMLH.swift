@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftyJSON
 
 class MyMLH: UIViewController, WKNavigationDelegate {
     
@@ -37,11 +38,32 @@ class MyMLH: UIViewController, WKNavigationDelegate {
         if(webView.url?.absoluteString.contains("https://hackru.org/dashboard.html?authdata"))!{
             
             let stringURL = webView.url?.absoluteString
-            let cleanUp = stringURL?.removingPercentEncoding
+            var cleanUp = stringURL?.removingPercentEncoding
             
-            print(cleanUp ?? "no cleanup")
+           // print(cleanUp ?? "no cleanup")
+            let subJson = cleanUp?.suffix(from: (cleanUp?.index(of: "{"))!)
+            cleanUp = String(subJson!)
             
-            performSegue(withIdentifier: "segueLoggedIn", sender: nil)
+            print(cleanUp!)
+            
+            
+            if let body = JSON(parseJSON: cleanUp!).dictionary!["auth"]{
+                
+                let user = UserDefaults.standard
+                
+                if let auth = body["token"].string{
+                    print(auth)
+                    user.set(auth, forKey: "auth")
+                }
+                
+                if let email = body["email"].string{
+                    print(email)
+                    user.set(email, forKey: "email")
+                }
+            
+            
+                performSegue(withIdentifier: "segueLoggedIn", sender: nil)
+            }
             
         }
     }

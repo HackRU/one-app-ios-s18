@@ -8,6 +8,7 @@
 
 import UIKit
 import Floaty
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        
         // Override point for customization after application launch.
 //        Floaty.global.button.addItem(title: "Hello, World!")
 //        Floaty.global.show()

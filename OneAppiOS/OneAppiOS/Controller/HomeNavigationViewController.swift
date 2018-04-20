@@ -16,6 +16,7 @@ class HomeNavigationViewController: UINavigationController {
         
         //self.navigationItem.title = "HackRU"
         self.navigationController?.title = "HackRU"
+        self.navigationBar.backItem?.backBarButtonItem?.tintColor = .white
         
         // Do any additional setup after loading the view.
     }

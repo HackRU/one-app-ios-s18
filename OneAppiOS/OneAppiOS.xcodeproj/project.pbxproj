@@ -31,7 +31,14 @@
 		96025ADE2079CC7600F6EFEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ADD2079CC7600F6EFEB /* API.swift */; };
 		9612AB2120830C7200A158CF /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9612AB2020830C7200A158CF /* login.js */; };
 		961AD92E20868E500098BDD3 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */; };
+		9622CC9E2087626A00FB0CB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CC9D2087626A00FB0CB5 /* MapViewController.swift */; };
+		9622CCA0208762B600FB0CB5 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */; };
+		9622CCA22087B7D800FB0CB5 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CCA12087B7D800FB0CB5 /* EventsTableViewCell.swift */; };
+		9622CCA82087D12100FB0CB5 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CCA72087D12100FB0CB5 /* EventDetailTableViewController.swift */; };
+		9622CCAA2087D39F00FB0CB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9622CCA92087D39900FB0CB5 /* GoogleService-Info.plist */; };
 		962375062083341E0053F81D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962375052083341E0053F81D /* ScannerViewController.swift */; };
+		9625EE342086CFF100ED5B18 /* SlackAnnouncmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625EE332086CFF100ED5B18 /* SlackAnnouncmentViewController.swift */; };
+		9625EE362086E6ED00ED5B18 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625EE352086E6ED00ED5B18 /* EventsTableViewController.swift */; };
 		9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644C8E5207D883E0021A445 /* SplashViewController.swift */; };
 		966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C292079D8B100472C03 /* MyMLH.swift */; };
 		966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B5C2D207A0A0100472C03 /* TabsViewController.swift */; };
@@ -88,7 +95,14 @@
 		96025ADD2079CC7600F6EFEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9612AB2020830C7200A158CF /* login.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = login.js; sourceTree = "<group>"; };
 		961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		9622CC9D2087626A00FB0CB5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		9622CCA12087B7D800FB0CB5 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		9622CCA72087D12100FB0CB5 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		9622CCA92087D39900FB0CB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		962375052083341E0053F81D /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		9625EE332086CFF100ED5B18 /* SlackAnnouncmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackAnnouncmentViewController.swift; sourceTree = "<group>"; };
+		9625EE352086E6ED00ED5B18 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		9644C8E5207D883E0021A445 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		966B5C292079D8B100472C03 /* MyMLH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMLH.swift; sourceTree = "<group>"; };
 		966B5C2D207A0A0100472C03 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
@@ -178,11 +192,17 @@
 				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
 				9644C888207D7CF00021A445 /* Transitions */,
 				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
+				9622CC9D2087626A00FB0CB5 /* MapViewController.swift */,
+				9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */,
+				9625EE352086E6ED00ED5B18 /* EventsTableViewController.swift */,
+				9625EE332086CFF100ED5B18 /* SlackAnnouncmentViewController.swift */,
+				9622CCA12087B7D800FB0CB5 /* EventsTableViewCell.swift */,
 				966B5C292079D8B100472C03 /* MyMLH.swift */,
 				9612AB2020830C7200A158CF /* login.js */,
 				969856091FCE4ACF00A1D84C /* ViewController.swift */,
 				962375052083341E0053F81D /* ScannerViewController.swift */,
 				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
+				9622CCA72087D12100FB0CB5 /* EventDetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +275,7 @@
 				9698560B1FCE4ACF00A1D84C /* Main.storyboard */,
 				9698560E1FCE4ACF00A1D84C /* Assets.xcassets */,
 				969856101FCE4ACF00A1D84C /* LaunchScreen.storyboard */,
+				9622CCA92087D39900FB0CB5 /* GoogleService-Info.plist */,
 				969856131FCE4ACF00A1D84C /* Info.plist */,
 			);
 			path = OneAppiOS;
@@ -406,6 +427,7 @@
 			files = (
 				9612AB2120830C7200A158CF /* login.js in Resources */,
 				969856121FCE4ACF00A1D84C /* LaunchScreen.storyboard in Resources */,
+				9622CCAA2087D39F00FB0CB5 /* GoogleService-Info.plist in Resources */,
 				9698560F1FCE4ACF00A1D84C /* Assets.xcassets in Resources */,
 				9698560D1FCE4ACF00A1D84C /* Main.storyboard in Resources */,
 			);
@@ -438,30 +460,38 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/RippleEffectView/RippleEffectView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RippleEffectView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,6 +561,7 @@
 			files = (
 				96025AC82079BAC000F6EFEB /* CoalescedCallbacks.swift in Sources */,
 				966B5C2A2079D8B100472C03 /* MyMLH.swift in Sources */,
+				9622CCA22087B7D800FB0CB5 /* EventsTableViewCell.swift in Sources */,
 				96025AB32079B92E00F6EFEB /* CountdownViewController.swift in Sources */,
 				96025ABD2079B9FF00F6EFEB /* CircularProgressIndicator.swift in Sources */,
 				96025ADA2079BE3100F6EFEB /* Configuration.swift in Sources */,
@@ -539,6 +570,7 @@
 				96025AD62079BE3100F6EFEB /* EventOrganizer.swift in Sources */,
 				9698560A1FCE4ACF00A1D84C /* ViewController.swift in Sources */,
 				961AD92E20868E500098BDD3 /* HomeNavigationViewController.swift in Sources */,
+				9622CCA82087D12100FB0CB5 /* EventDetailTableViewController.swift in Sources */,
 				9644C8E6207D883E0021A445 /* SplashViewController.swift in Sources */,
 				96025AD42079BE3100F6EFEB /* Location.swift in Sources */,
 				96025AD82079BE3100F6EFEB /* Event.swift in Sources */,
@@ -550,10 +582,14 @@
 				96025AD92079BE3100F6EFEB /* Announcement.swift in Sources */,
 				96025AD72079BE3100F6EFEB /* ScannedDataField.swift in Sources */,
 				96025ACA2079BAC000F6EFEB /* KeychainWrapper.swift in Sources */,
+				9625EE342086CFF100ED5B18 /* SlackAnnouncmentViewController.swift in Sources */,
+				9625EE362086E6ED00ED5B18 /* EventsTableViewController.swift in Sources */,
 				966B5C2E207A0A0100472C03 /* TabsViewController.swift in Sources */,
 				96025AD52079BE3100F6EFEB /* ScanEvent.swift in Sources */,
 				962375062083341E0053F81D /* ScannerViewController.swift in Sources */,
 				96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */,
+				9622CCA0208762B600FB0CB5 /* ImageScrollView.swift in Sources */,
+				9622CC9E2087626A00FB0CB5 /* MapViewController.swift in Sources */,
 				96025AB62079B94F00F6EFEB /* APIManager+UIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
