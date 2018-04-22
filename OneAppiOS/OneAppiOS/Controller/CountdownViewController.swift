@@ -140,7 +140,8 @@ class CountdownViewController: UIViewController {
 	func updateCountdownViews() {
 
 		if let firstAppearanceDate = firstAppearanceDate , firstAppearanceDate.timeIntervalSinceNow < -0.5 {
-            progressIndicator.setProgress((configuration?.progress())!, animated: true)
+            progressIndicator.setProgress((configuration?.progress()) ?? 0.0, animated: true)
+            
 		}
 		
 		countdownLabel.text = configuration?.timeRemainingDescription

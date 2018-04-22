@@ -12,15 +12,16 @@ import QRCodeReader
 import MaterialComponents
 import Alamofire
 import SwiftyJSON
-
+import Firebase
 
 class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var changeScanning: MDCRaisedButton!
-    
+    var ref: DatabaseReference!
     @IBOutlet weak var lblStatus: UILabel!
     var scanning : String?
     var scanParam: [String: AnyObject]?
     var state: Int?
+    var email: String?
     
     @IBOutlet weak var btnScanner: MDCRaisedButton!
     @IBOutlet weak var btnScan: UILabel!
@@ -134,33 +135,17 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
 
-
-
         Alamofire.request(request).responseJSON { (response) in
             let swiftJson = JSON(response.result.value!)
+                print(swiftJson)
             
             if let statusCode = swiftJson["statusCode"].int {
                 if(statusCode == 200){
                     
-                    
                     if let body = swiftJson["body"].string{
                         print(body)
                         
-                        
-                       
-//                        let alert = UIAlertController(title: "Success", message: swiftJson["body"].string, preferredStyle: .alert)
-//
-//
-//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{item in
-//
-//                            self.scanInPreviewAction((Any).self)
-//
-//                        }))
-                        
-                        self.scanInPreviewAction((Any).self)
-                        //self.present(alert, animated: true, completion: nil)
-                        
-                        
+                           self.scanInPreviewAction((Any).self)
                     }
                 }else{
                     self.previewView.layer.borderWidth = 5
@@ -181,13 +166,145 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
                 
                 
             }
-            
-            
-        
         }
 
     }
     
+    
+    func printQR(printEmail: String){
+        let url: String = "https://labels.hackru.org/\(printEmail)"
+    
+        Alamofire.request(url).responseJSON { response in
+            
+            switch response.result{
+            case .success:
+                
+                print("SUCCESS SOMETHING SOMETHING")
+                let swiftJson = JSON(response.result.value!)
+                
+                    if(swiftJson["statusCode"].int == 200){
+                        
+                        print(printEmail)
+                        self.apiCall(userString: printEmail, dictUpdate: ["$set": ["registration_status": "check-in" as AnyObject, "day_of.checked_in": true as AnyObject]])
+                        
+                    }else{
+                        let alert = UIAlertController(title: "Error Printing \(printEmail)", message: swiftJson.description, preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {item in
+                            //self.scanInPreviewAction((Any).self)
+                            self.scanInPreviewAction((Any).self)
+                            
+                        }))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                
+            case .failure:
+                    let alert = UIAlertController(title: "Error Printing \(printEmail)", message: " Error Connecting to Label Printer", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {item in
+                        //self.scanInPreviewAction((Any).self)
+                        self.scanInPreviewAction((Any).self)
+                        
+                    }))
+                
+                    self.present(alert, animated: true, completion: nil)
+            }
+
+        }
+    }
+    
+    
+    func checkIn(email: String){
+        let jsonObject = NSMutableDictionary()
+        var jsonData: Data = Data()
+        
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as! String, forKey: "auth")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as! String, forKey: "email")
+        jsonObject.setValue(["email": email], forKey: "query")
+        
+        do {
+            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
+            let jsonString = NSString(data: jsonData , encoding: String.Encoding.utf8.rawValue)! as String
+            print("json string = \(jsonString)")
+        } catch _ {
+            print ("JSON Failure")
+        }
+        
+        var request = URLRequest(url: URL(string: baseURL + "/read")!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        
+        
+        Alamofire.request(request).responseJSON { (response) in
+            let swiftJson = JSON(response.result.value!)
+            
+            print(swiftJson.description)
+          //  let stringJson = swiftJson.description
+            
+            if let body = JSON(response.result.value!)["body"].array {
+                for item in body {
+                    let day_of = item["day_of"].dictionary
+                    
+                    let checked = day_of!["checked_in"]?.bool ?? false
+                            print("CHECKED STATUS: \(checked)")
+                    
+                    self.ref = Database.database().reference()
+                    self.ref.observe(.value, with: { snapshot in
+                       // print(snapshot.value!)
+                         let swiftJson = JSON(snapshot.value!)
+                        if let allowOnlyAccepted = swiftJson["allowOnlyAccepted"].bool {
+                            if(item["registration_status"].string == "coming" || !allowOnlyAccepted == true){
+                                if (checked == true) {
+                                    
+                                    let alert = UIAlertController(title: "Already Checked In", message: "AHOY MATE \(email) ye be checked in", preferredStyle: .alert)
+                                    
+                                    alert.addAction(UIAlertAction(title: "Print QR Again", style: .default, handler: {item in
+                                        
+                                        self.printQR(printEmail: email)
+                                        print("print")
+                                        
+                                    }))
+                                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {item in
+                                        
+                                        self.scanInPreviewAction((Any).self)
+                                    }))
+                                    
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                }else{
+                                    
+                                    print("HEADING TO PRINT")
+                                    self.printQR(printEmail: email)
+                                    
+                                }
+                            }else{
+                                let alert = UIAlertController(title: "Waitlist checkin has not opened up yet! \(email)", message: "Only people who are marked as coming are being scanned at the moment,Accepted and Coming is Being Checked In ", preferredStyle: .alert)
+                                
+
+                                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {item in
+                                    
+                                    self.scanInPreviewAction((Any).self)
+                                }))
+                                
+                                self.present(alert, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    })
+                    
+             
+                }
+            }
+            
+        
+            
+            print("FIRST TIME CHECKIN")
+        }
+        
+    }
 
     
     @IBAction func changeBtnAction(_ sender: Any) {
@@ -259,7 +376,8 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             
             switch self.state {
             case 0:
-                self.apiCall(userString: result.value, dictUpdate: ["$set": ["registration_status": "check-in" as AnyObject, "day_of.checked_in": true as AnyObject]])
+                
+                self.checkIn(email: result.value)
                 break
             case 1:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.lunch_1": 1 as AnyObject]])
