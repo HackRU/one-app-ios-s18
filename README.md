@@ -1,5 +1,7 @@
 # One App iOS
 
+**One App Android's Description is still being made.  This will also act as the description for that while it is being prepared**
+
 ## Description
 *What is the purpose of this project?*
 
@@ -24,6 +26,7 @@ This is for both organizers and hackers.  The scanner will show up based off of 
 *What do people need in their systems? Is there a hardware requirement?*
 
 This will be a native iOS application so at the moment it can only be compiled on a Macbook.
+**Android does not have a hardware requiresment to develop on**
 
 ## Example Uses
 
