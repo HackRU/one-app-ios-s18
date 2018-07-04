@@ -14,9 +14,11 @@ We had started using a mobile application to keep track of analytics to get a be
 *How do the users get this up and running?*
 
 **For Developing**
+
 Clone the repo that is here and pod install to get all the dependcies to get it running.  You will need to have LCS up and running since that is the backend of this application at the moment
 
 **For Using**
+
 Since this is an iOS application deployed on the App Store, all you need to do is search and download it from there!
 
 What do people need in their systems? Is there a hardware requirement?
