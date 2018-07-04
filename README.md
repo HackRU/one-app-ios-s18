@@ -8,7 +8,7 @@ This project is a mobile application for hackers/organizers/mentors/sponsors at 
 ## Inspiration
 *How did this project come to be?*
 
-We had started using a mobile application to keep track of analytics to get a better idea of how certain aspects of the hackathon were running such as food consumption and optimization for checkin.  This project expanded into a mobile application so hackers had easier access to their QR code as well organizers with their scanners.  We put in more information about the hackathon everyone can stay up to date on events that are happeneing wherever in the venue. 
+We had started using an inhouse hybrid mobile application to keep track of analytics to get a better idea of how certain aspects of the hackathon were running such as food consumption and optimization for checkin.  This project expanded into a public native mobile application so hackers had easier access to their QR code as well organizers with their scanners.  We put in more information about the hackathon everyone can stay up to date on events that are happeneing wherever in the venue. 
 
 ## Installation Guide
 *How do the users get this up and running?*
