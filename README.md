@@ -1,6 +1,6 @@
 # One App iOS
 
-**One App Android's Description is still being made.  This will also act as the description for that while it is being prepared**
+**One App Android's Description is still being made.  This will also act as the description for that while it is being prepared.**
 
 ## Description
 *What is the purpose of this project?*
