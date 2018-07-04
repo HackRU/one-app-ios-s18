@@ -13,13 +13,13 @@ We had started using a mobile application to keep track of analytics to get a be
 ## Installation Guide
 *How do the users get this up and running?*
 
-**For Developing**
-
+### For Developing
 Clone the repo that is here and pod install to get all the dependcies to get it running.  You will need to have LCS up and running since that is the backend of this application at the moment
 
-**For Using**
+### For Users
 
 Since this is an iOS application deployed on the App Store, all you need to do is search and download it from there!
+This is for both organizers and hackers.  The scanner will show up based off of the role the user has when they are registerd on [lcs](https://github.com/HackRU/lcs#lcs) (the backend).
 
 What do people need in their systems? Is there a hardware requirement?
 
@@ -28,19 +28,24 @@ This will be a native iOS application so at the moment it can only be compiled o
 ## Example Uses
 
 *What in HackRU uses this, if this is a HackRU Project?*
-*What is this project for? if this is not a HackRU Project?*
+
+This application is for everyone at the hackathon!
+
 
 ## Style Guide
 
 *What Code Design Style guide is this project following*
+
+Currently we are looking to conform to the style-guide written by [RayWenderlich](https://github.com/raywenderlich/swift-style-guide)
 
 
 ## TO-DO List
 
 *Organize the priorities here!*
 
+* Cleanup old code-base
+* Work on a new design
+* Add new features and fix bugs from last semester
+
 ## Links to Further docs
 
-*If you have further docs... please tell me you document.*
-
-## And whatever you want :tada:
