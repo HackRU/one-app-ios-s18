@@ -190,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
-				9644C888207D7CF00021A445 /* Transitions */,
 				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
 				9622CC9D2087626A00FB0CB5 /* MapViewController.swift */,
 				9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */,
@@ -231,13 +230,6 @@
 				96025ACC2079BE3100F6EFEB /* Location.swift */,
 			);
 			path = "Public Models";
-			sourceTree = "<group>";
-		};
-		9644C888207D7CF00021A445 /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transitions;
 			sourceTree = "<group>";
 		};
 		969855FB1FCE4ACF00A1D84C = {
