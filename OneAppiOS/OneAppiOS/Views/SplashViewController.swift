@@ -21,19 +21,17 @@ class SplashViewController: UIViewController {
         "CIPhotoEffectTransfer",
         "CISepiaTone"
     ]
-    
+
     var rippleEffectView: RippleEffectView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.backgroundColor = UIColor.black
-        
-        
+
         rippleEffectView = RippleEffectView()
-        
-        
+
         var img = UIImage(named: "wave")
-        
+
         let ciContext = CIContext(options: nil)
         let coreImage = CIImage(image: img!)
         let filter = CIFilter(name: "CIPhotoEffectFade" )
@@ -43,23 +41,17 @@ class SplashViewController: UIViewController {
         let filteredImageRef = ciContext.createCGImage(filteredImageData, from: filteredImageData.extent)
         img = UIImage(cgImage: filteredImageRef!)
         rippleEffectView?.tileImage = img
-        
+
         rippleEffectView?.magnitude = -0.4
-        rippleEffectView?.cellSize = CGSize(width:50, height:50)
+        rippleEffectView?.cellSize = CGSize(width: 50, height: 50)
         rippleEffectView?.rippleType = .oneWave
         rippleEffectView?.animationDuration = 5.0
-        
-        
-        
+
         view.addSubview((rippleEffectView)!)
-        
+
         // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         rippleEffectView?.startAnimating()
     }
@@ -68,7 +60,6 @@ class SplashViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

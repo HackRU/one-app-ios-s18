@@ -10,9 +10,8 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var txtInfo: UITextView!
-    
+
     @IBOutlet weak var txtTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

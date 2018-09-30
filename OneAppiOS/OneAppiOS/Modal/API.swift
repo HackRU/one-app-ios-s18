@@ -12,51 +12,50 @@ import Alamofire_Synchronous
 
 var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
 
-public class Authenticator{
+public class Authenticator {
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
     var jsonData: Data = Data()
     var email: String
     var password: String
-    
-    public init(email: String, password: String){
-        
+
+    public init(email: String, password: String) {
+
         self.email = email
         self.password = password
-        
+
         jsonObject.setValue(email, forKey: "email")
         jsonObject.setValue(password, forKey: "password")
-        
+
         do {
             jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
-            let jsonString = NSString(data: jsonData , encoding: String.Encoding.utf8.rawValue)! as String
+            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
             print("json string = \(jsonString)")
         } catch _ {
             print ("JSON Failure")
         }
-        
+
     }
-    
-    func authenticate() -> Int{
-        
+
+    func authenticate() -> Int {
+
         var request = URLRequest(url: URL(string: baseURL + "/authorize")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
-        
+
         var status = 0
-        
+
         Alamofire.request(request).responseJSON { (response) in
-            let responseJSON = response.result.value as! [String:AnyObject]
+            let responseJSON = response.result.value as! [String: AnyObject]
             print(responseJSON)
-            
+
                  status = responseJSON["statusCode"] as! Int
-            
-            
+
         }
         return status
-        
+
     }
-    
+
 //    func authenticateSync()-> Int{
 //       // let response = Alamofire.request(baseURL + "/authorize", method: .post, parameters: jsonData).responseJSON(options: .allowFragments)
 //
@@ -76,32 +75,29 @@ public class Authenticator{
 //         return status
 //
 //    }
-    
-    
-    
-    
+
 }
 
 extension UIImage {
-    func imageWithSize(_ size:CGSize) -> UIImage {
+    func imageWithSize(_ size: CGSize) -> UIImage {
         var scaledImageRect = CGRect.zero
-        
-        let aspectWidth:CGFloat = size.width / self.size.width
-        let aspectHeight:CGFloat = size.height / self.size.height
-        let aspectRatio:CGFloat = min(aspectWidth, aspectHeight)
-        
+
+        let aspectWidth: CGFloat = size.width / self.size.width
+        let aspectHeight: CGFloat = size.height / self.size.height
+        let aspectRatio: CGFloat = min(aspectWidth, aspectHeight)
+
         scaledImageRect.size.width = self.size.width * aspectRatio
         scaledImageRect.size.height = self.size.height * aspectRatio
         scaledImageRect.origin.x = (size.width - scaledImageRect.size.width) / 2.0
         scaledImageRect.origin.y = (size.height - scaledImageRect.size.height) / 2.0
-        
+
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        
+
         self.draw(in: scaledImageRect)
-        
+
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return scaledImage!
     }
 }
@@ -110,7 +106,7 @@ extension UIAlertAction {
     convenience init(title: String?, style: UIAlertActionStyle, image: UIImage, handler: ((UIAlertAction) -> Void)? = nil) {
         self.init(title: title, style: style, handler: handler)
         self.actionImage = image
-        
+
     }
 
     convenience init?(title: String?, style: UIAlertActionStyle, imageNamed imageName: String, handler: ((UIAlertAction) -> Void)? = nil) {
@@ -154,30 +150,27 @@ extension UIAlertAction {
 //}
 
 extension UIImage {
-    
-    func maskWithColor( color:UIColor) -> UIImage {
-        
+
+    func maskWithColor( color: UIColor) -> UIImage {
+
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()!
-        
+
         color.setFill()
-        
+
         context.translateBy(x: 0, y: self.size.height)
         context.scaleBy(x: 1.0, y: -1.0)
-        
+
         let rect = CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height)
         context.draw(self.cgImage!, in: rect)
-        
+
         context.setBlendMode(CGBlendMode.sourceIn)
         context.addRect(rect)
         context.drawPath(using: CGPathDrawingMode.fill)
-        
+
         let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return coloredImage!
     }
 }
-
-
-

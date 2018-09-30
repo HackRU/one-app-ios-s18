@@ -10,26 +10,24 @@ import UIKit
 
 class MapViewController: UIViewController {
 
-    
     private let scrollView = ImageScrollView(image: UIImage(named: "layout")!)
-    
+
     override func viewDidLoad() {
         view.backgroundColor = HackRUColor.blue
         view.addSubview(scrollView)
-        
+
         let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
+
         self.navigationItem.backBarButtonItem?.tintColor = .white
-        
-        
+
         navigationController?.navigationBar.backItem?.title = "back"
-        
+
         scrollView.frame = view.frame
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +35,6 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

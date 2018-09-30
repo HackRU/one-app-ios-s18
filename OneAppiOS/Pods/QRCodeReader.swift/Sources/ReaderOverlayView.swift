@@ -59,7 +59,7 @@ public final class ReaderOverlayView: UIView {
   var overlayColor: UIColor = UIColor.white {
     didSet {
       self.overlay.strokeColor = overlayColor.cgColor
-      
+
       self.setNeedsDisplay()
     }
   }
@@ -71,8 +71,7 @@ public final class ReaderOverlayView: UIView {
     if innerRect.width != minSize {
       innerRect.origin.x   += (innerRect.width - minSize) / 2
       innerRect.size.width = minSize
-    }
-    else if innerRect.height != minSize {
+    } else if innerRect.height != minSize {
       innerRect.origin.y    += (innerRect.height - minSize) / 2
       innerRect.size.height = minSize
     }

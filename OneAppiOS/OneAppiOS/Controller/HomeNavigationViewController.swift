@@ -13,11 +13,11 @@ class HomeNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.barTintColor = HackRUColor.lightBlue
-        
+
         //self.navigationItem.title = "HackRU"
         self.navigationController?.title = "HackRU"
         self.navigationBar.backItem?.backBarButtonItem?.tintColor = .white
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -25,7 +25,6 @@ class HomeNavigationViewController: UINavigationController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

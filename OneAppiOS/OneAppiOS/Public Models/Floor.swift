@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 
-final class Floor: SerializableElementWithIdentifier
-{
+final class Floor: SerializableElementWithIdentifier {
     let ID: String
     static var resultsKey: String = "floors"
     var name: String
@@ -23,10 +22,9 @@ final class Floor: SerializableElementWithIdentifier
     var northWestCoordinate: CLLocationCoordinate2D
     var southEastCoordinate: CLLocationCoordinate2D
     var fileLocation: String?
-    private var imageCache: UIImage? = nil
-    
-    init(ID: String, name: String, imageURL: String, index: Int, description: String, offsetFraction: Double, aspectRatio: Double, northWestCoordinate: CLLocationCoordinate2D, southEastCoordinate: CLLocationCoordinate2D, fileLocation: String?)
-    {
+    private var imageCache: UIImage?
+
+    init(ID: String, name: String, imageURL: String, index: Int, description: String, offsetFraction: Double, aspectRatio: Double, northWestCoordinate: CLLocationCoordinate2D, southEastCoordinate: CLLocationCoordinate2D, fileLocation: String?) {
         self.ID = ID
         self.name = name
         self.imageURL = imageURL
@@ -38,24 +36,20 @@ final class Floor: SerializableElementWithIdentifier
         self.southEastCoordinate = southEastCoordinate
         self.fileLocation = fileLocation
     }
-    
-    
+
     /// Call this function to get the image from a floor. This function handles all the caching and under the hood optimizations and so may call your completion almost immediately.
     ///
     /// - Parameter completion: A callback which accepts the image for this floor.
-    func retrieveImage(_ completion: @escaping (UIImage) -> Void)
-    {
+    func retrieveImage(_ completion: @escaping (UIImage) -> Void) {
         let internalCompletion = { (image: UIImage) in
             self.imageCache = image
             completion(image)
         }
-        if let image = imageCache
-        {
+        if let image = imageCache {
             internalCompletion(image)
             return
         }
-        if let image = imageFromFileLocation()
-        {
+        if let image = imageFromFileLocation() {
             internalCompletion(image)
             return
         }
@@ -64,43 +58,37 @@ final class Floor: SerializableElementWithIdentifier
             assertionFailure("Could not resolve URL \(imageURL) from server")
             return
         }
-        
+
         let task = URLSession.shared.dataTask(with: URL) { data, response, error in
             guard error == nil, let data = data
             else {
                // NotificationCenter.default.post(name: APIManager.FailureNotification, object: error?.localizedDescription ?? "Failed to download floor \(self.name)")
                 return
             }
-            
+
             let newFileLocation = cacheContainer.appendingPathComponent(URL.lastPathComponent)
             _ = try? FileManager.default.removeItem(at: newFileLocation)
             do {
                 try data.write(to: newFileLocation)
                 self.fileLocation = newFileLocation.path
-                if let image = self.imageFromFileLocation()
-                {
+                if let image = self.imageFromFileLocation() {
                     internalCompletion(image)
                 }
-            }
-            catch
-            {
+            } catch {
                 //NotificationCenter.default.post(name: APIManager.FailureNotification, object: error.localizedDescription)
             }
         }
         task.resume()
     }
-    private func imageFromFileLocation() -> UIImage?
-    {
+    private func imageFromFileLocation() -> UIImage? {
         guard let location = fileLocation
-        else
-        {
+        else {
             return nil
         }
         return UIImage(contentsOfFile: location)
     }
 }
-extension Floor
-{
+extension Floor {
     private static let nameKey = "name"
     private static let imageURLKey = "floor_image"
     private static let indexKey = "level"
@@ -112,9 +100,9 @@ extension Floor
     private static let southEastLatitudeKey = "se_latitude"
     private static let southEastLongitudeKey = "se_longitude"
     private static let descriptionKey = "desc"
-    
+
     convenience init?(_ serializedRepresentation: SerializedRepresentation) {
-        
+
         guard
             let id = serializedRepresentation[Floor.idKey] as? String,
             let name = serializedRepresentation[Floor.nameKey] as? String,
@@ -130,24 +118,22 @@ extension Floor
             let southEastLongitude = Double(southEastLongitudeString),
             let description = serializedRepresentation[Floor.descriptionKey] as? String
             else { return nil }
-        
-        
+
         let offsetFraction = 1.0
         let aspectRatio = 1.0
         let northWestCoordinate = CLLocationCoordinate2D(latitude: northWestLatitude, longitude: northWestLongitude)
         let southEastCoordinate = CLLocationCoordinate2D(latitude: southEastLatitude, longitude: southEastLongitude)
-        
+
         self.init(ID: id, name: name, imageURL: imageURL, index: index, description: description, offsetFraction: offsetFraction, aspectRatio: aspectRatio, northWestCoordinate: northWestCoordinate, southEastCoordinate: southEastCoordinate, fileLocation: serializedRepresentation[Floor.fileLocationKey] as? String)
     }
-    
-    func toSerializedRepresentation() -> NSDictionary
-    {
+
+    func toSerializedRepresentation() -> NSDictionary {
         var dict: [String: Any] = [
             Floor.idKey: ID,
             Floor.nameKey: name,
             Floor.imageURLKey: imageURL,
             Floor.indexKey: index,
-            Floor.offsetFractionKey : offsetFraction,
+            Floor.offsetFractionKey: offsetFraction,
             Floor.aspectRatioKey: aspectRatio,
             Floor.northWestLatitudeKey: "\(northWestCoordinate.latitude)",
             Floor.northWestLongitudeKey: "\(northWestCoordinate.longitude)",
@@ -155,11 +141,11 @@ extension Floor
             Floor.southEastLongitudeKey: "\(southEastCoordinate.longitude)",
             Floor.descriptionKey: description
         ]
-        
+
         if let file = fileLocation {
             dict[Floor.fileLocationKey] = file
         }
-        
+
         return dict as NSDictionary
     }
 }

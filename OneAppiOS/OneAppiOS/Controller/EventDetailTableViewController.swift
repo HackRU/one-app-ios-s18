@@ -18,14 +18,10 @@ class EventDetailTableViewController: UITableViewController {
 //    
 //    var detail = details()
     public static let mutArr = NSMutableArray()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,22 +45,18 @@ class EventDetailTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return EventDetailTableViewController.mutArr.count
     }
-    
-   
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        
+
         cell.textLabel?.text = EventDetailTableViewController.mutArr.object(at: indexPath.row) as? String
         print(cell.textLabel?.text!)
         cell.textLabel?.textColor = HackRUColor.blue
 
         return cell
     }
- 
 
     /*
     // Override to support conditional editing of the table view.

@@ -9,50 +9,41 @@
 import Foundation
 
 typealias SerializedRepresentation = [String: Any]
-protocol SerializableElement
-{
-	init?(_ serializedRepresentation : SerializedRepresentation)
+protocol SerializableElement {
+	init?(_ serializedRepresentation: SerializedRepresentation)
 	func toSerializedRepresentation() -> NSDictionary
 }
-extension SerializableElement
-{
-	init?(_ serializedRepresentation : SerializedRepresentation?)
-	{
+extension SerializableElement {
+	init?(_ serializedRepresentation: SerializedRepresentation?) {
 		guard let serializedRepresentation = serializedRepresentation
 			else { return nil }
 		self.init(serializedRepresentation)
 	}
 }
 
-protocol SerializableElementWithIdentifier: SerializableElement, Comparable, Hashable
-{
+protocol SerializableElementWithIdentifier: SerializableElement, Comparable, Hashable {
 	var ID: String { get }
 	static var resultsKey: String { get }
 }
-extension SerializableElementWithIdentifier
-{
+extension SerializableElementWithIdentifier {
 	var hashValue: Int { return ID.hashValue }
 	static var idKey: String { return "id" }
 }
-func ==<Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool
-{
+func ==<Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool {
 	return lhs.ID == rhs.ID
 }
-func < <Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool
-{
+func < <Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool {
 	return lhs.ID < rhs.ID
 }
 
-protocol Serializable: class, SerializableElement
-{
+protocol Serializable: class, SerializableElement {
 	func updateWith(_ serialized: SerializedRepresentation) -> Bool
 
 	var semaphoreGuard: DispatchSemaphore { get }
 	var coalescer: CoalescedCallbacks { get }
 	var lastUpdated: Int? { get }
 }
-extension Serializable
-{
+extension Serializable {
 	static var lastUpdatedKey: String { return "date_updated" }
 	var sinceDictionary: [String: Any] {
 		guard let lastUpdated = lastUpdated

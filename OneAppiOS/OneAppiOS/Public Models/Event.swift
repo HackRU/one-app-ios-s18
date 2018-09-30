@@ -9,16 +9,15 @@
 import Foundation
 import UIKit
 
-
 final class Event: SerializableElementWithIdentifier {
- 
+
 	enum Category: String, CustomStringConvertible {
 		case general = "General"
 		case food = "Food"
 		case techTalk = "Tech Talk"
 		case sponsor = "Sponsor Event"
 		case other = "Other"
-		
+
 		var color: UIColor {
 			switch self {
 			case .general:
@@ -33,12 +32,12 @@ final class Event: SerializableElementWithIdentifier {
 				return HackRUColor.red
 			}
 		}
-		
-		var description : String {
+
+		var description: String {
 			return self.rawValue
 		}
 	}
-	
+
 	let ID: String
 	static var resultsKey: String = "events"
     let name: String
@@ -47,11 +46,11 @@ final class Event: SerializableElementWithIdentifier {
     let startDate: Date
 	let endDate: Date
     let description: String
-	
+
 	var duration: Double {
 		return 60
 	}
-	
+
 	init(ID: String, name: String, category: Category, locationID: String, startDate: Date, endDate: Date, description: String) {
 		self.ID = ID
 		self.name = name
@@ -62,11 +61,10 @@ final class Event: SerializableElementWithIdentifier {
 		self.description = description
 	}
 
-	
     var timeInterval: Range<TimeInterval> {
         return startDate.timeIntervalSinceReferenceDate..<endDate.timeIntervalSinceReferenceDate
     }
-	
+
 //    var location: Location? {
 //        return APIManager.shared.locations[locationID]
 //    }
@@ -79,7 +77,7 @@ extension Event {
 	private static let startDateKey = "startDate_ts"
 	private static let endDateKey = "endDate_ts"
 	private static let categoryKey = "category"
-	
+
 	convenience init?(_ serialized: SerializedRepresentation) {
 		guard
 			let name = serialized[Event.nameKey] as? String,
@@ -93,7 +91,7 @@ extension Event {
 		else {
 			return nil
 		}
-		
+
 		self.init(
 			ID: ID,
 			name: name,
@@ -104,7 +102,7 @@ extension Event {
 			description: description
 		)
 	}
-	
+
 	func toSerializedRepresentation() -> NSDictionary {
 		return [
 			Event.idKey: ID,
@@ -120,4 +118,3 @@ extension Event {
 func < (lhs: Event, rhs: Event) -> Bool {
 	return lhs.startDate < rhs.startDate
 }
-

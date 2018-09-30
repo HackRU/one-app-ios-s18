@@ -9,23 +9,22 @@
 import UIKit
 
 struct Announcement: SerializableElementWithIdentifier {
-	
-	struct Category : OptionSet, CustomStringConvertible {
-		
-		let rawValue : Int
-		
+
+	struct Category: OptionSet, CustomStringConvertible {
+
+		let rawValue: Int
+
 		static let none = Category(rawValue: 0 << 0)
 		static let emergency = Category(rawValue: 1 << 0)
 		static let logistics = Category(rawValue: 1 << 1)
 		static let food = Category(rawValue: 1 << 2)
 		static let events = Category(rawValue: 1 << 3)
 		static let sponsor = Category(rawValue: 1 << 4)
-		
+
 		static let all: [Category] = [.events, .food, .logistics, .emergency, .sponsor]
-		
+
 		var description: String {
-			switch self.rawValue
-			{
+			switch self.rawValue {
 			case Category.emergency.rawValue:
 				return "emergency"
 			case Category.logistics.rawValue:
@@ -42,8 +41,7 @@ struct Announcement: SerializableElementWithIdentifier {
 		}
 
 		var descriptionDisplay: String {
-			switch self.rawValue
-			{
+			switch self.rawValue {
 			case Category.emergency.rawValue:
 				return "Emergency"
 			case Category.logistics.rawValue:
@@ -58,9 +56,9 @@ struct Announcement: SerializableElementWithIdentifier {
 				return "None"
 			}
 		}
-		
+
 		var color: UIColor {
-			
+
 			if contains(.emergency) {
 				return HackRUColor.red
 			} else if contains(.logistics) {
@@ -74,7 +72,7 @@ struct Announcement: SerializableElementWithIdentifier {
 			}
 		}
 	}
-	
+
 	var ID: String
 	static let resultsKey: String = "announcements"
 	var title: String
@@ -85,32 +83,31 @@ struct Announcement: SerializableElementWithIdentifier {
 	var isSponsored: Bool {
 		return self.category.contains(Announcement.Category.sponsor)
 	}
-		
+
 	static private let todayDateFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.timeStyle = .short
-		return formatter;
+		return formatter
 	}()
-	
+
 	static private let otherDayDateFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.dateStyle = .short
-		formatter.doesRelativeDateFormatting = true;
-		return formatter;
+		formatter.doesRelativeDateFormatting = true
+		return formatter
 	}()
-	
+
 	static func localizedDate(for date: Date) -> String {
 		let formatter = Calendar.current.isDateInToday(date) ? Announcement.todayDateFormatter : Announcement.otherDayDateFormatter
 		return formatter.string(from: date)
 	}
-	
+
 	var localizedDate: String {
 		return Announcement.localizedDate(for: date)
 	}
 }
 
-extension Announcement
-{
+extension Announcement {
 	private static let infoKey = "body"
 	private static let titleKey = "title"
 	private static let dateKey = "broadcastTime_ts"
@@ -137,7 +134,7 @@ extension Announcement
 			approved: approved
 		)
 	}
-	
+
 	func toSerializedRepresentation() -> NSDictionary {
 		return [
 			Announcement.idKey: ID,
@@ -148,11 +145,11 @@ extension Announcement
 			Announcement.approvedKey: approved
 		]
 	}
-	
+
 	static func getPreferenceList(preferenceValue: Int) -> String {
 		var preferences = [String]()
 		var bit = 1
-		
+
 		while (bit < 64) {
 			if preferenceValue & bit == bit {
 				let category = Category(rawValue: bit)
@@ -162,14 +159,14 @@ extension Announcement
 			}
 			bit <<= 1
 		}
-		
+
 		return preferences.joined(separator: ",")
 	}
-	
+
 	static func getPreferenceValue(preferences: [String]) -> Int {
 		return preferences.reduce(0, {$0 + Announcement.getCategoryValue(type: $1)})
 	}
-	
+
 	static func getCategoryValue(type: String) -> Int {
 		switch type {
 		case "emergency":
@@ -188,8 +185,6 @@ extension Announcement
 	}
 }
 
-
 func <(lhs: Announcement, rhs: Announcement) -> Bool {
 	return lhs.date > rhs.date
 }
-

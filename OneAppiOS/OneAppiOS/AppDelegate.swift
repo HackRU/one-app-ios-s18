@@ -15,18 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         FirebaseApp.configure()
-        
+
         // Override point for customization after application launch.
 //        Floaty.global.button.addItem(title: "Hello, World!")
 //        Floaty.global.show()
-     
-        
+
         //user.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
-        
+
         return true
     }
 
@@ -52,6 +50,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

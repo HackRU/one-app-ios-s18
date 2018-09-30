@@ -10,10 +10,10 @@ import Foundation
 
 final class CoalescedCallbacks {
 	typealias Callback = (Bool) -> Void
-	
+
 	private var callbacks = [Callback]()
 	private let semaphore = DispatchSemaphore(value: 1)
-	
+
 	func registerCallback(_ callback: @escaping Callback) {
 		semaphore.wait()
 		defer { semaphore.signal() }

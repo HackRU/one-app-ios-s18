@@ -11,32 +11,32 @@ import Alamofire
 import SwiftyJSON
 
 class EventsTableViewController: UITableViewController {
-    
+
     struct event {
         let start: String
         let end: String
         let summary: String
         let location: String
     }
-    
+
     var events: NSMutableArray?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         events = NSMutableArray()
-        
+
         let url: String = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest/dayof-events"
         Alamofire.request(url).responseJSON { response in
             let swiftJson = JSON(response.result.value!)
             //print(swiftJson)
-            
+
             if let stausCode = swiftJson["statusCode"].int {
                 if stausCode == 200 {
                     if let body = swiftJson["body"].array {
                         print(body)
-                        
-                        for item in body{
-                            
+
+                        for item in body {
+
                             //print(item)
                             //print(item["summary"])
                             //print(item["end"].string!)
@@ -46,30 +46,27 @@ class EventsTableViewController: UITableViewController {
                             let dayTimePeriodFormatter = DateFormatter()
                             dayTimePeriodFormatter.dateFormat = "EEE hh:mm a"
                             let dateStringStart = dayTimePeriodFormatter.string(from: (date as Date?)!)
-                            
-                            
+
                             let dateFormatterEnd = DateFormatter()
                             dateFormatterEnd.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
                             let dateEnd = dateFormatterEnd.date (from: item["end"]["dateTime"].string!)
                             let dayTimePeriodFormatterEnd = DateFormatter()
                             dayTimePeriodFormatterEnd.dateFormat = "EEE hh:mm a"
                             let dateStringEnd = dayTimePeriodFormatter.string(from: (dateEnd as Date?)!)
-                            
+
                             self.events?.add(event.init(start: dateStringStart, end: dateStringEnd, summary: item["summary"].string!, location: item["location"].string ?? ""))
-                            
+
                             self.tableView.reloadData()
                         }
                     }
-                    
-                    
-                }else{
+
+                } else {
                     print("Bad Status Code")
                 }
-            
-            
+
             }
         }
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -81,8 +78,6 @@ class EventsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
     // MARK: - Table view data source
 
@@ -96,43 +91,37 @@ class EventsTableViewController: UITableViewController {
         return (events?.count)!
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        
+
         let item = events?.object(at: indexPath.row) as! event
-        
+
         cell.textLabel?.text = item.summary
         cell.textLabel?.textColor = HackRUColor.blue
-        
-        
+
         cell.detailTextLabel?.text = item.start
         cell.detailTextLabel?.textColor = HackRUColor.lightBlue
-        
-      
-        
+
         return cell
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueDetail"){
-            if let indexPath = self.tableView.indexPathForSelectedRow{
+        if(segue.identifier == "segueDetail") {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let eventSelected = events?.object(at: indexPath.row) as! event
                 EventDetailTableViewController.mutArr.removeAllObjects()
-                
+
                 EventDetailTableViewController.mutArr.add("Event: \(eventSelected.summary)")
                 EventDetailTableViewController.mutArr.add("Location: \(eventSelected.location)")
                 EventDetailTableViewController.mutArr.add("Start: \(eventSelected.start)")
                 EventDetailTableViewController.mutArr.add("End: \(eventSelected.end)")
-                
-                
+
             }
-            
+
         }
     }
- 
 
     /*
     // Override to support conditional editing of the table view.

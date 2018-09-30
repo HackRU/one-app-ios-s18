@@ -122,7 +122,7 @@ open class Floaty: UIView {
 	/**
 		Child item's image color
 	*/
-	@IBInspectable open var itemImageColor: UIColor? = nil
+	@IBInspectable open var itemImageColor: UIColor?
 
     /**
         Enable/disable shadow.
@@ -142,15 +142,15 @@ open class Floaty: UIView {
     open var openAnimationType: FloatyOpenAnimationType = .pop
 
     open var friendlyTap: Bool = true
-    
+
     open var sticky: Bool = false
-    
+
     open static var global: FloatyManager {
         get {
             return FloatyManager.defaultInstance()
         }
     }
-    
+
     /**
      Delegate that can be used to learn more about the behavior of the FAB widget.
     */
@@ -181,7 +181,7 @@ open class Floaty: UIView {
     */
 //    private var overlayLayer: CAShapeLayer = CAShapeLayer()
 
-    fileprivate var overlayView : UIControl = UIControl()
+    fileprivate var overlayView: UIControl = UIControl()
 
     /**
         Keep track of whether overlay open animation completes, to avoid animation conflicts.
@@ -268,8 +268,8 @@ open class Floaty: UIView {
     open func open() {
         fabDelegate?.floatyWillOpen?(self)
         let animationGroup = DispatchGroup()
-        
-        if(items.count > 0){
+
+        if(items.count > 0) {
 
             setOverlayView()
             self.superview?.insertSubview(overlayView, aboveSubview: self)
@@ -319,8 +319,8 @@ open class Floaty: UIView {
     @objc open func close() {
         fabDelegate?.floatyWillClose?(self)
         let animationGroup = DispatchGroup()
-        
-        if(items.count > 0){
+
+        if(items.count > 0) {
             self.overlayView.removeTarget(self, action: #selector(close), for: UIControlEvents.touchUpInside)
             animationGroup.enter()
             UIView.animate(withDuration: 0.3, delay: 0,
@@ -336,7 +336,6 @@ open class Floaty: UIView {
                     }
                     animationGroup.leave()
             })
-            
 
             switch openAnimationType {
             case .pop:
@@ -388,8 +387,7 @@ open class Floaty: UIView {
         items.append(item)
         addSubview(item)
     }
-    
-    
+
     /**
      Add item with title, titlePositon.
      titlePosition's default value is left.
@@ -419,7 +417,7 @@ open class Floaty: UIView {
         addItem(item: item)
         return item
     }
-    
+
     /**
      Add item with title, titlePosition and icon.
      titlePosition's default value is left.
@@ -464,7 +462,7 @@ open class Floaty: UIView {
         addItem(item: item)
         return item
     }
-    
+
     /**
      Add item with titlePosition and handler.
      titlePosition's default value is left.
@@ -497,7 +495,7 @@ open class Floaty: UIView {
         addItem(item: item)
         return item
     }
-    
+
     /**
      Add item with title, icon, titlePosition or handler.
      titlePosition's default value is left
@@ -512,7 +510,7 @@ open class Floaty: UIView {
             item.titleLabelPosition = titlePosition!
         }
         item.title = title
-        item.icon = icon        
+        item.icon = icon
         item.handler = handler
         addItem(item: item)
         return item
@@ -577,16 +575,16 @@ open class Floaty: UIView {
         return super.hitTest(point, with: event)
     }
 
-    fileprivate func determineTapArea(item : FloatyItem) -> CGRect {
-        let tappableMargin : CGFloat = 30.0
-        var x : CGFloat?
+    fileprivate func determineTapArea(item: FloatyItem) -> CGRect {
+        let tappableMargin: CGFloat = 30.0
+        var x: CGFloat?
         if(item.titleLabelPosition == .left) {
             x = item.titleLabel.frame.origin.x + item.bounds.origin.x
         } else {
             x = item.bounds.origin.x
         }
         let y = item.bounds.origin.y
-        
+
         var width: CGFloat
         if isCustomFrame {
             width = item.titleLabel.bounds.size.width + item.bounds.size.width + tappableMargin + paddingX
@@ -647,7 +645,7 @@ open class Floaty: UIView {
 	fileprivate func setOverlayFrame() {
         if let superview = superview {
 		    overlayView.frame = CGRect(
-			  x: 0,y: 0,
+			  x: 0, y: 0,
 			  width: superview.bounds.width,
 			  height: superview.bounds.height
 		    )
@@ -658,7 +656,7 @@ open class Floaty: UIView {
         if !hasShadow {
             return
         }
-        
+
         layer.shadowOffset = CGSize(width: 1, height: 1)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
@@ -718,14 +716,14 @@ open class Floaty: UIView {
 
     fileprivate func setObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -747,7 +745,7 @@ open class Floaty: UIView {
         return touches.count == 1 && touches.first?.tapCount == 1 && touches.first?.location(in: self) != nil
     }
 
-    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if (object as? UIView) == superview && keyPath == "frame" {
             if isCustomFrame == false {
                 setRightBottomFrame()
@@ -768,7 +766,7 @@ open class Floaty: UIView {
             if let superviews = self.getAllSuperviews() {
                 for superview in superviews {
                     if superview is UIScrollView {
-                        superview.removeObserver(self, forKeyPath: "contentOffset", context:nil)
+                        superview.removeObserver(self, forKeyPath: "contentOffset", context: nil)
                     }
                 }
             }
@@ -783,7 +781,7 @@ open class Floaty: UIView {
             if let superviews = self.getAllSuperviews() {
                 for superview in superviews {
                     if superview is UIScrollView {
-                        superview.addObserver(self, forKeyPath: "contentOffset", options: .new, context:nil)
+                        superview.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
                     }
                 }
             }
@@ -809,7 +807,7 @@ open class Floaty: UIView {
         guard let keyboardSize: CGFloat = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
             return
         }
-        
+
         if sticky == true {
             return
         }
@@ -831,11 +829,11 @@ open class Floaty: UIView {
     }
 
     @objc internal func keyboardWillHide(_ notification: Notification) {
-        
+
         if sticky == true {
             return
         }
-        
+
         UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions(), animations: {
             if self.isCustomFrame == false {
                 self.setRightBottomFrame()
@@ -1076,14 +1074,14 @@ extension UIView {
         if (self.superview == nil) {
             return nil
         }
-        
+
         var superviews: [UIView] = []
-        
+
         superviews.append(self.superview!)
         if let allSuperviews = self.superview!.getAllSuperviews() {
             superviews.append(contentsOf: allSuperviews)
         }
-        
+
         return superviews
     }
 }
