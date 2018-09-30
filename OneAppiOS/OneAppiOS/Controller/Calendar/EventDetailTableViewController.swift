@@ -52,7 +52,7 @@ class EventDetailTableViewController: UITableViewController {
         // Configure the cell...
 
         cell.textLabel?.text = EventDetailTableViewController.mutArr.object(at: indexPath.row) as? String
-        print(cell.textLabel?.text!)
+//        print(cell.textLabel?.text!)
         cell.textLabel?.textColor = HackRUColor.blue
 
         return cell

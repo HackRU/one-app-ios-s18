@@ -11,8 +11,6 @@
 		72B2584F4554A1B48FC91CBD /* Pods_OneAppiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E9E235F89986AA27ECC00D /* Pods_OneAppiOSTests.framework */; };
 		75B162FE657D3431DAD27F8E /* Pods_OneAppiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21241FC07E37BC532137608 /* Pods_OneAppiOSUITests.framework */; };
 		96025AB32079B92E00F6EFEB /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB22079B92E00F6EFEB /* CountdownViewController.swift */; };
-		96025AB62079B94F00F6EFEB /* APIManager+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB42079B94F00F6EFEB /* APIManager+UIKit.swift */; };
-		96025AB72079B94F00F6EFEB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB52079B94F00F6EFEB /* APIManager.swift */; };
 		96025AB92079B95700F6EFEB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB82079B95700F6EFEB /* Extensions.swift */; };
 		96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ABA2079B9FF00F6EFEB /* CircleView.swift */; };
 		96025ABD2079B9FF00F6EFEB /* CircularProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ABB2079B9FF00F6EFEB /* CircularProgressIndicator.swift */; };
@@ -75,8 +73,6 @@
 		6C55C53064BE374EF84DCB8E /* Pods-OneAppiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C989D35A7A2A39ED3445B83 /* Pods-OneAppiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96025AB22079B92E00F6EFEB /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
-		96025AB42079B94F00F6EFEB /* APIManager+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+UIKit.swift"; sourceTree = "<group>"; };
-		96025AB52079B94F00F6EFEB /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		96025AB82079B95700F6EFEB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96025ABA2079B9FF00F6EFEB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		96025ABB2079B9FF00F6EFEB /* CircularProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicator.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 		96025ABF2079BA2400F6EFEB /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				96025AB52079B94F00F6EFEB /* APIManager.swift */,
-				96025AB42079B94F00F6EFEB /* APIManager+UIKit.swift */,
 				96025ADD2079CC7600F6EFEB /* API.swift */,
 			);
 			path = Modal;
@@ -189,47 +183,23 @@
 		96025AC02079BA4E00F6EFEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
-				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
-				9622CC9D2087626A00FB0CB5 /* MapViewController.swift */,
-				9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */,
-				9625EE352086E6ED00ED5B18 /* EventsTableViewController.swift */,
-				9625EE332086CFF100ED5B18 /* SlackAnnouncmentViewController.swift */,
-				9622CCA12087B7D800FB0CB5 /* EventsTableViewCell.swift */,
-				966B5C292079D8B100472C03 /* MyMLH.swift */,
-				9612AB2020830C7200A158CF /* login.js */,
-				969856091FCE4ACF00A1D84C /* ViewController.swift */,
-				962375052083341E0053F81D /* ScannerViewController.swift */,
-				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
-				9622CCA72087D12100FB0CB5 /* EventDetailTableViewController.swift */,
+				96B9BB212161591A005A45B7 /* Scanner */,
+				96B9BB202161590F005A45B7 /* Slack */,
+				96B9BB1F216158EB005A45B7 /* Login */,
+				96B9BB1E216158C3005A45B7 /* Calendar */,
+				96B9BB1D216158B8005A45B7 /* Map */,
+				96B9BB1C2161589F005A45B7 /* Home+Navigation */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		96025ACB2079BACA00F6EFEB /* Modal Internals */ = {
+		96025ACB2079BACA00F6EFEB /* Internals */ = {
 			isa = PBXGroup;
 			children = (
-				96025ACD2079BE3100F6EFEB /* ScanEvent.swift */,
-				96025ACF2079BE3100F6EFEB /* ScannedDataField.swift */,
 				96025AC42079BAC000F6EFEB /* CoalescedCallbacks.swift */,
-				96025AC62079BAC000F6EFEB /* KeychainWrapper.swift */,
-				96025AC52079BAC000F6EFEB /* MHacksArray.swift */,
 				96025AC32079BABF00F6EFEB /* Serializable.swift */,
 			);
-			path = "Modal Internals";
-			sourceTree = "<group>";
-		};
-		96025ADC2079BE4300F6EFEB /* Public Models */ = {
-			isa = PBXGroup;
-			children = (
-				96025AD12079BE3100F6EFEB /* Announcement.swift */,
-				96025AD22079BE3100F6EFEB /* Configuration.swift */,
-				96025AD02079BE3100F6EFEB /* Event.swift */,
-				96025ACE2079BE3100F6EFEB /* EventOrganizer.swift */,
-				96025AD32079BE3100F6EFEB /* Floor.swift */,
-				96025ACC2079BE3100F6EFEB /* Location.swift */,
-			);
-			path = "Public Models";
+			path = Internals;
 			sourceTree = "<group>";
 		};
 		969855FB1FCE4ACF00A1D84C = {
@@ -262,8 +232,8 @@
 				96025ABE2079BA0900F6EFEB /* Views */,
 				96025ABF2079BA2400F6EFEB /* Modal */,
 				96025AC02079BA4E00F6EFEB /* Controller */,
-				96025ADC2079BE4300F6EFEB /* Public Models */,
-				96025ACB2079BACA00F6EFEB /* Modal Internals */,
+				96B9BB1A2161583D005A45B7 /* CountdownTimerConfiguration */,
+				96B9BB1B2161585B005A45B7 /* Old MHacks Files */,
 				9698560B1FCE4ACF00A1D84C /* Main.storyboard */,
 				9698560E1FCE4ACF00A1D84C /* Assets.xcassets */,
 				969856101FCE4ACF00A1D84C /* LaunchScreen.storyboard */,
@@ -289,6 +259,86 @@
 				969856291FCE4ACF00A1D84C /* Info.plist */,
 			);
 			path = OneAppiOSUITests;
+			sourceTree = "<group>";
+		};
+		96B9BB1A2161583D005A45B7 /* CountdownTimerConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				96025ACB2079BACA00F6EFEB /* Internals */,
+				96025AD22079BE3100F6EFEB /* Configuration.swift */,
+			);
+			path = CountdownTimerConfiguration;
+			sourceTree = "<group>";
+		};
+		96B9BB1B2161585B005A45B7 /* Old MHacks Files */ = {
+			isa = PBXGroup;
+			children = (
+				96025AC62079BAC000F6EFEB /* KeychainWrapper.swift */,
+				96025AC52079BAC000F6EFEB /* MHacksArray.swift */,
+				96025ACD2079BE3100F6EFEB /* ScanEvent.swift */,
+				96025ACF2079BE3100F6EFEB /* ScannedDataField.swift */,
+				96025AD12079BE3100F6EFEB /* Announcement.swift */,
+				96025AD02079BE3100F6EFEB /* Event.swift */,
+				96025ACE2079BE3100F6EFEB /* EventOrganizer.swift */,
+				96025AD32079BE3100F6EFEB /* Floor.swift */,
+				96025ACC2079BE3100F6EFEB /* Location.swift */,
+			);
+			path = "Old MHacks Files";
+			sourceTree = "<group>";
+		};
+		96B9BB1C2161589F005A45B7 /* Home+Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
+				969856091FCE4ACF00A1D84C /* ViewController.swift */,
+				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
+				966B5C2D207A0A0100472C03 /* TabsViewController.swift */,
+			);
+			path = "Home+Navigation";
+			sourceTree = "<group>";
+		};
+		96B9BB1D216158B8005A45B7 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9622CC9D2087626A00FB0CB5 /* MapViewController.swift */,
+				9622CC9F208762B600FB0CB5 /* ImageScrollView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		96B9BB1E216158C3005A45B7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9622CCA72087D12100FB0CB5 /* EventDetailTableViewController.swift */,
+				9625EE352086E6ED00ED5B18 /* EventsTableViewController.swift */,
+				9622CCA12087B7D800FB0CB5 /* EventsTableViewCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		96B9BB1F216158EB005A45B7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				966B5C292079D8B100472C03 /* MyMLH.swift */,
+				9612AB2020830C7200A158CF /* login.js */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		96B9BB202161590F005A45B7 /* Slack */ = {
+			isa = PBXGroup;
+			children = (
+				9625EE332086CFF100ED5B18 /* SlackAnnouncmentViewController.swift */,
+			);
+			path = Slack;
+			sourceTree = "<group>";
+		};
+		96B9BB212161591A005A45B7 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				962375052083341E0053F81D /* ScannerViewController.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 		F6C0FE1CAE392AD4F64E7AD7 /* Frameworks */ = {
@@ -570,7 +620,6 @@
 				96025AD42079BE3100F6EFEB /* Location.swift in Sources */,
 				96025AD82079BE3100F6EFEB /* Event.swift in Sources */,
 				96025AC92079BAC000F6EFEB /* MHacksArray.swift in Sources */,
-				96025AB72079B94F00F6EFEB /* APIManager.swift in Sources */,
 				96025ADB2079BE3100F6EFEB /* Floor.swift in Sources */,
 				96025ADE2079CC7600F6EFEB /* API.swift in Sources */,
 				969856081FCE4ACF00A1D84C /* AppDelegate.swift in Sources */,
@@ -585,7 +634,6 @@
 				96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */,
 				9622CCA0208762B600FB0CB5 /* ImageScrollView.swift in Sources */,
 				9622CC9E2087626A00FB0CB5 /* MapViewController.swift in Sources */,
-				96025AB62079B94F00F6EFEB /* APIManager+UIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
