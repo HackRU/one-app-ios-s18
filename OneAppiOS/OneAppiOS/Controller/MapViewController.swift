@@ -16,7 +16,7 @@ class MapViewController: UIViewController {
         view.backgroundColor = HackRUColor.blue
         view.addSubview(scrollView)
 
-        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
 
         self.navigationItem.backBarButtonItem?.tintColor = .white

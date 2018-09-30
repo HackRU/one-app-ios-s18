@@ -1,24 +1,21 @@
-/*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCTextInputCommonFundament.h"
 
 #import "MDCMultilineTextField.h"
 #import "MDCMultilineTextInputDelegate.h"
-#import "MDCPaddedLabel.h"
 #import "MDCTextField.h"
 #import "MDCTextFieldPositioningDelegate.h"
 #import "MDCTextInput.h"
@@ -31,28 +28,6 @@
 #import "MaterialMath.h"
 #import "MaterialPalettes.h"
 #import "MaterialTypography.h"
-
-static NSString *const MDCTextInputFundamentBorderPathKey = @"MDCTextInputFundamentBorderPathKey";
-static NSString *const MDCTextInputFundamentBorderViewKey = @"MDCTextInputFundamentBorderViewKey";
-static NSString *const MDCTextInputFundamentClearButtonKey = @"MDCTextInputFundamentClearButtonKey";
-static NSString *const MDCTextInputFundamentHidesPlaceholderKey =
-    @"MDCTextInputFundamentHidesPlaceholderKey";
-static NSString *const MDCTextInputFundamentLeadingLabelKey =
-    @"MDCTextInputFundamentLeadingLabelKey";
-static NSString *const MDCTextInputFundamentMDCAdjustsFontsKey =
-    @"MDCTextInputFundamentMDCAdjustsFontsKey";
-static NSString *const MDCTextInputFundamentPlaceholderLabelKey =
-    @"MDCTextInputFundamentPlaceholderLabelKey";
-static NSString *const MDCTextInputFundamentPositioningDelegateKey =
-    @"MDCTextInputFundamentPositioningDelegateKey";
-static NSString *const MDCTextInputFundamentTextColorKey = @"MDCTextInputFundamentTextColorKey";
-static NSString *const MDCTextInputFundamentTextInputKey = @"MDCTextInputFundamentTextInputKey";
-static NSString *const MDCTextInputFundamentTextInsetsModeKey =
-    @"MDCTextInputFundamentTextInsetsModeKey";
-static NSString *const MDCTextInputFundamentTrailingLabelKey =
-    @"MDCTextInputFundamentTrailingLabelKey";
-static NSString *const MDCTextInputFundamentUnderlineViewKey =
-    @"MDCTextInputFundamentUnderlineViewKey";
 
 static NSString *const MDCTextInputUnderlineKVOKeyColor = @"color";
 static NSString *const MDCTextInputUnderlineKVOKeyLineHeight = @"lineHeight";
@@ -135,6 +110,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
     // This is the first call to the .textInput property. On MDCMultilineTextField, .textView is a
     // failsafe, lazy var. It will create a .textView instance if there wasn't one on the ivar.
     _textInput.font = [UIFont mdc_standardFontForMaterialTextStyle:MDCFontTextStyleBody1];
+    // TODO: (#4331) This needs to be converted to the new text scheme.
 
     // Initialize elements of UI
     [self setupPlaceholderLabel];
@@ -159,32 +135,6 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   if (self) {
     [self commonMDCTextInputCommonFundamentInit];
 
-    _borderPath = [aDecoder decodeObjectOfClass:[UIBezierPath class]
-                                         forKey:MDCTextInputFundamentBorderPathKey];
-    _borderView = [aDecoder decodeObjectOfClass:[MDCTextInputBorderView class]
-                                         forKey:MDCTextInputFundamentBorderViewKey];
-    _clearButton = [aDecoder decodeObjectOfClass:[UIButton class]
-                                          forKey:MDCTextInputFundamentClearButtonKey];
-    _hidesPlaceholderOnInput = [aDecoder decodeBoolForKey:MDCTextInputFundamentHidesPlaceholderKey];
-    _leadingUnderlineLabel = [aDecoder decodeObjectOfClass:[UILabel class]
-                                                    forKey:MDCTextInputFundamentLeadingLabelKey];
-    _mdc_adjustsFontForContentSizeCategory =
-        [aDecoder decodeBoolForKey:MDCTextInputFundamentMDCAdjustsFontsKey];
-    _placeholderLabel = [aDecoder decodeObjectOfClass:[UILabel class]
-                                               forKey:MDCTextInputFundamentPlaceholderLabelKey];
-    _textInput = [aDecoder decodeObjectOfClass:[UIView class]
-                                        forKey:MDCTextInputFundamentTextInputKey];
-    _textColor =
-        [aDecoder decodeObjectOfClass:[UIColor class] forKey:MDCTextInputFundamentTextColorKey];
-    if ([aDecoder containsValueForKey:MDCTextInputFundamentTextInsetsModeKey]) {
-      _textInsetsMode = (MDCTextInputTextInsetsMode)
-          [aDecoder decodeIntegerForKey:MDCTextInputFundamentTextInsetsModeKey];
-    }
-    _trailingUnderlineLabel =
-        [aDecoder decodeObjectOfClass:[UILabel class] forKey:MDCTextInputFundamentTrailingLabelKey];
-    _underline = [aDecoder decodeObjectOfClass:[MDCTextInputUnderlineView class]
-                                        forKey:MDCTextInputFundamentUnderlineViewKey];
-
     [self setupBorder];
     [self setupPlaceholderLabel];
 
@@ -195,31 +145,8 @@ static inline UIColor *MDCTextInputUnderlineColor() {
     [self setupUnderlineView];
 
     [self subscribeForKVO];
-
-    // This is done last because it's an external object that may also depend on us. So, we want to
-    // be completely ready before we recreate it.
-    _positioningDelegate =
-        [aDecoder decodeObjectForKey:MDCTextInputFundamentPositioningDelegateKey];
   }
   return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-  [aCoder encodeObject:self.borderPath forKey:MDCTextInputFundamentBorderPathKey];
-  [aCoder encodeObject:self.borderView forKey:MDCTextInputFundamentBorderViewKey];
-  [aCoder encodeObject:self.clearButton forKey:MDCTextInputFundamentClearButtonKey];
-  [aCoder encodeBool:self.hidesPlaceholderOnInput forKey:MDCTextInputFundamentHidesPlaceholderKey];
-  [aCoder encodeObject:self.leadingUnderlineLabel forKey:MDCTextInputFundamentLeadingLabelKey];
-  [aCoder encodeBool:self.mdc_adjustsFontForContentSizeCategory
-              forKey:MDCTextInputFundamentMDCAdjustsFontsKey];
-  [aCoder encodeObject:self.placeholderLabel forKey:MDCTextInputFundamentPlaceholderLabelKey];
-  [aCoder encodeConditionalObject:self.positioningDelegate
-                           forKey:MDCTextInputFundamentPositioningDelegateKey];
-  [aCoder encodeConditionalObject:self.textInput forKey:MDCTextInputFundamentTextInputKey];
-  [aCoder encodeObject:self.textColor forKey:MDCTextInputFundamentTextColorKey];
-  [aCoder encodeInteger:self.textInsetsMode forKey:MDCTextInputFundamentTextInsetsModeKey];
-  [aCoder encodeObject:self.trailingUnderlineLabel forKey:MDCTextInputFundamentTrailingLabelKey];
-  [aCoder encodeObject:self.underline forKey:MDCTextInputFundamentUnderlineViewKey];
 }
 
 - (instancetype)copyWithZone:(__unused NSZone *)zone {
@@ -337,7 +264,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
 
 - (void)setupPlaceholderLabel {
   if (!_placeholderLabel) {
-    _placeholderLabel = [[MDCPaddedLabel alloc] initWithFrame:CGRectZero];
+    _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   }
   _placeholderLabel.translatesAutoresizingMaskIntoConstraints = NO;
   [_placeholderLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultLow - 2
@@ -551,7 +478,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
 - (void)updateClearButton {
   UIImage *image = self.clearButton.currentImage
                        ? self.clearButton.currentImage
-                       : [self drawnClearButtonImage:self.clearButton.tintColor];
+                       : [self drawnClearButtonImage];
 
   if (![self.clearButton imageForState:UIControlStateNormal]) {
     [self.clearButton setImage:image forState:UIControlStateNormal];
@@ -628,14 +555,13 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   return clearButtonAlpha;
 }
 
-- (UIImage *)drawnClearButtonImage:(UIColor *)color {
+- (UIImage *)drawnClearButtonImage {
   CGSize clearButtonSize = CGSizeMake(MDCTextInputClearButtonImageSquareWidthHeight,
                                       MDCTextInputClearButtonImageSquareWidthHeight);
 
-  CGFloat scale = [UIScreen mainScreen].scale;
-  CGRect bounds = CGRectMake(0, 0, clearButtonSize.width * scale, clearButtonSize.height * scale);
-  UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale);
-  [color setFill];
+  CGRect bounds = CGRectMake(0, 0, clearButtonSize.width, clearButtonSize.height);
+  UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0);
+  [UIColor.grayColor setFill];
 
   [MDCPathForClearButtonImageFrame(bounds) fill];
   UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -670,9 +596,11 @@ static inline UIColor *MDCTextInputUnderlineColor() {
       [[NSNotificationCenter defaultCenter] postNotificationName:UITextViewTextDidChangeNotification
                                                           object:textField.textView];
     } else if ([self.textInput isKindOfClass:[UITextField class]]) {
+      UITextField *textField = (UITextField *)self.textInput;
       [[NSNotificationCenter defaultCenter]
           postNotificationName:UITextFieldTextDidChangeNotification
                         object:self.textInput];
+      [textField sendActionsForControlEvents:UIControlEventEditingChanged];
     }
   }
 }
@@ -853,12 +781,6 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   self.textInput.trailingViewMode = trailingViewMode;
 }
 
-#pragma mark - NSSecureCoding
-
-+ (BOOL)supportsSecureCoding {
-  return YES;
-}
-
 #pragma mark - Layout
 
 - (void)updateTextColor {
@@ -868,6 +790,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
 - (void)updateFontsForDynamicType {
   if (self.mdc_adjustsFontForContentSizeCategory) {
     UIFont *textFont = [UIFont mdc_preferredFontForMaterialTextStyle:MDCFontTextStyleBody1];
+    // TODO: (#4331) This needs to be converted to the new text scheme.
     self.textInput.font = textFont;
     self.leadingUnderlineLabel.font = textFont;
     self.trailingUnderlineLabel.font = textFont;
@@ -900,17 +823,27 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   }
 
   MDCTextField *textField = (MDCTextField *)self.textInput;
-  if (textField.leadingView.superview && !self.placeholderLeadingLeadingViewTrailing) {
-    self.placeholderLeadingLeadingViewTrailing =
-        [NSLayoutConstraint constraintWithItem:textField.placeholderLabel
-                                     attribute:NSLayoutAttributeLeading
-                                     relatedBy:NSLayoutRelationEqual
-                                        toItem:textField.leadingView
-                                     attribute:NSLayoutAttributeTrailing
-                                    multiplier:1
-                                      constant:MDCTextInputOverlayViewToEditingRectPadding];
-    self.placeholderLeadingLeadingViewTrailing.priority = UILayoutPriorityDefaultLow + 1;
-    self.placeholderLeadingLeadingViewTrailing.active = YES;
+  if (textField.leadingView.superview) {
+    CGFloat leadingViewTrailingConstant = MDCTextInputOverlayViewToEditingRectPadding;
+    if ([self.textInput.positioningDelegate
+            respondsToSelector:@selector(leadingViewTrailingPaddingConstant)]) {
+      leadingViewTrailingConstant =
+          [self.textInput.positioningDelegate leadingViewTrailingPaddingConstant];
+    }
+
+    if (!self.placeholderLeadingLeadingViewTrailing) {
+      self.placeholderLeadingLeadingViewTrailing =
+          [NSLayoutConstraint constraintWithItem:textField.placeholderLabel
+                                       attribute:NSLayoutAttributeLeading
+                                       relatedBy:NSLayoutRelationEqual
+                                          toItem:textField.leadingView
+                                       attribute:NSLayoutAttributeTrailing
+                                      multiplier:1
+                                        constant:leadingViewTrailingConstant];
+      self.placeholderLeadingLeadingViewTrailing.priority = UILayoutPriorityDefaultLow + 1;
+      self.placeholderLeadingLeadingViewTrailing.active = YES;
+    }
+    self.placeholderLeadingLeadingViewTrailing.constant = leadingViewTrailingConstant;
   } else if (!textField.leadingView.superview && self.placeholderLeadingLeadingViewTrailing) {
     self.placeholderLeadingLeadingViewTrailing = nil;
   }

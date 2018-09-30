@@ -1,36 +1,26 @@
-/*
- Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCCard.h"
 
 #import "MaterialMath.h"
 #import "MaterialShapes.h"
 
-static NSString *const MDCCardBackgroundColorsKey = @"MDCCardBackgroundColorsKey";
-static NSString *const MDCCardBorderColorsKey = @"MDCCardBorderColorsKey";
-static NSString *const MDCCardBorderWidthsKey = @"MDCCardBorderWidthsKey";
-static NSString *const MDCCardCornerRadiusKey = @"MDCCardCornerRadiusKey";
-static NSString *const MDCCardInkViewKey = @"MDCCardInkViewKey";
-static NSString *const MDCCardShadowColorsKey = @"MDCCardShadowColorsKey";
-static NSString *const MDCCardShadowElevationsKey = @"MDCCardShadowElevationsKey";
-
 static const CGFloat MDCCardShadowElevationNormal = 1.f;
 static const CGFloat MDCCardShadowElevationHighlighted = 8.f;
 static const CGFloat MDCCardCornerRadiusDefault = 4.f;
-
+static const BOOL MDCCardIsInteractableDefault = YES;
 
 @interface MDCCard ()
 @property(nonatomic, readonly, strong) MDCShapedShadowLayer *layer;
@@ -54,24 +44,6 @@ static const CGFloat MDCCardCornerRadiusDefault = 4.f;
 - (instancetype)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if (self) {
-    _shadowElevations = [coder decodeObjectOfClass:[NSMutableDictionary class]
-                                            forKey:MDCCardShadowElevationsKey];
-    _shadowColors = [coder decodeObjectOfClass:[NSMutableDictionary class]
-                                        forKey:MDCCardShadowColorsKey];
-    _borderWidths = [coder decodeObjectOfClass:[NSMutableDictionary class]
-                                        forKey:MDCCardBorderWidthsKey];
-    _borderColors = [coder decodeObjectOfClass:[NSMutableDictionary class]
-                                        forKey:MDCCardBorderColorsKey];
-    _inkView = [coder decodeObjectOfClass:[MDCInkView class] forKey:MDCCardInkViewKey];
-    if ([coder containsValueForKey:MDCCardCornerRadiusKey]) {
-      self.layer.cornerRadius = (CGFloat)[coder decodeDoubleForKey:MDCCardCornerRadiusKey];
-    } else {
-      self.layer.cornerRadius = MDCCardCornerRadiusDefault;
-    }
-    if ([coder containsValueForKey:MDCCardBackgroundColorsKey]) {
-      [self.layer setShapedBackgroundColor:[coder decodeObjectOfClass:[UIColor class]
-                                                               forKey:MDCCardBackgroundColorsKey]];
-    }
     [self commonMDCCardInit];
   }
   return self;
@@ -80,13 +52,15 @@ static const CGFloat MDCCardCornerRadiusDefault = 4.f;
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
-    self.layer.cornerRadius = MDCCardCornerRadiusDefault;
     [self commonMDCCardInit];
   }
   return self;
 }
 
 - (void)commonMDCCardInit {
+  self.layer.cornerRadius = MDCCardCornerRadiusDefault;
+  _interactable = MDCCardIsInteractableDefault;
+
   if (_inkView == nil) {
     _inkView = [[MDCInkView alloc] initWithFrame:self.bounds];
     _inkView.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
@@ -124,17 +98,6 @@ static const CGFloat MDCCardCornerRadiusDefault = 4.f;
   [self updateBorderWidth];
   [self updateBorderColor];
   [self updateBackgroundColor];
-}
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-  [super encodeWithCoder:coder];
-  [coder encodeObject:_shadowElevations forKey:MDCCardShadowElevationsKey];
-  [coder encodeObject:_shadowColors forKey:MDCCardShadowColorsKey];
-  [coder encodeObject:_borderWidths forKey:MDCCardBorderWidthsKey];
-  [coder encodeObject:_borderColors forKey:MDCCardBorderColorsKey];
-  [coder encodeObject:_inkView forKey:MDCCardInkViewKey];
-  [coder encodeDouble:self.layer.cornerRadius forKey:MDCCardCornerRadiusKey];
-  [coder encodeObject:self.layer.shapedBackgroundColor forKey:MDCCardBackgroundColorsKey];
 }
 
 - (void)layoutSubviews {
@@ -270,14 +233,16 @@ static const CGFloat MDCCardCornerRadiusDefault = 4.f;
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+  UIView *result = [super hitTest:point withEvent:event];
+  if (!_interactable && result == self) {
+    return nil;
+  }
   if (self.layer.shapeGenerator) {
-    if (CGPathContainsPoint(self.layer.shapeLayer.path, nil, point, true)) {
-      return self;
-    } else {
+    if (!CGPathContainsPoint(self.layer.shapeLayer.path, nil, point, true)) {
       return nil;
     }
   }
-  return [super hitTest:point withEvent:event];
+  return result;
 }
 
 - (void)setShapeGenerator:(id<MDCShapeGenerating>)shapeGenerator {

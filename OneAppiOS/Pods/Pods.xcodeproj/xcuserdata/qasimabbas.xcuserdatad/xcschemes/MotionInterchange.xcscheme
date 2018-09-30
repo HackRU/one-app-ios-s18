@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2144621F46E03AF5FD5DE0A8CEE7BA04"
+               BlueprintIdentifier = "8046E8301B1CB1460F455A7EDF6D6242"
                BuildableName = "MotionInterchange.framework"
                BlueprintName = "MotionInterchange"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2144621F46E03AF5FD5DE0A8CEE7BA04"
+            BlueprintIdentifier = "8046E8301B1CB1460F455A7EDF6D6242"
             BuildableName = "MotionInterchange.framework"
             BlueprintName = "MotionInterchange"
             ReferencedContainer = "container:Pods.xcodeproj">

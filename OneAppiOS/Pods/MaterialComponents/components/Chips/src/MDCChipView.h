@@ -1,18 +1,16 @@
-/*
- Copyright 2017-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2017-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -23,12 +21,18 @@
 /*
  A Material chip.
 
- @see https://material.io/guidelines/components/chips.html for full details.
+ @see https://material.io/go/design-chips for full details.
 
  Chips are compact elements that represent an attribute, text, entity, or action.
 
  Chips contain an optional leading image, a title label and an optional trailing accessory view.
  They can also contain a leading image that appears only when the chip is selected.
+
+ Chips currently support two contentHorizontalAlignment styles: centered
+ (UIControlContentHorizontalAlignmentCenter) and default
+ (any other UIControlContentHorizontalAlignment value). In the default mode, the image and text will
+ be left-aligned, and the accessory view will be right aligned. In the centered mode, all three will
+ appear together in the center of the chip.
  */
 @interface MDCChipView : UIControl
 
@@ -138,6 +142,12 @@
  Defaults to a minimum height of 32 points, and no minimum width.
  */
 @property(nonatomic, assign) CGSize minimumSize UI_APPEARANCE_SELECTOR;
+
+/**
+ Custom insets to use when computing touch targets. A positive inset value will shrink the hit
+ area for the Chip.
+ */
+@property(nonatomic, assign) UIEdgeInsets hitAreaInsets;
 
 /*
  A color used as the chip's @c backgroundColor for @c state.

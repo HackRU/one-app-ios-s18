@@ -103,13 +103,13 @@ extension UIImage {
 }
 
 extension UIAlertAction {
-    convenience init(title: String?, style: UIAlertActionStyle, image: UIImage, handler: ((UIAlertAction) -> Void)? = nil) {
+    convenience init(title: String?, style: UIAlertAction.Style, image: UIImage, handler: ((UIAlertAction) -> Void)? = nil) {
         self.init(title: title, style: style, handler: handler)
         self.actionImage = image
 
     }
 
-    convenience init?(title: String?, style: UIAlertActionStyle, imageNamed imageName: String, handler: ((UIAlertAction) -> Void)? = nil) {
+    convenience init?(title: String?, style: UIAlertAction.Style, imageNamed imageName: String, handler: ((UIAlertAction) -> Void)? = nil) {
         if let image = UIImage(named: imageName) {
             self.init(title: title, style: style, image: image, handler: handler)
         } else {

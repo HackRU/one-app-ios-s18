@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3AB2F5F7E6A73E7DBCC9977D397E10E"
+               BlueprintIdentifier = "A76E8A505F24F774D93761819DEF5E14"
                BuildableName = "MDFTextAccessibility.framework"
                BlueprintName = "MDFTextAccessibility"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3AB2F5F7E6A73E7DBCC9977D397E10E"
+            BlueprintIdentifier = "A76E8A505F24F774D93761819DEF5E14"
             BuildableName = "MDFTextAccessibility.framework"
             BlueprintName = "MDFTextAccessibility"
             ReferencedContainer = "container:Pods.xcodeproj">

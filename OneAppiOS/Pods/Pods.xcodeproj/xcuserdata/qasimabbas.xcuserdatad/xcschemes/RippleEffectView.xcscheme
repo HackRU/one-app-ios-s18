@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE978F68C6D3C1F342F491CC7B5A5ED2"
+               BlueprintIdentifier = "3377C478130908010C386150F247A8B3"
                BuildableName = "RippleEffectView.framework"
                BlueprintName = "RippleEffectView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE978F68C6D3C1F342F491CC7B5A5ED2"
+            BlueprintIdentifier = "3377C478130908010C386150F247A8B3"
             BuildableName = "RippleEffectView.framework"
             BlueprintName = "RippleEffectView"
             ReferencedContainer = "container:Pods.xcodeproj">

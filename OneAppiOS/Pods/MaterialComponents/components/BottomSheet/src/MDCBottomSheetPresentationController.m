@@ -1,23 +1,18 @@
-/*
- Copyright 2017-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2017-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCBottomSheetPresentationController.h"
-
-#import "MDCBottomSheetController.h"
-
 #import "MaterialMath.h"
 #import "private/MDCSheetContainerView.h"
 
@@ -47,15 +42,22 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
 @interface MDCBottomSheetPresentationController () <MDCSheetContainerViewDelegate>
 @end
 
+@interface MDCBottomSheetPresentationController ()
+@property(nonatomic, strong) MDCSheetContainerView *sheetView;
+@end
+
 @implementation MDCBottomSheetPresentationController {
   UIView *_dimmingView;
-  MDCSheetContainerView *_sheetView;
+  @private BOOL _scrimIsAccessibilityElement;
+  @private NSString *_scrimAccessibilityLabel;
+  @private NSString *_scrimAccessibilityHint;
+  @private UIAccessibilityTraits _scrimAccessibilityTraits;
 }
 
 @synthesize delegate;
 
 - (UIView *)presentedView {
-  return _sheetView;
+  return self.sheetView;
 }
 
 - (CGRect)frameOfPresentedViewInContainerView {
@@ -86,20 +88,25 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
   _dimmingView.translatesAutoresizingMaskIntoConstraints = NO;
   _dimmingView.autoresizingMask =
       UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  _dimmingView.accessibilityTraits |= UIAccessibilityTraitButton;
+  _dimmingView.isAccessibilityElement = _scrimIsAccessibilityElement;
+  _dimmingView.accessibilityTraits = _scrimAccessibilityTraits;
+  _dimmingView.accessibilityLabel = _scrimAccessibilityLabel;
+  _dimmingView.accessibilityHint = _scrimAccessibilityHint;
 
   UIScrollView *scrollView = self.trackingScrollView;
   if (scrollView == nil) {
     scrollView = MDCBottomSheetGetPrimaryScrollView(self.presentedViewController);
   }
   CGRect sheetFrame = [self frameOfPresentedViewInContainerView];
-  _sheetView = [[MDCSheetContainerView alloc] initWithFrame:sheetFrame
-                                                contentView:self.presentedViewController.view
-                                                 scrollView:scrollView];
-  _sheetView.delegate = self;
-  _sheetView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+  self.sheetView = [[MDCSheetContainerView alloc] initWithFrame:sheetFrame
+                                                    contentView:self.presentedViewController.view
+                                                     scrollView:scrollView];
+  self.sheetView.delegate = self;
+  self.sheetView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 
   [containerView addSubview:_dimmingView];
-  [containerView addSubview:_sheetView];
+  [containerView addSubview:self.sheetView];
 
   [self updatePreferredSheetHeight];
 
@@ -146,8 +153,8 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
 
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id<UIContentContainer>)container {
   [super preferredContentSizeDidChangeForChildContentContainer:container];
-  _sheetView.frame = [self frameOfPresentedViewInContainerView];
-  [_sheetView layoutIfNeeded];
+  self.sheetView.frame = [self frameOfPresentedViewInContainerView];
+  [self.sheetView layoutIfNeeded];
   [self updatePreferredSheetHeight];
 }
 
@@ -155,22 +162,34 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
        withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
   [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
-  [coordinator animateAlongsideTransition:
-      ^(__unused id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self->_sheetView.frame = [self frameOfPresentedViewInContainerView];
-        [self->_sheetView layoutIfNeeded];
+  [coordinator
+      animateAlongsideTransition:^(
+          __unused id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+        self.sheetView.frame = [self frameOfPresentedViewInContainerView];
+        [self.sheetView layoutIfNeeded];
         [self updatePreferredSheetHeight];
-      }                        completion:nil];
+      }
+                      completion:nil];
 }
 
+/**
+ Sets the new value of @c sheetView.preferredSheetHeight.
+ If @c preferredContentHeight is non-positive, it will set it to half of sheetView's
+ frame's height.
+ */
 - (void)updatePreferredSheetHeight {
-  CGFloat preferredContentHeight = self.presentedViewController.preferredContentSize.height;
-
   // If |preferredSheetHeight| has not been specified, use half of the current height.
-  if (MDCCGFloatEqual(preferredContentHeight, 0)) {
-    preferredContentHeight = MDCRound(_sheetView.frame.size.height / 2);
+  CGFloat preferredSheetHeight;
+  if (self.preferredSheetHeight > 0.f) {
+    preferredSheetHeight = self.preferredSheetHeight;
+  } else {
+    preferredSheetHeight = self.presentedViewController.preferredContentSize.height;
   }
-  _sheetView.preferredSheetHeight = preferredContentHeight;
+
+  if (MDCCGFloatEqual(preferredSheetHeight, 0)) {
+    preferredSheetHeight = MDCRound(CGRectGetHeight(self.sheetView.frame) / 2);
+  }
+  self.sheetView.preferredSheetHeight = preferredSheetHeight;
 }
 
 - (void)dismissPresentedControllerIfNecessary:(UITapGestureRecognizer *)tapRecognizer {
@@ -192,6 +211,49 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
   }
 }
 
+#pragma mark - Properties
+
+- (void)setIsScrimAccessibilityElement:(BOOL)isScrimAccessibilityElement {
+  _scrimIsAccessibilityElement = isScrimAccessibilityElement;
+  _dimmingView.isAccessibilityElement = isScrimAccessibilityElement;
+}
+
+- (BOOL)isScrimAccessibilityElement {
+  return _scrimIsAccessibilityElement;
+}
+
+- (void)setScrimAccessibilityLabel:(NSString *)scrimAccessibilityLabel {
+  _scrimAccessibilityLabel = scrimAccessibilityLabel;
+  _dimmingView.accessibilityLabel = scrimAccessibilityLabel;
+}
+
+- (NSString *)scrimAccessibilityLabel {
+  return _scrimAccessibilityLabel;
+}
+
+- (void)setScrimAccessibilityHint:(NSString *)scrimAccessibilityHint {
+  _scrimAccessibilityHint = scrimAccessibilityHint;
+  _dimmingView.accessibilityHint = scrimAccessibilityHint;
+}
+
+- (NSString *)scrimAccessibilityHint {
+  return _scrimAccessibilityHint;
+}
+
+- (void)setScrimAccessibilityTraits:(UIAccessibilityTraits)scrimAccessibilityTraits {
+  _scrimAccessibilityTraits = scrimAccessibilityTraits;
+  _dimmingView.accessibilityTraits = scrimAccessibilityTraits;
+}
+
+- (UIAccessibilityTraits)scrimAccessibilityTraits {
+  return _scrimAccessibilityTraits;
+}
+
+- (void)setPreferredSheetHeight:(CGFloat)preferredSheetHeight {
+  _preferredSheetHeight = preferredSheetHeight;
+  [self updatePreferredSheetHeight];
+}
+
 #pragma mark - MDCSheetContainerViewDelegate
 
 - (void)sheetContainerViewDidHide:(nonnull __unused MDCSheetContainerView *)containerView {
@@ -201,6 +263,15 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
   if ([strongDelegate respondsToSelector:
        @selector(bottomSheetPresentationControllerDidDismissBottomSheet:)]) {
     [strongDelegate bottomSheetPresentationControllerDidDismissBottomSheet:self];
+  }
+}
+
+- (void)sheetContainerViewWillChangeState:(nonnull MDCSheetContainerView *)containerView
+                               sheetState:(MDCSheetState)sheetState {
+  id<MDCBottomSheetPresentationControllerDelegate> strongDelegate = self.delegate;
+  if ([strongDelegate respondsToSelector:
+       @selector(bottomSheetWillChangeState:sheetState:)]) {
+    [strongDelegate bottomSheetWillChangeState:self sheetState:sheetState];
   }
 }
 

@@ -1,18 +1,16 @@
-/*
- Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCAlertControllerView.h"
 #import "MDCAlertControllerView+Private.h"
@@ -20,9 +18,10 @@
 #import <MDFInternationalization/MDFInternationalization.h>
 
 #import "MaterialButtons.h"
+#import "MaterialMath.h"
 #import "MaterialTypography.h"
 
-// https://material.io/guidelines/components/dialogs.html#dialogs-specs
+// https://material.io/go/design-dialogs#dialogs-specs
 static const MDCFontTextStyle kTitleTextStyle = MDCFontTextStyleTitle;
 static const MDCFontTextStyle kMessageTextStyle = MDCFontTextStyleBody1;
 static const MDCFontTextStyle kButtonTextStyle = MDCFontTextStyleButton;
@@ -32,9 +31,10 @@ static const CGFloat MDCDialogContentVerticalPadding = 20.0;
 
 static const UIEdgeInsets MDCDialogActionsInsets = {8.0, 8.0, 8.0, 8.0};
 static const CGFloat MDCDialogActionsHorizontalPadding = 8.0;
-static const CGFloat MDCDialogActionsVerticalPadding = 8.0;
+static const CGFloat MDCDialogActionsVerticalPadding = 12.0;
 static const CGFloat MDCDialogActionButtonHeight = 36.0;
 static const CGFloat MDCDialogActionButtonMinimumWidth = 48.0;
+static const CGFloat MDCDialogActionMinTouchTarget = 48.f;
 
 static const CGFloat MDCDialogMessageOpacity = 0.54f;
 
@@ -51,6 +51,8 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
     NSMutableArray<MDCFlatButton *> *_actionButtons;
     BOOL _mdc_adjustsFontForContentSizeCategory;
 }
+
+@dynamic titleAlignment;
 
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
@@ -75,6 +77,7 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
     } else {
       self.titleLabel.font = [MDCTypography titleFont];
     }
+    self.titleLabel.accessibilityTraits |= UIAccessibilityTraitHeader;
     [self.contentScrollView addSubview:self.titleLabel];
 
     self.messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -114,7 +117,7 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
   [self setNeedsLayout];
 }
 
-- (void)addActionButtonTitle:(NSString *)actionTitle target:(id)target selector:(SEL)selector {
+- (MDCButton *)addActionButtonTitle:(NSString *)actionTitle target:(id)target selector:(SEL)selector {
   MDCFlatButton *actionButton = [[MDCFlatButton alloc] initWithFrame:CGRectZero];
   actionButton.mdc_adjustsFontForContentSizeCategory = self.mdc_adjustsFontForContentSizeCategory;
   [actionButton setTitle:actionTitle forState:UIControlStateNormal];
@@ -124,6 +127,7 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
     [actionButton setTitleColor:_buttonColor forState:UIControlStateNormal];
   }
   [actionButton setTitleFont:_buttonFont forState:UIControlStateNormal];
+  actionButton.inkColor = self.buttonInkColor;
   // TODO(#1726): Determine default text color values for Normal and Disabled
   CGRect buttonRect = actionButton.bounds;
   buttonRect.size.height = MAX(buttonRect.size.height, MDCDialogActionButtonHeight);
@@ -135,6 +139,7 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
   [self.actionsScrollView addSubview:actionButton];
 
   [_actionButtons addObject:actionButton];
+  return actionButton;
 }
 
 - (void)setTitleFont:(UIFont *)font {
@@ -166,6 +171,14 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
   _titleColor = titleColor;
 
   _titleLabel.textColor = titleColor;
+}
+
+- (NSTextAlignment)titleAlignment {
+  return self.titleLabel.textAlignment;
+}
+
+- (void)setTitleAlignment:(NSTextAlignment)titleAlignment {
+  self.titleLabel.textAlignment = titleAlignment;
 }
 
 - (NSString *)message {
@@ -245,6 +258,26 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
   }
 }
 
+- (void)setButtonInkColor:(UIColor *)color {
+  _buttonInkColor = color;
+
+  for (MDCButton *button in self.actionButtons) {
+    button.inkColor = color;
+  }
+}
+
+- (CGFloat)cornerRadius {
+  return self.layer.cornerRadius;
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius {
+  if (MDCCGFloatEqual(cornerRadius, self.layer.cornerRadius)) {
+    return;
+  }
+  self.layer.cornerRadius = cornerRadius;
+  [self setNeedsLayout];
+}
+
 #pragma mark - Internal
 
 
@@ -255,7 +288,8 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
     MDCDialogActionsInsets.top + MDCDialogActionButtonHeight + MDCDialogActionsInsets.bottom;
     size.width = MDCDialogActionsInsets.left + MDCDialogActionsInsets.right;
     for (UIButton *button in self.actionButtons) {
-      size.width += CGRectGetWidth(button.bounds);
+      CGSize buttonSize = [button sizeThatFits:size];
+      size.width += buttonSize.width;
       if (button != [self.actionButtons lastObject]) {
         size.width += MDCDialogActionsHorizontalPadding;
       }
@@ -271,8 +305,10 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
     size.height = MDCDialogActionsInsets.top + MDCDialogActionsInsets.bottom;
     size.width = MDCDialogActionsInsets.left + MDCDialogActionsInsets.right;
     for (UIButton *button in self.actionButtons) {
-      size.height += CGRectGetHeight(button.bounds);
-      size.width = MAX(size.width, CGRectGetWidth(button.bounds));
+      CGSize buttonSize = [button sizeThatFits:size];
+      buttonSize.height = MAX(buttonSize.height, MDCDialogActionButtonHeight);
+      size.height += buttonSize.height;
+      size.width = MAX(size.width, buttonSize.width);
       if (button != [self.actionButtons lastObject]) {
         size.height += MDCDialogActionsVerticalPadding;
       }
@@ -351,8 +387,22 @@ static const CGFloat MDCDialogMessageOpacity = 0.54f;
 - (void)layoutSubviews {
   [super layoutSubviews];
 
-  for (UIButton *button in self.actionButtons) {
+  for (MDCButton *button in self.actionButtons) {
     [button sizeToFit];
+    CGRect buttonFrame = button.frame;
+    buttonFrame.size.width =
+        MAX(CGRectGetWidth(buttonFrame), MDCDialogActionButtonMinimumWidth);
+    buttonFrame.size.height =
+        MAX(CGRectGetHeight(buttonFrame), MDCDialogActionButtonHeight);
+    button.frame = buttonFrame;
+    CGFloat verticalInsets = (CGRectGetHeight(button.frame) - MDCDialogActionMinTouchTarget) / 2;
+    CGFloat horizontalInsets = (CGRectGetWidth(button.frame) - MDCDialogActionMinTouchTarget) / 2;
+    verticalInsets = MIN(0, verticalInsets);
+    horizontalInsets = MIN(0, horizontalInsets);
+    button.hitAreaInsets = UIEdgeInsetsMake(verticalInsets,
+                                            horizontalInsets,
+                                            verticalInsets,
+                                            horizontalInsets);
   }
 
   // Used to calculate the height of the scrolling content, so we limit the width.

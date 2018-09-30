@@ -30,7 +30,7 @@ class CountdownViewController: UIViewController {
 
        //setFloaty()
 
-        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
 
         self.navigationController?.navigationItem.title = "HackRU"
@@ -104,7 +104,7 @@ class CountdownViewController: UIViewController {
 
 		let timer = Timer(fireAt: nextSecond, interval: 1.0, target: self, selector: #selector(CountdownViewController.timerFire(_:)), userInfo: nil, repeats: true)
 
-		RunLoop.main.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
+		RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
 
 		self.timer = timer
 	}

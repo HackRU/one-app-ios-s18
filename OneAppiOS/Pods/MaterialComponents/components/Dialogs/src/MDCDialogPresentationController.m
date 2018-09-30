@@ -1,18 +1,16 @@
-/*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCDialogPresentationController.h"
 
@@ -52,6 +50,16 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 20, 24, 20};
   return _dismissGestureRecognizer.enabled;
 }
 
+// presentedViewCornerRadius wraps the cornerRadius property of our tracking view to avoid
+// duplication.
+- (void)setDialogCornerRadius:(CGFloat)cornerRadius {
+  _trackingView.layer.cornerRadius = cornerRadius;
+}
+
+- (CGFloat)dialogCornerRadius {
+  return _trackingView.layer.cornerRadius;
+}
+
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController
                        presentingViewController:(UIViewController *)presentingViewController {
   self = [super initWithPresentedViewController:presentedViewController
@@ -81,11 +89,9 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 20, 24, 20};
 
   // For pre iOS 11 devices, we are assuming a safeAreaInset of UIEdgeInsetsZero
   UIEdgeInsets containerSafeAreaInsets = UIEdgeInsetsZero;
-#if defined(__IPHONE_11_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0)
   if (@available(iOS 11.0, *)) {
     containerSafeAreaInsets = self.containerView.safeAreaInsets;
   }
-#endif
 
   // Take the larger of the Safe Area insets and the Material specified insets.
   containerSafeAreaInsets.top = MAX(containerSafeAreaInsets.top, MDCDialogEdgeInsets.top);
@@ -97,7 +103,7 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 20, 24, 20};
   CGFloat keyboardHeight = [MDCKeyboardWatcher sharedKeyboardWatcher].visibleKeyboardHeight;
   containerSafeAreaInsets.bottom = MAX(containerSafeAreaInsets.bottom, keyboardHeight);
 
-  // Area that the presented dialog can utilize.
+  // Area that the presented dialog can use.
   CGRect standardPresentableBounds = UIEdgeInsetsInsetRect(containerBounds, containerSafeAreaInsets);
 
   CGRect presentedViewFrame = CGRectZero;

@@ -1,28 +1,20 @@
-/*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCTextInputUnderlineView.h"
 
 #import "MaterialPalettes.h"
-
-static NSString *const MDCTextInputUnderlineColorKey = @"MDCTextInputUnderlineColorKey";
-static NSString *const MDCTextInputUnderlineDisabledColorKey =
-    @"MDCTextInputUnderlineDisabledColorKey";
-static NSString *const MDCTextInputUnderlineEnabledKey = @"MDCTextInputUnderlineEnabledKey";
-static NSString *const MDCTextInputUnderlineLineHeightKey = @"MDCTextInputUnderlineLineHeightKey";
 
 static const CGFloat MDCTextInputUnderlineDefaultHeight = 1.f;
 
@@ -52,12 +44,6 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   self = [super initWithCoder:coder];
   if (self) {
     [self commonMDCUnderlineViewInit];
-
-    _color = [coder decodeObjectOfClass:[UIColor class] forKey:MDCTextInputUnderlineColorKey];
-    _disabledColor =
-        [coder decodeObjectOfClass:[UIColor class] forKey:MDCTextInputUnderlineDisabledColorKey];
-    _enabled = [coder decodeBoolForKey:MDCTextInputUnderlineEnabledKey];
-    _lineHeight = (CGFloat)[coder decodeDoubleForKey:MDCTextInputUnderlineLineHeightKey];
   }
   return self;
 }
@@ -72,14 +58,6 @@ static inline UIColor *MDCTextInputUnderlineColor() {
                           forAxis:UILayoutConstraintAxisVertical];
   [self setClipsToBounds:NO];
   [self updateUnderline];
-}
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-  [super encodeWithCoder:coder];
-  [coder encodeObject:self.color forKey:MDCTextInputUnderlineColorKey];
-  [coder encodeObject:self.disabledColor forKey:MDCTextInputUnderlineDisabledColorKey];
-  [coder encodeBool:self.enabled forKey:MDCTextInputUnderlineEnabledKey];
-  [coder encodeDouble:(double)self.lineHeight forKey:MDCTextInputUnderlineLineHeightKey];
 }
 
 - (instancetype)copyWithZone:(__unused NSZone *)zone {
@@ -188,12 +166,6 @@ static inline UIColor *MDCTextInputUnderlineColor() {
     _lineHeight = lineHeight;
   }
   [self updateUnderline];
-}
-
-#pragma mark - NSSecureCoding
-
-+ (BOOL)supportsSecureCoding {
-  return YES;
 }
 
 @end

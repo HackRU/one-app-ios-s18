@@ -162,7 +162,7 @@ extension RippleEffectView {
                 tileLayer.rippleType = rippleType
                 tileLayer.frame.size = CGSize(width: itemWidth, height: itemHeight)
                 tileLayer.contentsScale = contentScaleFactor
-                tileLayer.contentsGravity = kCAGravityResize
+                tileLayer.contentsGravity = CALayerContentsGravity.resize
                 tileLayer.position = startPoint
                 tileLayer.position.x = tileLayer.position.x + (CGFloat(column) * itemWidth)
                 tileLayer.position.y = tileLayer.position.y + (CGFloat(row) * itemHeight)
@@ -211,7 +211,7 @@ private class GridItemView: CALayer {
 
     func startAnimatingWithDuration(_ duration: TimeInterval, rippleDelay: TimeInterval, rippleOffset: CGPoint) {
         let timingFunction = CAMediaTimingFunction(controlPoints: 0.25, 0, 0.2, 1)
-        let linearFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        let linearFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         let zeroPointValue = NSValue(cgPoint: CGPoint.zero)
 
         var animations = [CAAnimation]()
@@ -260,7 +260,7 @@ private class GridItemView: CALayer {
 
         let groupAnimation = CAAnimationGroup()
         groupAnimation.repeatCount = Float.infinity
-        groupAnimation.fillMode = kCAFillModeBackwards
+        groupAnimation.fillMode = CAMediaTimingFillMode.backwards
         groupAnimation.duration = duration
         groupAnimation.beginTime = rippleDelay
         groupAnimation.isRemovedOnCompletion = false

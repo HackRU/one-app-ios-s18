@@ -1,24 +1,23 @@
-/*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
 #import "MaterialInk.h"
 #import "MaterialShadowElevations.h"
+#import "MaterialShapes.h"
 
 /**
  A Material flat, raised or floating button.
@@ -32,7 +31,7 @@
  All buttons set the exclusiveTouch property to YES by default, which prevents users from
  simultaneously interacting with a button and other UI elements.
 
- @see https://material.io/guidelines/components/buttons.html
+ @see https://material.io/go/design-buttons
  */
 @interface MDCButton : UIButton
 
@@ -121,6 +120,19 @@
     BOOL mdc_adjustsFontForContentSizeCategory UI_APPEARANCE_SELECTOR;
 
 /**
+ The shape generator used to define the button's shape.
+
+ note: If a layer property is explicitly set after the shapeGenerator has been set,
+ it can lead to unexpected behavior.
+
+ When the shapeGenerator is nil, MDCButton will use the default underlying layer with
+ its default settings.
+
+ Default value for shapeGenerator is nil.
+ */
+@property(nullable, nonatomic, strong) id<MDCShapeGenerating> shapeGenerator;
+
+/**
  A color used as the button's @c backgroundColor for @c state.
 
  @param state The state.
@@ -199,6 +211,28 @@
  */
 - (void)setBorderColor:(nullable UIColor *)borderColor forState:(UIControlState)state
     UI_APPEARANCE_SELECTOR;
+
+/**
+ A color used as the button's imageView tint color @c imageTintColor for @c state.
+
+ If no image tint color has been set for a given state, the returned value will fall back to the
+ value set for UIControlStateNormal.
+
+ @param state The state.
+ @return The tint color.
+ */
+- (nullable UIColor *)imageTintColorForState:(UIControlState)state;
+
+/**
+ Sets the image view tint color for a particular control state.
+
+ If left unset or reset to nil for a given state, it falls back to UIControlStateNormal setting.
+
+ @param imageTintColor The imageView tint color to set.
+ @param state The state to set.
+ */
+- (void)setImageTintColor:(nullable UIColor *)imageTintColor forState:(UIControlState)state;
+
 
 /**
  The value set for the button's @c borderWidth for @c state.

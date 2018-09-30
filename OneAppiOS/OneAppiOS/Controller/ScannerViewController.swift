@@ -88,8 +88,8 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
                 alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
                     DispatchQueue.main.async {
-                        if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
-                            UIApplication.shared.open(settingsURL, options: ["Open Settings": "Open"], completionHandler: nil)
+                        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(["Open Settings": "Open"]), completionHandler: nil)
                         }
                     }
                 }))
@@ -392,4 +392,9 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         reader.stopScanning()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

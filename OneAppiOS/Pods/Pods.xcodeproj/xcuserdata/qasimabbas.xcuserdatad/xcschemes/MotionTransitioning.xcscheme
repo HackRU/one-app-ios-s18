@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5F2AA59B93756DEB313B3066C9354DF"
+               BlueprintIdentifier = "8712CE2351458B17A166280DFE65E507"
                BuildableName = "MotionTransitioning.framework"
                BlueprintName = "MotionTransitioning"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5F2AA59B93756DEB313B3066C9354DF"
+            BlueprintIdentifier = "8712CE2351458B17A166280DFE65E507"
             BuildableName = "MotionTransitioning.framework"
             BlueprintName = "MotionTransitioning"
             ReferencedContainer = "container:Pods.xcodeproj">

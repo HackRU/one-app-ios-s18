@@ -1,18 +1,16 @@
-/*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCItemBarCell.h"
 #import "MDCItemBarCell+Private.h"
@@ -92,7 +90,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 #pragma mark - Public
 
 + (UIEdgeInsets)edgeInsetsForHorizontalSizeClass:(UIUserInterfaceSizeClass)sizeClass {
-  // Padding from spec: https://material.io/guidelines/components/tabs.html
+  // Padding from spec: https://material.io/go/design-tabs
   CGFloat outerPadding = (sizeClass == UIUserInterfaceSizeClassRegular) ? 24.0f : 12.0f;
   return UIEdgeInsetsMake(0.0, outerPadding, 0.0, outerPadding);
 }
@@ -202,6 +200,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 
     [self updateDisplayedTitle];
     [self updateTitleTextColor];
+    [self updateImageTintColor];
     [self updateInk];
     [self updateSubviews];
     [self updateTitleLines];
@@ -312,6 +311,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
   [super tintColorDidChange];
 
   [self updateTitleTextColor];
+  [self updateImageTintColor];
 }
 
 - (void)didMoveToWindow {
@@ -330,6 +330,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 - (void)prepareForReuse {
   [super prepareForReuse];
   [self updateTitleTextColor];
+  [self updateImageTintColor];
   [self updateAccessibilityTraits];
   [_inkTouchController cancelInkTouchProcessing];
 }
@@ -342,6 +343,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 
   [super setSelected:selected];
   [self updateTitleTextColor];
+  [self updateImageTintColor];
   [self updateAccessibilityTraits];
   [self updateTransformsAnimated:animate];
   [self updateTitleFont];
@@ -350,6 +352,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 - (void)setHighlighted:(BOOL)highlighted {
   [super setHighlighted:highlighted];
   [self updateTitleTextColor];
+  [self updateImageTintColor];
 }
 
 #pragma mark - UIAccessibility
@@ -427,6 +430,8 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 
       // Display our image in the new image view.
       [self updateDisplayedImage];
+
+      [self updateImageTintColor];
     }
 
     _imageView.hidden = NO;
@@ -475,6 +480,7 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
 
 - (void)updateColors {
   [self updateTitleTextColor];
+  [self updateImageTintColor];
   [self updateInk];
 }
 
@@ -485,7 +491,14 @@ static const NSTimeInterval kSelectionAnimationDuration = 0.3f;
   }
   _titleLabel.textColor = textColor;
   _badgeLabel.textColor = textColor;
-  _imageView.tintColor = textColor;
+}
+
+- (void)updateImageTintColor {
+  UIColor *imageTintColor = _style.imageTintColor;
+  if (self.isHighlighted || self.isSelected) {
+    imageTintColor = _style.selectedImageTintColor;
+  }
+  _imageView.tintColor = imageTintColor;
 }
 
 - (void)updateTransformsAnimated:(BOOL)animated {

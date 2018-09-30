@@ -1,18 +1,16 @@
-/*
- Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
+// Copyright 2018-present the Material Components for iOS authors. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #import "MDCCardCollectionCell.h"
 
@@ -36,13 +34,14 @@ static NSString *const MDCCardCellShadowColorsKey = @"MDCCardCellShadowColorsKey
 static NSString *const MDCCardCellStateKey = @"MDCCardCellStateKey";
 static NSString *const MDCCardCellVerticalImageAlignmentsKey =
     @"MDCCardCellVerticalImageAlignmentsKey";
+static NSString *const MDCCardCellIsInteractableKey = @"MDCCardCellIsInteractableKey";
 
 static const CGFloat MDCCardCellCornerRadiusDefault = 4.f;
 static const CGFloat MDCCardCellSelectedImagePadding = 8;
 static const CGFloat MDCCardCellShadowElevationHighlighted = 8.f;
 static const CGFloat MDCCardCellShadowElevationNormal = 1.f;
 static const CGFloat MDCCardCellShadowElevationSelected = 8.f;
-
+static const BOOL MDCCardCellIsInteractableDefault = YES;
 
 @interface MDCCardCollectionCell ()
 @property(nonatomic, strong, nullable) UIImageView *selectedImageView;
@@ -103,6 +102,11 @@ static const CGFloat MDCCardCellShadowElevationSelected = 8.f;
           [coder decodeObjectOfClass:[UIColor class]
                               forKey:MDCCardCellBackgroundColorsKey]];
     }
+    if ([coder containsValueForKey:MDCCardCellIsInteractableKey]) {
+      _interactable = [coder decodeBoolForKey:MDCCardCellIsInteractableKey];
+    } else {
+      _interactable = MDCCardCellIsInteractableDefault;
+    }
     [self commonMDCCardCollectionCellInit];
   }
   return self;
@@ -112,6 +116,7 @@ static const CGFloat MDCCardCellShadowElevationSelected = 8.f;
   self = [super initWithFrame:frame];
   if (self) {
     self.layer.cornerRadius = MDCCardCellCornerRadiusDefault;
+    _interactable = MDCCardCellIsInteractableDefault;
     [self commonMDCCardCollectionCellInit];
   }
   return self;
@@ -207,6 +212,7 @@ static const CGFloat MDCCardCellShadowElevationSelected = 8.f;
   [coder encodeObject:_verticalImageAlignments forKey:MDCCardCellVerticalImageAlignmentsKey];
   [coder encodeObject:_imageTintColors forKey:MDCCardCellImageTintColorsKey];
   [coder encodeObject:self.layer.shapedBackgroundColor forKey:MDCCardCellBackgroundColorsKey];
+  [coder encodeBool:_interactable forKey:MDCCardCellIsInteractableKey];
 }
 
 - (void)layoutSubviews {
@@ -536,6 +542,14 @@ static const CGFloat MDCCardCellShadowElevationSelected = 8.f;
 }
 
 #pragma mark - UIResponder
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+  UIView *result = [super hitTest:point withEvent:event];
+  if (!_interactable && (result == self.contentView || result == self)) {
+    return nil;
+  }
+  return result;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   [super touchesBegan:touches withEvent:event];
