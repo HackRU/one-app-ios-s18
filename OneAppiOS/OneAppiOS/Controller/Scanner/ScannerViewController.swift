@@ -66,7 +66,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     //By pressing on the switch camera button
 //    func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
 //        if let cameraName = newCaptureDevice.device.localizedName {
-//            print("Switching capturing to: \(cameraName)")
+//            //print("Switching capturing to: \(cameraName)")
 //        }
 //    }
 
@@ -110,11 +110,11 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         let jsonObject: NSMutableDictionary = NSMutableDictionary()
         var jsonData: Data = Data()
 
-        //print("TOKEN \(user.value(forKey: "auth") ?? "NONE")")
+        ////print("TOKEN \(user.value(forKey: "auth") ?? "NONE")")
 
         jsonObject.setValue(userString, forKey: "user_email")
-        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as! String, forKey: "auth_email")
-        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as! String, forKey: "auth")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "auth_email")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "auth")
 
         //jsonObject.setValue(["email": userString], forKey: "query")
 
@@ -122,10 +122,10 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
         do {
             jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
-            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            print("json string = \(jsonString)")
+            _ = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+            //print("json string = \(jsonString)")
         } catch _ {
-            print ("JSON Failure")
+            //print ("JSON Failure")
         }
 
         var request = URLRequest(url: URL(string: baseURL + "/update")!)
@@ -135,13 +135,13 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
         Alamofire.request(request).responseJSON { (response) in
             let swiftJson = JSON(response.result.value!)
-                print(swiftJson)
+               // print(swiftJson)
 
             if let statusCode = swiftJson["statusCode"].int {
-                if(statusCode == 200) {
+                if statusCode == 200 {
 
                     if let body = swiftJson["body"].string {
-                        print(body)
+                            print(body)
 
                            self.scanInPreviewAction((Any).self)
                     }
@@ -173,10 +173,10 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             switch response.result {
             case .success:
 
-                print("SUCCESS SOMETHING SOMETHING")
+                //print("SUCCESS SOMETHING SOMETHING")
                 let swiftJson = JSON(response.result.value!)
 
-                    if(swiftJson["statusCode"].int == 200) {
+                    if swiftJson["statusCode"].int == 200 {
 
                         print(printEmail)
                         self.apiCall(userString: printEmail, dictUpdate: ["$set": ["registration_status": "check-in" as AnyObject, "day_of.checked_in": true as AnyObject]])
@@ -211,17 +211,15 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     func checkIn(email: String) {
         let jsonObject = NSMutableDictionary()
         var jsonData: Data = Data()
-
-        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as! String, forKey: "auth")
-        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as! String, forKey: "email")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "auth")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "email")
         jsonObject.setValue(["email": email], forKey: "query")
 
         do {
             jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
-            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            print("json string = \(jsonString)")
+            //let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
         } catch _ {
-            print ("JSON Failure")
+            //print ("JSON Failure")
         }
 
         var request = URLRequest(url: URL(string: baseURL + "/read")!)
@@ -237,18 +235,20 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
             if let body = JSON(response.result.value!)["body"].array {
                 for item in body {
-                    let day_of = item["day_of"].dictionary
+                    guard let dayof = item["day_of"].dictionary else {
+                        return
+                    }
 
-                    let checked = day_of!["checked_in"]?.bool ?? false
-                            print("CHECKED STATUS: \(checked)")
+                    let checked = dayof["checked_in"]?.bool ?? false
+                            //print("CHECKED STATUS: \(checked)")
 
                     self.ref = Database.database().reference()
                     self.ref.observe(.value, with: { snapshot in
                        // print(snapshot.value!)
                          let swiftJson = JSON(snapshot.value!)
                         if let allowOnlyAccepted = swiftJson["allowOnlyAccepted"].bool {
-                            if(item["registration_status"].string == "coming" || !allowOnlyAccepted == true) {
-                                if (checked == true) {
+                            if item["registration_status"].string == "coming" || !allowOnlyAccepted == true {
+                                if checked == true {
 
                                     let alert = UIAlertController(title: "Already Checked In", message: "AHOY MATE \(email) ye be checked in", preferredStyle: .alert)
 
@@ -267,7 +267,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
                                 } else {
 
-                                    print("HEADING TO PRINT")
+                                    //print("HEADING TO PRINT")
                                     self.printQR(printEmail: email)
 
                                 }
@@ -288,7 +288,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
                 }
             }
 
-            print("FIRST TIME CHECKIN")
+            //print("FIRST TIME CHECKIN")
         }
 
     }
@@ -351,33 +351,25 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             self.previewView.layer.borderWidth = 5
             self.previewView.layer.borderColor = UIColor.green.cgColor
 
-            print("Completion with result: \(result.value) of type \(result.metadataType)")
+            //print("Completion with result: \(result.value) of type \(result.metadataType)")
 
             //self.apiCall(userString: result.value)
 
             switch self.state {
             case 0:
-
                 self.checkIn(email: result.value)
-                break
             case 1:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.lunch_1": 1 as AnyObject]])
-                break
             case 2:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.day_of.dinner": 1 as AnyObject]])
-                break
             case 3:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.midnight_suprise": 1 as AnyObject]])
-                break
             case 4:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.t_shirt": 1 as AnyObject]])
-                break
             case 5:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.breakfast": 1 as AnyObject]])
-                break
             case 6:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.lunch_2": 1 as AnyObject]])
-                break
             default:
                 break
             }
@@ -395,6 +387,6 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

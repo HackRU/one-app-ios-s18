@@ -29,7 +29,6 @@
 //
 //        startDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: firstDate)!
 //
-//        // FIXME: Use the swift method instead?
 //        let nextDayDate = (calendar as NSCalendar).nextDate(after: firstDate, matching: .hour, value: 0, options: .matchNextTime)!
 //
 //        let endDate = nextDayDate < lastDate ? nextDayDate : lastDate
@@ -37,7 +36,6 @@
 //
 //        var hours = [Hour(startDate: (calendar as NSCalendar).date(bySettingHour: (calendar as NSCalendar).component(.hour, from: firstDate), minute: 0, second: 0, of: firstDate, options: [])!)]
 //
-//        // FIXME: Use the swift method instead?
 //        (calendar as NSCalendar).enumerateDates(startingAfter: firstDate, matching: Hour.Components, options: .matchNextTime) { date, exactMatch, stop in
 //            guard let date = date
 //            else {

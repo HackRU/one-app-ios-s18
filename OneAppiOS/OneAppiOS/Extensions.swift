@@ -19,12 +19,12 @@ extension String {
 			else {
 				return
 			}
-            formatted += sentence.replacingCharacters(in: self.startIndex..<self.index(self.startIndex, offsetBy: 1), with: sentence.substring(to: sentence.index(after: sentence.startIndex)).capitalized)
-            
-            
+//            formatted += sentence.replacingCharacters(in: self.startIndex..<self.index(self.startIndex, offsetBy: 1), with: sentence.substring(to: sentence.index(after: sentence.startIndex)).capitalized)
+            formatted += sentence.replacingCharacters(in: self.startIndex..<self.index(self.startIndex, offsetBy: 1), with: self.prefix(upTo: sentence.index(after: sentence.startIndex)).capitalized)
+
 		})
 		// Add trailing full stop.
-		if (formatted[formatted.index(before: formatted.endIndex)] != ".") {
+		if formatted[formatted.index(before: formatted.endIndex)] != "." {
 			formatted += "."
 		}
 		return formatted
@@ -44,27 +44,21 @@ let remoteNotificationPreferencesKey = "remote_notification_preferences"
 
 // MARK: - Color constants
 struct HackRUColor {
-    
-   
-    
+
     static var main: UIColor {
         return UIColor(red: 120.0 / 255.0, green: 82.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
     }
-    
+
     static var secondary: UIColor {
         return UIColor(red: 57.0 / 255.0, green: 39.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0)
     }
-    
+
     static var dark: UIColor {
         return UIColor(red: 31.0 / 255.0, green: 74.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0)
     }
-    
-    
-    
-    
-    
+
 	static var blue: UIColor {
-        
+
 		return UIColor(red: 31.0 / 255.0, green: 74.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0)
 	}
     static var lightBlue: UIColor {

@@ -12,10 +12,10 @@ import SwiftyJSON
 
 class SlackAnnouncmentViewController: UITableViewController {
 
-    struct announce {
+    struct Announce {
         let user: String
         let text: String
-        let ts: String
+        let timestamp: String
     }
 
     var announceArray: NSMutableArray?
@@ -29,7 +29,7 @@ class SlackAnnouncmentViewController: UITableViewController {
         Alamofire.request(url).responseJSON { response in
             // handle JSON
             let swiftJson = JSON(response.result.value!)
-            if(swiftJson["statusCode"].int == 200) {
+            if swiftJson["statusCode"].int == 200 {
                 //print(swiftJson)
                 print("SUCCESSFUL STATUS CODE")
                 if let body = swiftJson["body"].array {
@@ -40,9 +40,9 @@ class SlackAnnouncmentViewController: UITableViewController {
                         //print(item["text"].string!)
 
                         print(item)
-                        let itemText = self.cleanString(s: item["text"].string ?? "")
-                        if(itemText != "") {
-                            let itemAnnounce = announce(user: item["user"].string!, text: item["text"].string!, ts: item["ts"].string!)
+                        let itemText = self.cleanString(str: item["text"].string ?? "")
+                        if itemText != "" {
+                            let itemAnnounce = Announce(user: item["user"].string!, text: item["text"].string!, timestamp: item["ts"].string!)
                             self.announceArray?.add(itemAnnounce)
                             self.tableView.reloadData()
                         }
@@ -80,13 +80,17 @@ class SlackAnnouncmentViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventsTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EventsTableViewCell else {
+            return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        }
 
-        let item = announceArray?.object(at: indexPath.row) as! announce
+        guard let item = announceArray?.object(at: indexPath.row) as? Announce else {
+            return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        }
         var itemText = item.text
-        itemText = cleanString(s: itemText)
+        itemText = cleanString(str: itemText)
 
-        let timeStamp = Double(item.ts)
+        let timeStamp = Double(item.timestamp)
 
         let date = NSDate(timeIntervalSince1970: TimeInterval(timeStamp!))
 
@@ -112,20 +116,20 @@ class SlackAnnouncmentViewController: UITableViewController {
         return 128
     }
 
-    func cleanString (s: String) -> String {
+    func cleanString (str: String) -> String {
         var res = ""
         var openBracColon = false
 
-        for c in s {
-            if(openBracColon) {
-                if(c == ">" || c == ":") {
+        for char in str {
+            if openBracColon {
+                if char == ">" || char == ":" {
                     openBracColon = false
                 }
             } else {
-                if(c == "<" || c == ":") {
+                if char == "<" || char == ":" {
                     openBracColon = true
                 } else {
-                    res = res + "\(c)"
+                    res.append(char)
                 }
             }
 

@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
             let swiftJsonVar = JSON(response.result.value!)
             print(swiftJsonVar)
             if let status = swiftJsonVar["statusCode"].int {
-                if(status as Int? == 200) {
+                if status as Int? == 200 {
                     print("success!")
 
                     if let body = JSON(parseJSON: swiftJsonVar["body"].string!).dictionary!["auth"] {
@@ -118,7 +118,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
                         self.performSegue(withIdentifier: "segueHome", sender: nil)
 
                     }
-                } else if(status as Int? == 403) {
+                } else if status as Int? == 403 {
 
                     if let body = swiftJsonVar["body"].string {
                         let alert = UIAlertController(title: "Oops Invalid Email/Password!", message: body, preferredStyle: .alert)

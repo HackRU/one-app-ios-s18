@@ -64,7 +64,9 @@ class MyMLH: UIViewController, WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
             let myFileURL = Bundle.main.url(forResource: "login", withExtension: "js")!
-            let myText = try! String(contentsOf: myFileURL)
+            guard let myText = try? String(contentsOf: myFileURL) else {
+                return
+            }
             print(myText)
 
             webView.evaluateJavaScript(myText) { (result, error) in

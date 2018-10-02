@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class EventsTableViewController: UITableViewController {
 
-    struct event {
+    struct Event {
         let start: String
         let end: String
         let summary: String
@@ -54,7 +54,7 @@ class EventsTableViewController: UITableViewController {
                             dayTimePeriodFormatterEnd.dateFormat = "EEE hh:mm a"
                             let dateStringEnd = dayTimePeriodFormatter.string(from: (dateEnd as Date?)!)
 
-                            self.events?.add(event.init(start: dateStringStart, end: dateStringEnd, summary: item["summary"].string!, location: item["location"].string ?? ""))
+                            self.events?.add(Event.init(start: dateStringStart, end: dateStringEnd, summary: item["summary"].string!, location: item["location"].string ?? ""))
 
                             self.tableView.reloadData()
                         }
@@ -96,7 +96,9 @@ class EventsTableViewController: UITableViewController {
 
         // Configure the cell...
 
-        let item = events?.object(at: indexPath.row) as! event
+        guard let item = events?.object(at: indexPath.row) as? Event else {
+            return cell
+        }
 
         cell.textLabel?.text = item.summary
         cell.textLabel?.textColor = HackRUColor.dark
@@ -108,9 +110,11 @@ class EventsTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueDetail") {
+        if segue.identifier == "segueDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let eventSelected = events?.object(at: indexPath.row) as! event
+                guard let eventSelected = events?.object(at: indexPath.row) as? Event else {
+                    return
+                }
                 EventDetailTableViewController.mutArr.removeAllObjects()
 
                 EventDetailTableViewController.mutArr.add("Event: \(eventSelected.summary)")

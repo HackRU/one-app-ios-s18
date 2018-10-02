@@ -50,7 +50,7 @@ class CountdownViewController: UIViewController {
 
                // Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
                 Configuration.startDateEpoch = Date().timeIntervalSince1970.exponent
-                if(Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400) {
+                if Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400 {
                     Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
                 }
 
@@ -86,8 +86,12 @@ class CountdownViewController: UIViewController {
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		stopUpdatingCountdownViews()
-		NotificationCenter.default.removeObserver(self)
+
 	}
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 	// MARK: - Model Update
 
@@ -96,7 +100,6 @@ class CountdownViewController: UIViewController {
 	func beginUpdatingCountdownViews() {
 
 		updateCountdownViews()
-		// FIXME: Use swift method instead?
 
         progressIndicator.progressColor = HackRUColor.main
 

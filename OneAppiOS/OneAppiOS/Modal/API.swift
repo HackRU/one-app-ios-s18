@@ -50,10 +50,12 @@ public class Authenticator {
         var status = 0
 
         Alamofire.request(request).responseJSON { (response) in
-            let responseJSON = response.result.value as! [String: AnyObject]
+            guard let responseJSON = response.result.value as? [String: AnyObject] else {
+                return
+            }
             print(responseJSON)
 
-                 status = responseJSON["statusCode"] as! Int
+            status = responseJSON["statusCode"] as? Int ?? 400
 
         }
         return status

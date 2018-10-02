@@ -152,6 +152,6 @@ final class Configuration: Serializable, Equatable {
     }
 }
 
-func ==(lhs: Configuration, rhs: Configuration) -> Bool {
+func == (lhs: Configuration, rhs: Configuration) -> Bool {
     return lhs.startDate == rhs.startDate && lhs.endDate == rhs.endDate
 }

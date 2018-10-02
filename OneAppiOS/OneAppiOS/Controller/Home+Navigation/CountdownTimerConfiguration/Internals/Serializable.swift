@@ -22,18 +22,18 @@ extension SerializableElement {
 }
 
 protocol SerializableElementWithIdentifier: SerializableElement, Comparable, Hashable {
-    var ID: String { get }
+    var IDENTITY: String { get }
     static var resultsKey: String { get }
 }
 extension SerializableElementWithIdentifier {
-    var hashValue: Int { return ID.hashValue }
+    var hashValue: Int { return IDENTITY.hashValue }
     static var idKey: String { return "id" }
 }
 func ==<Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool {
-    return lhs.ID == rhs.ID
+    return lhs.IDENTITY == rhs.IDENTITY
 }
 func < <Type: SerializableElementWithIdentifier>(lhs: Type, rhs: Type) -> Bool {
-    return lhs.ID < rhs.ID
+    return lhs.IDENTITY < rhs.IDENTITY
 }
 
 protocol Serializable: class, SerializableElement {

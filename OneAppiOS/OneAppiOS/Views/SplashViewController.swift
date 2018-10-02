@@ -37,7 +37,9 @@ class SplashViewController: UIViewController {
         let filter = CIFilter(name: "CIPhotoEffectFade" )
         filter!.setDefaults()
         filter!.setValue(coreImage, forKey: kCIInputImageKey)
-        let filteredImageData = filter!.value(forKey: kCIOutputImageKey) as! CIImage
+        guard let filteredImageData = filter!.value(forKey: kCIOutputImageKey) as? CIImage else {
+            return
+        }
         let filteredImageRef = ciContext.createCGImage(filteredImageData, from: filteredImageData.extent)
         img = UIImage(cgImage: filteredImageRef!)
         rippleEffectView?.tileImage = img

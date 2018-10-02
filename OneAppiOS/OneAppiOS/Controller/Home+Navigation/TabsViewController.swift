@@ -27,7 +27,7 @@ class TabsViewController: UITabBarController {
         floaty.plusColor = .white
         floaty.itemButtonColor = HackRUColor.main
 
-        if(organizer) {
+        if organizer {
 
             floaty.addItem("Scanner", icon: UIImage(named: "ic_camera")?.maskWithColor(color: .white), handler: { item in
 
@@ -41,7 +41,7 @@ class TabsViewController: UITabBarController {
 
             let alert = UIAlertController(title: UserDefaults.standard.value(forKey: "email") as? String, message: "", preferredStyle: .alert)
 
-            var qrCode = QRCode(UserDefaults.standard.value(forKey: "email") as! String)
+            var qrCode = QRCode(UserDefaults.standard.value(forKey: "email") as? String ?? "team@hackru.org")
             qrCode?.color = CIColor.init(color: HackRUColor.dark)
             qrCode?.backgroundColor = CIColor.white
 
@@ -80,8 +80,10 @@ class TabsViewController: UITabBarController {
                 user.set(nil, forKey: "auth")
                 user.set(nil, forKey: "email")
 
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! ViewController
-                self.present(vc, animated: true, completion: nil)
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Login") as? ViewController else {
+                    return
+                }
+                self.present(viewController, animated: true, completion: nil)
 
             }))
 
@@ -104,15 +106,17 @@ class TabsViewController: UITabBarController {
         let user = UserDefaults.standard
         print("TOKEN \(user.value(forKey: "auth") ?? "NONE")")
 
-        if(user.string(forKey: "auth") == nil) {
+        if user.string(forKey: "auth") == nil {
 
-            let vc = storyboard?.instantiateViewController(withIdentifier: "Login") as! ViewController
-            self.present(vc, animated: true, completion: nil)
-        } else if((user.string(forKey: "organizer") == nil) || !organizer) {
+            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "Login") as? ViewController else {
+                return
+            }
+            self.present(viewController, animated: true, completion: nil)
+        } else if (user.string(forKey: "organizer") == nil) || (!organizer) {
 
-            jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as! String, forKey: "auth")
-            jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as! String, forKey: "email")
-            jsonObject.setValue(["email": UserDefaults.standard.object(forKey: "email") as! String], forKey: "query")
+            jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "auth")
+            jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "email")
+            jsonObject.setValue(["email": UserDefaults.standard.object(forKey: "email") as? String], forKey: "query")
 
             do {
                 jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
@@ -136,7 +140,7 @@ class TabsViewController: UITabBarController {
                 if let body = JSON(response.result.value!)["body"].array {
                     for item in body {
                         if let role = item["role"].dictionary {
-                            if((role["director"]?.bool)! || (role["organizer"]?.bool)!) {
+                            if (role["director"]?.bool)! || (role["organizer"]?.bool)! {
                                 print("DIRECTOR OR ORGANIZER")
 
                                 self.organizer = true
