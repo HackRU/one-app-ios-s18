@@ -27,17 +27,17 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
         txtPass.delegate = self
         txtEmail.delegate = self
 
-        self.view.backgroundColor = HackRUColor.lightBlue
+        self.view.backgroundColor = HackRUColor.main
 
-        btnSubmit.backgroundColor = HackRUColor.lightBlue
+        btnSubmit.backgroundColor = HackRUColor.main
         btnSubmit.titleLabel?.font = txtEmail.font?.withSize(14)
-        btnSubmit.titleLabel?.textColor = HackRUColor.blue
+        btnSubmit.titleLabel?.textColor = HackRUColor.dark
 
         //btnSubmit.layer.borderWidth = 1
         //btnMLH.layer.borderWidth = 1
 
-        //btnSubmit.layer.borderColor = HackRUColor.lightBlue.cgColor
-        btnMLH.layer.borderColor = HackRUColor.lightBlue.cgColor
+        //btnSubmit.layer.borderColor = HackRUColor.main.cgColor
+        btnMLH.layer.borderColor = HackRUColor.main.cgColor
 
         // Do any additional setup after loading the view, typically from a nib.
     }

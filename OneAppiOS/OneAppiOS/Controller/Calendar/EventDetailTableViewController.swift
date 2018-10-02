@@ -53,7 +53,7 @@ class EventDetailTableViewController: UITableViewController {
 
         cell.textLabel?.text = EventDetailTableViewController.mutArr.object(at: indexPath.row) as? String
 //        print(cell.textLabel?.text!)
-        cell.textLabel?.textColor = HackRUColor.blue
+        cell.textLabel?.textColor = HackRUColor.dark
 
         return cell
     }

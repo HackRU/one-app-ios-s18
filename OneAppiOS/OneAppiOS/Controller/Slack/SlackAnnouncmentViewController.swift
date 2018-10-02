@@ -98,10 +98,10 @@ class SlackAnnouncmentViewController: UITableViewController {
         print( " value is \(dateString)")
 
         cell.txtInfo.text = itemText
-        cell.txtInfo.textColor = HackRUColor.blue
+        cell.txtInfo.textColor = HackRUColor.dark
 
         cell.txtTime.text = dateString
-        cell.txtTime.textColor = HackRUColor.lightBlue
+        cell.txtTime.textColor = HackRUColor.main
 
         //cell.detailTextLabel?.text = dateString
 

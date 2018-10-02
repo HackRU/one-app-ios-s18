@@ -12,7 +12,7 @@ class HomeNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = HackRUColor.lightBlue
+        self.navigationBar.barTintColor = HackRUColor.main
 
         //self.navigationItem.title = "HackRU"
         self.navigationController?.title = "HackRU"

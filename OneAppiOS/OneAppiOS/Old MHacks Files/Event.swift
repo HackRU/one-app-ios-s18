@@ -21,7 +21,7 @@
 //        var color: UIColor {
 //            switch self {
 //            case .general:
-//                return HackRUColor.blue
+//                return HackRUColor.dark
 //            case .food:
 //                return HackRUColor.orange
 //            case .techTalk:

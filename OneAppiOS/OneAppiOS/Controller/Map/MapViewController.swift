@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
     private let scrollView = ImageScrollView(image: UIImage(named: "layout")!)
 
     override func viewDidLoad() {
-        view.backgroundColor = HackRUColor.blue
+        view.backgroundColor = HackRUColor.dark
         view.addSubview(scrollView)
 
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

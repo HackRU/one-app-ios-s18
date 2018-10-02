@@ -23,9 +23,9 @@ class TabsViewController: UITabBarController {
 
         floaty = Floaty(frame: CGRect(x: (UIScreen.main.bounds.size.width) - size - 14, y: UIScreen.main.bounds.size.height - (size * 2) - self.tabBar.bounds.height, width: size, height: size))
         floaty.openAnimationType = .pop
-        floaty.buttonColor = HackRUColor.lightBlue
+        floaty.buttonColor = HackRUColor.main
         floaty.plusColor = .white
-        floaty.itemButtonColor = HackRUColor.lightBlue
+        floaty.itemButtonColor = HackRUColor.main
 
         if(organizer) {
 
@@ -42,7 +42,7 @@ class TabsViewController: UITabBarController {
             let alert = UIAlertController(title: UserDefaults.standard.value(forKey: "email") as? String, message: "", preferredStyle: .alert)
 
             var qrCode = QRCode(UserDefaults.standard.value(forKey: "email") as! String)
-            qrCode?.color = CIColor.init(color: HackRUColor.blue)
+            qrCode?.color = CIColor.init(color: HackRUColor.dark)
             qrCode?.backgroundColor = CIColor.white
 
             qrCode?.size = CGSize(width: alert.view.bounds.width * 0.65, height: alert.view.bounds.width * 0.65)
@@ -153,8 +153,8 @@ class TabsViewController: UITabBarController {
         }
 
         self.tabBar.unselectedItemTintColor = .white
-        self.tabBar.selectedItem?.badgeColor = HackRUColor.blue
-        self.tabBar.barTintColor = HackRUColor.lightBlue
+        self.tabBar.selectedItem?.badgeColor = HackRUColor.dark
+        self.tabBar.barTintColor = HackRUColor.main
 
         for item in self.tabBar.items! {
                 item.image = item.image?.maskWithColor(color: .white)

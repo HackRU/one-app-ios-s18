@@ -25,7 +25,7 @@ class EventsTableViewController: UITableViewController {
         super.viewDidLoad()
         events = NSMutableArray()
 
-        let url: String = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest/dayof-events"
+        let url: String = baseURL + "/dayof-events"
         Alamofire.request(url).responseJSON { response in
             let swiftJson = JSON(response.result.value!)
             //print(swiftJson)
@@ -99,10 +99,10 @@ class EventsTableViewController: UITableViewController {
         let item = events?.object(at: indexPath.row) as! event
 
         cell.textLabel?.text = item.summary
-        cell.textLabel?.textColor = HackRUColor.blue
+        cell.textLabel?.textColor = HackRUColor.dark
 
         cell.detailTextLabel?.text = item.start
-        cell.detailTextLabel?.textColor = HackRUColor.lightBlue
+        cell.detailTextLabel?.textColor = HackRUColor.main
 
         return cell
     }

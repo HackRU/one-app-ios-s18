@@ -98,7 +98,7 @@ class CountdownViewController: UIViewController {
 		updateCountdownViews()
 		// FIXME: Use swift method instead?
 
-        progressIndicator.progressColor = HackRUColor.lightBlue
+        progressIndicator.progressColor = HackRUColor.main
 
 		let nextSecond = (Calendar.current as NSCalendar).nextDate(after: Date(), matching: .nanosecond, value: 0, options: .matchNextTime)!
 

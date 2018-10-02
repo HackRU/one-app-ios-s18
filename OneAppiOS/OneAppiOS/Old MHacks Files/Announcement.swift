@@ -66,7 +66,7 @@
 //            } else if contains(.food) {
 //                return HackRUColor.yellow
 //            } else if contains(.events) {
-//                return HackRUColor.blue
+//                return HackRUColor.dark
 //            } else {
 //                return HackRUColor.plain
 //            }

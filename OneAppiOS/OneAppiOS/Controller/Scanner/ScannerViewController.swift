@@ -34,11 +34,11 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         btnScanner.tintColor = .white
-        btnScanner.backgroundColor = HackRUColor.lightBlue
+        btnScanner.backgroundColor = HackRUColor.main
         btnScanner.titleLabel?.textColor = .white
 
         changeScanning.tintColor = .white
-        changeScanning.backgroundColor = HackRUColor.lightBlue
+        changeScanning.backgroundColor = HackRUColor.main
         changeScanning.titleLabel?.textColor = .white
 
         self.btnScanner.isHidden = true

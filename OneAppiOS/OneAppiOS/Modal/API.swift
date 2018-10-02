@@ -10,7 +10,11 @@ import Foundation
 import Alamofire
 import Alamofire_Synchronous
 
-var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
+//TEST API
+var baseURL = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/"
+
+//PRODUCTION API
+//var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
 
 public class Authenticator {
     let jsonObject: NSMutableDictionary = NSMutableDictionary()

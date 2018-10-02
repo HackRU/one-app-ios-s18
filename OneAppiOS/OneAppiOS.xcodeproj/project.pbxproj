@@ -232,7 +232,6 @@
 				96025ABE2079BA0900F6EFEB /* Views */,
 				96025ABF2079BA2400F6EFEB /* Modal */,
 				96025AC02079BA4E00F6EFEB /* Controller */,
-				96B9BB1A2161583D005A45B7 /* CountdownTimerConfiguration */,
 				96B9BB1B2161585B005A45B7 /* Old MHacks Files */,
 				9698560B1FCE4ACF00A1D84C /* Main.storyboard */,
 				9698560E1FCE4ACF00A1D84C /* Assets.xcassets */,
@@ -289,6 +288,7 @@
 		96B9BB1C2161589F005A45B7 /* Home+Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				96B9BB1A2161583D005A45B7 /* CountdownTimerConfiguration */,
 				96025AB22079B92E00F6EFEB /* CountdownViewController.swift */,
 				969856091FCE4ACF00A1D84C /* ViewController.swift */,
 				961AD92D20868E500098BDD3 /* HomeNavigationViewController.swift */,
