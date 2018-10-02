@@ -29,7 +29,7 @@ class TabsViewController: UITabBarController {
 
         if organizer {
 
-            floaty.addItem("Scanner", icon: UIImage(named: "ic_camera")?.maskWithColor(color: .white), handler: { item in
+            floaty.addItem("Scanner", icon: UIImage(named: "ic_camera")?.maskWithColor(color: .white), handler: { _ in
 
                 let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "ScannerViewController")
                 self.navigationController?.pushViewController(mainViewController!, animated: true)
@@ -37,7 +37,7 @@ class TabsViewController: UITabBarController {
 
         }
 
-        floaty.addItem("QR", icon: UIImage(named: "ic_action_qrcode"), handler: { item in
+        floaty.addItem("QR", icon: UIImage(named: "ic_action_qrcode"), handler: { _ in
 
             let alert = UIAlertController(title: UserDefaults.standard.value(forKey: "email") as? String, message: "", preferredStyle: .alert)
 
@@ -65,16 +65,16 @@ class TabsViewController: UITabBarController {
 
         })
 
-        floaty.addItem("Map", icon: UIImage(named: "ic_map")?.maskWithColor(color: .white), handler: { item in
+        floaty.addItem("Map", icon: UIImage(named: "ic_map")?.maskWithColor(color: .white), handler: { _ in
             let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Map")
 
             self.navigationController?.pushViewController(mainViewController!, animated: true)
         })
 
-        floaty.addItem("Logout", icon: UIImage(named: "logout")?.maskWithColor(color: .white), handler: { item in
+        floaty.addItem("Logout", icon: UIImage(named: "logout")?.maskWithColor(color: .white), handler: { _ in
             let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
                    let user = UserDefaults.standard
 
                 user.set(nil, forKey: "auth")

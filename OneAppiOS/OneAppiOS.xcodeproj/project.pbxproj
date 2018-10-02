@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14543C0E9B79630FCABEDF65 /* Pods_OneAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6049C6CD865D81AF1B3A5932 /* Pods_OneAppiOS.framework */; };
-		72B2584F4554A1B48FC91CBD /* Pods_OneAppiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E9E235F89986AA27ECC00D /* Pods_OneAppiOSTests.framework */; };
-		75B162FE657D3431DAD27F8E /* Pods_OneAppiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21241FC07E37BC532137608 /* Pods_OneAppiOSUITests.framework */; };
 		96025AB32079B92E00F6EFEB /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB22079B92E00F6EFEB /* CountdownViewController.swift */; };
 		96025AB92079B95700F6EFEB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB82079B95700F6EFEB /* Extensions.swift */; };
 		96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ABA2079B9FF00F6EFEB /* CircleView.swift */; };
@@ -67,11 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2AF66CC2D71F690238CCBAB0 /* Pods-OneAppiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6049C6CD865D81AF1B3A5932 /* Pods_OneAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		690350A800901775EB9713B9 /* Pods-OneAppiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6C55C53064BE374EF84DCB8E /* Pods-OneAppiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		7C989D35A7A2A39ED3445B83 /* Pods-OneAppiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96025AB22079B92E00F6EFEB /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		96025AB82079B95700F6EFEB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96025ABA2079B9FF00F6EFEB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -115,10 +107,6 @@
 		969856231FCE4ACF00A1D84C /* OneAppiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneAppiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		969856271FCE4ACF00A1D84C /* OneAppiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneAppiOSUITests.swift; sourceTree = "<group>"; };
 		969856291FCE4ACF00A1D84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5E9E235F89986AA27ECC00D /* Pods_OneAppiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA280FED28A368D57098D9CE /* Pods-OneAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.release.xcconfig"; sourceTree = "<group>"; };
-		E21241FC07E37BC532137608 /* Pods_OneAppiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED66E4326E38D1463410FEAC /* Pods-OneAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14543C0E9B79630FCABEDF65 /* Pods_OneAppiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72B2584F4554A1B48FC91CBD /* Pods_OneAppiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,26 +128,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75B162FE657D3431DAD27F8E /* Pods_OneAppiOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83F47D9114DF15107FCAA8E8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ED66E4326E38D1463410FEAC /* Pods-OneAppiOS.debug.xcconfig */,
-				CA280FED28A368D57098D9CE /* Pods-OneAppiOS.release.xcconfig */,
-				7C989D35A7A2A39ED3445B83 /* Pods-OneAppiOSTests.debug.xcconfig */,
-				6C55C53064BE374EF84DCB8E /* Pods-OneAppiOSTests.release.xcconfig */,
-				2AF66CC2D71F690238CCBAB0 /* Pods-OneAppiOSUITests.debug.xcconfig */,
-				690350A800901775EB9713B9 /* Pods-OneAppiOSUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		96025ABE2079BA0900F6EFEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +181,6 @@
 				9698561B1FCE4ACF00A1D84C /* OneAppiOSTests */,
 				969856261FCE4ACF00A1D84C /* OneAppiOSUITests */,
 				969856051FCE4ACF00A1D84C /* Products */,
-				83F47D9114DF15107FCAA8E8 /* Pods */,
-				F6C0FE1CAE392AD4F64E7AD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,16 +311,6 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
-		F6C0FE1CAE392AD4F64E7AD7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6049C6CD865D81AF1B3A5932 /* Pods_OneAppiOS.framework */,
-				C5E9E235F89986AA27ECC00D /* Pods_OneAppiOSTests.framework */,
-				E21241FC07E37BC532137608 /* Pods_OneAppiOSUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,11 +318,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9698562C1FCE4ACF00A1D84C /* Build configuration list for PBXNativeTarget "OneAppiOS" */;
 			buildPhases = (
-				A99DCACE3EA5BC9586105B1A /* [CP] Check Pods Manifest.lock */,
 				969856001FCE4ACF00A1D84C /* Sources */,
 				969856011FCE4ACF00A1D84C /* Frameworks */,
 				969856021FCE4ACF00A1D84C /* Resources */,
-				3319671C272E8A97DD01A06B /* [CP] Embed Pods Frameworks */,
 				96B9BB222162FDD3005A45B7 /* ShellScript */,
 			);
 			buildRules = (
@@ -378,7 +336,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9698562F1FCE4ACF00A1D84C /* Build configuration list for PBXNativeTarget "OneAppiOSTests" */;
 			buildPhases = (
-				7587DA693979B0F86B4122AF /* [CP] Check Pods Manifest.lock */,
 				969856141FCE4ACF00A1D84C /* Sources */,
 				969856151FCE4ACF00A1D84C /* Frameworks */,
 				969856161FCE4ACF00A1D84C /* Resources */,
@@ -397,7 +354,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 969856321FCE4ACF00A1D84C /* Build configuration list for PBXNativeTarget "OneAppiOSUITests" */;
 			buildPhases = (
-				6278160C2522CD0FC5F297A6 /* [CP] Check Pods Manifest.lock */,
 				9698561F1FCE4ACF00A1D84C /* Sources */,
 				969856201FCE4ACF00A1D84C /* Frameworks */,
 				969856211FCE4ACF00A1D84C /* Resources */,
@@ -496,124 +452,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3319671C272E8A97DD01A06B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
-				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
-				"${BUILT_PRODUCTS_DIR}/RippleEffectView/RippleEffectView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RippleEffectView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6278160C2522CD0FC5F297A6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OneAppiOSUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7587DA693979B0F86B4122AF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OneAppiOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		96B9BB222162FDD3005A45B7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		A99DCACE3EA5BC9586105B1A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OneAppiOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -819,7 +669,6 @@
 		};
 		9698562D1FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED66E4326E38D1463410FEAC /* Pods-OneAppiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -832,6 +681,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = QasimAbbas.OneAppiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -839,7 +689,6 @@
 		};
 		9698562E1FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA280FED28A368D57098D9CE /* Pods-OneAppiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -859,7 +708,6 @@
 		};
 		969856301FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C989D35A7A2A39ED3445B83 /* Pods-OneAppiOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -877,7 +725,6 @@
 		};
 		969856311FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C55C53064BE374EF84DCB8E /* Pods-OneAppiOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -895,7 +742,6 @@
 		};
 		969856331FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AF66CC2D71F690238CCBAB0 /* Pods-OneAppiOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -912,7 +758,6 @@
 		};
 		969856341FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 690350A800901775EB9713B9 /* Pods-OneAppiOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

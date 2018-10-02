@@ -29,6 +29,7 @@ PODS:
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
   - Floaty (3.0.1)
+  - FoldingTabBar (1.2.1)
   - GoogleAppMeasurement (5.2.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -549,6 +550,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Floaty (~> 3.0.0)
+  - FoldingTabBar
   - MaterialComponents
   - QRCode (~> 2.0)
   - QRCodeReader.swift (~> 8.1.1)
@@ -565,6 +567,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - Floaty
+    - FoldingTabBar
     - GoogleAppMeasurement
     - GoogleUtilities
     - leveldb-library
@@ -589,6 +592,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
   FirebaseInstanceID: 78ba376fcd5b94c001f9999b2cbd3d1f1e56e78d
   Floaty: bb7a353deee9ddcc14c584ca9c538efdc19669f2
+  FoldingTabBar: b1817b36d15eedefd8e42f66abbd36fe4feabcf2
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -604,6 +608,6 @@ SPEC CHECKSUMS:
   RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 66185e2653a37c596b2ca00d24670009b8b766fb
+PODFILE CHECKSUM: e832119cccbe58b60039d52cf5e54d73a6f6d467
 
 COCOAPODS: 1.5.0

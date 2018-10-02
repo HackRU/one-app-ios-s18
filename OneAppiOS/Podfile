@@ -17,6 +17,7 @@ target 'OneAppiOS' do
   pod 'QRCode', '~> 2.0'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'FoldingTabBar'
   
   # Pods for OneAppiOS
 

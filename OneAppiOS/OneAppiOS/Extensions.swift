@@ -14,7 +14,7 @@ import UIKit
 extension String {
 	public var sentenceCapitalizedString: String {
 		var formatted = ""
-		enumerateSubstrings(in: startIndex..<endIndex, options: NSString.EnumerationOptions.bySentences, { sentence, sentenceRange, enclosingRange, stop in
+		enumerateSubstrings(in: startIndex..<endIndex, options: NSString.EnumerationOptions.bySentences, { sentence, _, _, _ in
 			guard let sentence = sentence
 			else {
 				return

@@ -151,7 +151,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
                     let alert = UIAlertController(title: "Error", message: swiftJson.description, preferredStyle: .alert)
 
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {item in
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
                         self.scanInPreviewAction((Any).self)
 
                     }))
@@ -184,7 +184,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
                     } else {
                         let alert = UIAlertController(title: "Error Printing \(printEmail)", message: swiftJson.description, preferredStyle: .alert)
 
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {item in
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
                             //self.scanInPreviewAction((Any).self)
                             self.scanInPreviewAction((Any).self)
 
@@ -196,7 +196,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             case .failure:
                     let alert = UIAlertController(title: "Error Printing \(printEmail)", message: " Error Connecting to Label Printer", preferredStyle: .alert)
 
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {item in
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
                         //self.scanInPreviewAction((Any).self)
                         self.scanInPreviewAction((Any).self)
 
@@ -252,13 +252,13 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
                                     let alert = UIAlertController(title: "Already Checked In", message: "AHOY MATE \(email) ye be checked in", preferredStyle: .alert)
 
-                                    alert.addAction(UIAlertAction(title: "Print QR Again", style: .default, handler: {item in
+                                    alert.addAction(UIAlertAction(title: "Print QR Again", style: .default, handler: {_ in
 
                                         self.printQR(printEmail: email)
                                         print("print")
 
                                     }))
-                                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {item in
+                                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
 
                                         self.scanInPreviewAction((Any).self)
                                     }))
@@ -274,7 +274,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
                             } else {
                                 let alert = UIAlertController(title: "Waitlist checkin has not opened up yet! \(email)", message: "Only people who are marked as coming are being scanned at the moment,Accepted and Coming is Being Checked In ", preferredStyle: .alert)
 
-                                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {item in
+                                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
 
                                     self.scanInPreviewAction((Any).self)
                                 }))
@@ -296,43 +296,43 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     @IBAction func changeBtnAction(_ sender: Any) {
         let alert = UIAlertController(title: "Change Scanner", message: "Select what you are scanning for", preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Check-In", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Check-In", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Check-In"
             self.scanInPreviewAction((Any).self)
             self.state = 0
         }))
 
-        alert.addAction(UIAlertAction(title: "Lunch 1", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Lunch 1", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Lunch 1"
             self.scanInPreviewAction((Any).self)
             self.state = 1
         }))
 
-        alert.addAction(UIAlertAction(title: "Dinner", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Dinner", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Dinner"
             self.scanInPreviewAction((Any).self)
             self.state = 2
         }))
 
-        alert.addAction(UIAlertAction(title: "Midnight Surprise", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Midnight Surprise", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Midnight Surprise"
             self.scanInPreviewAction((Any).self)
             self.state = 3
         }))
 
-        alert.addAction(UIAlertAction(title: "T-Shirt", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "T-Shirt", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: T-Shirt"
             self.scanInPreviewAction((Any).self)
             self.state = 4
         }))
 
-        alert.addAction(UIAlertAction(title: "Breakfast", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Breakfast", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: Breakfast"
             self.scanInPreviewAction((Any).self)
             self.state = 5
         }))
 
-        alert.addAction(UIAlertAction(title: "Lunch 2", style: .default, handler: {item in
+        alert.addAction(UIAlertAction(title: "Lunch 2", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: Lunch 2"
              self.scanInPreviewAction((Any).self)
             self.state = 6
