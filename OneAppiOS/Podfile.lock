@@ -28,7 +28,7 @@ PODS:
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
-  - Floaty (3.0.1)
+  - Floaty (4.1.0)
   - FoldingTabBar (1.2.1)
   - GoogleAppMeasurement (5.2.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
@@ -545,17 +545,17 @@ PODS:
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
-  - Alamofire-Synchronous (~> 4.0)
+  - Alamofire
+  - Alamofire-Synchronous
   - Firebase/Core
   - Firebase/Database
-  - Floaty (~> 3.0.0)
+  - Floaty
   - FoldingTabBar
   - MaterialComponents
-  - QRCode (~> 2.0)
-  - QRCodeReader.swift (~> 8.1.1)
+  - QRCode
+  - QRCodeReader.swift
   - RippleEffectView
-  - SwiftyJSON (~> 4.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -591,7 +591,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 2a84b6b325792a4319ef71ee18819dcba08d2fd7
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
   FirebaseInstanceID: 78ba376fcd5b94c001f9999b2cbd3d1f1e56e78d
-  Floaty: bb7a353deee9ddcc14c584ca9c538efdc19669f2
+  Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FoldingTabBar: b1817b36d15eedefd8e42f66abbd36fe4feabcf2
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
@@ -608,6 +608,6 @@ SPEC CHECKSUMS:
   RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: e832119cccbe58b60039d52cf5e54d73a6f6d467
+PODFILE CHECKSUM: 7e3bc90668a04d97e1efd017bd1fa6eb7afbbdae
 
 COCOAPODS: 1.5.0

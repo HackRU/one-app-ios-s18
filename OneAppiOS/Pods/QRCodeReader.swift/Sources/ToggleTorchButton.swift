@@ -70,10 +70,10 @@ public final class ToggleTorchButton: UIButton {
     paintColor.setFill()
 
     for i in 0 ..< 8 {
-      let angle = ((2 * CGFloat(Double.pi)) / 8) * CGFloat(i)
+      let angle = ((2 * CGFloat(Double.pi)) / 8) * CGFloat(i);
 
-      let startPoint = CGPoint(x: centerX + cos(angle) * lineOriginFromCenter, y: centerY + sin(angle) * lineOriginFromCenter)
-      let endPoint   = CGPoint(x: centerX + cos(angle) * (lineOriginFromCenter + lineLength), y: centerY + sin(angle) * (lineOriginFromCenter + lineLength))
+      let startPoint = CGPoint(x: centerX + cos(angle) * lineOriginFromCenter, y: centerY + sin(angle) * lineOriginFromCenter);
+      let endPoint   = CGPoint(x: centerX + cos(angle) * (lineOriginFromCenter + lineLength), y: centerY + sin(angle) * (lineOriginFromCenter + lineLength));
 
       let beam = linePathWithStartPoint(startPoint, endPoint: endPoint, thickness: strokeLineWidth)
       beam.stroke()
@@ -119,7 +119,7 @@ public final class ToggleTorchButton: UIButton {
 
   public override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
     super.touchesCancelled(touches!, with: event)
-
+    
     setNeedsDisplay()
   }
 }

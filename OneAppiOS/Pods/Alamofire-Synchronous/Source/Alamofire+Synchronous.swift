@@ -10,29 +10,30 @@ import Foundation
 import Alamofire
 
 extension DataRequest {
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
      - returns: The response.
      */
     public func response() -> DefaultDataResponse {
-
+        
         let semaphore = DispatchSemaphore(value: 0)
         var result: DefaultDataResponse!
-
+        
         self.response(queue: DispatchQueue.global(qos: .default)) { response in
-
+            
             result = response
             semaphore.signal()
-
+            
         }
-
+        
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
+        
         return result
     }
-
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -41,22 +42,23 @@ extension DataRequest {
      - returns: The response.
      */
     public func response<T: DataResponseSerializerProtocol>(responseSerializer: T) -> DataResponse<T.SerializedObject> {
-
+        
         let semaphore = DispatchSemaphore(value: 0)
         var result: DataResponse<T.SerializedObject>!
-
+        
         self.response(queue: DispatchQueue.global(qos: .default), responseSerializer: responseSerializer) { response in
-
+            
             result = response
             semaphore.signal()
-
+            
         }
-
+        
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
+        
         return result
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -65,7 +67,8 @@ extension DataRequest {
     public func responseData() -> DataResponse<Data> {
         return response(responseSerializer: DataRequest.dataResponseSerializer())
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -76,7 +79,8 @@ extension DataRequest {
     public func responseJSON(options: JSONSerialization.ReadingOptions = .allowFragments) -> DataResponse<Any> {
         return response(responseSerializer: DataRequest.jsonResponseSerializer(options: options))
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -89,7 +93,8 @@ extension DataRequest {
     public func responseString(encoding: String.Encoding? = nil) -> DataResponse<String> {
         return response(responseSerializer: DataRequest.stringResponseSerializer(encoding: encoding))
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -102,6 +107,7 @@ extension DataRequest {
     }
 }
 
+
 extension DownloadRequest {
     /**
      Wait for the request to finish then return the response value.
@@ -109,22 +115,23 @@ extension DownloadRequest {
      - returns: The response.
      */
     public func response() -> DefaultDownloadResponse {
-
+        
         let semaphore = DispatchSemaphore(value: 0)
         var result: DefaultDownloadResponse!
-
+        
         self.response(queue: DispatchQueue.global(qos: .default)) { response in
-
+            
             result = response
             semaphore.signal()
-
+            
         }
-
+        
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
+        
         return result
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -133,22 +140,23 @@ extension DownloadRequest {
      - returns: The response.
      */
     public func response<T: DownloadResponseSerializerProtocol>(responseSerializer: T) -> DownloadResponse<T.SerializedObject> {
-
+        
         let semaphore = DispatchSemaphore(value: 0)
         var result: DownloadResponse<T.SerializedObject>!
-
+        
         self.response(queue: DispatchQueue.global(qos: .background), responseSerializer: responseSerializer) { response in
-
+            
             result = response
             semaphore.signal()
-
+            
         }
-
+        
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-
+        
         return result
     }
-
+    
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -157,7 +165,7 @@ extension DownloadRequest {
     public func responseData() -> DownloadResponse<Data> {
         return response(responseSerializer: DownloadRequest.dataResponseSerializer())
     }
-
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -168,7 +176,7 @@ extension DownloadRequest {
     public func responseJSON(options: JSONSerialization.ReadingOptions = .allowFragments) -> DownloadResponse<Any> {
         return response(responseSerializer: DownloadRequest.jsonResponseSerializer(options: options))
     }
-
+    
     /**
      Wait for the request to finish then return the response value.
      
@@ -181,7 +189,7 @@ extension DownloadRequest {
     public func responseString(encoding: String.Encoding? = nil) -> DownloadResponse<String> {
         return response(responseSerializer: DownloadRequest.stringResponseSerializer(encoding: encoding))
     }
-
+    
     /**
      Wait for the request to finish then return the response value.
      

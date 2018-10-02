@@ -182,7 +182,7 @@ public class QRCodeReaderViewController: UIViewController {
       delegate?.reader(self, didSwitchCamera: newDevice)
     }
   }
-
+  
   @objc func toggleTorchAction(_ button: ToggleTorchButton) {
     codeReader.toggleTorch()
   }

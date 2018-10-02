@@ -84,6 +84,7 @@ public final class QRCodeReaderViewControllerBuilder {
   */
   public var handleOrientationChange = true
 
+
   // MARK: - Initializing a Flap View
 
   /**
