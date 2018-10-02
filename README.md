@@ -1,5 +1,5 @@
 # One App iOS
-yeet
+
 **One App Android's Description is still being made.  This will also act as the description for that while it is being prepared.**
 
 ## Description
