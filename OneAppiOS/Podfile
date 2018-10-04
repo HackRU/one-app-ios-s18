@@ -18,6 +18,7 @@ target 'OneAppiOS' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'FoldingTabBar'
+  pod 'NVActivityIndicatorView'
   
   # Pods for OneAppiOS
 

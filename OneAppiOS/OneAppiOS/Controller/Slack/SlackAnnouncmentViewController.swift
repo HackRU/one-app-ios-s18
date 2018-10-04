@@ -9,9 +9,11 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class SlackAnnouncmentViewController: UITableViewController {
 
+    var indicate: NVActivityIndicatorView?
     struct Announce {
         let user: String
         let text: String
@@ -23,9 +25,17 @@ class SlackAnnouncmentViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         let centerFrame = CGRect(x: UIScreen.main.bounds.size.width*0.25, y: 0, width: self.view.bounds.width/2, height: self.view.bounds.height * 0.75)
+        indicate = NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2)
+
+        self.view.addSubview(indicate ?? NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2))
+
+        indicate?.startAnimating()
+        self.tableView.separatorColor = UIColor.clear
+
         announceArray = NSMutableArray()
 
-        let url: String = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack"
+        let url: String = baseURL + "/dayof-slack"
         Alamofire.request(url).responseJSON { response in
             // handle JSON
             let swiftJson = JSON(response.result.value!)
@@ -44,7 +54,11 @@ class SlackAnnouncmentViewController: UITableViewController {
                         if itemText != "" {
                             let itemAnnounce = Announce(user: item["user"].string!, text: item["text"].string!, timestamp: item["ts"].string!)
                             self.announceArray?.add(itemAnnounce)
+
                             self.tableView.reloadData()
+                            self.tableView.separatorColor = HackRUColor.dark
+                            self.indicate?.stopAnimating()
+                            self.indicate?.isHidden = true
                         }
 
                     }

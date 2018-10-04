@@ -41,13 +41,13 @@ class MyMLH: UIViewController, WKNavigationDelegate {
 
             print(cleanUp!)
 
-            if let body = JSON(parseJSON: cleanUp!).dictionary!["auth"] {
+            if let body = JSON(parseJSON: cleanUp!).dictionary!["token"] {
 
                 let user = UserDefaults.standard
 
                 if let auth = body["token"].string {
                     print(auth)
-                    user.set(auth, forKey: "auth")
+                    user.set(auth, forKey: "token")
                 }
 
                 if let email = body["email"].string {

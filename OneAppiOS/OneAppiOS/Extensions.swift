@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 // This file is to make Foundation more Swifty
 
@@ -45,30 +46,19 @@ let remoteNotificationPreferencesKey = "remote_notification_preferences"
 // MARK: - Color constants
 struct HackRUColor {
 
+    //Main Color Hex: #7852C9
     static var main: UIColor {
         return UIColor(red: 120.0 / 255.0, green: 82.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
     }
 
+    //Secondary Color Hex: #FFF242
     static var secondary: UIColor {
-        return UIColor(red: 57.0 / 255.0, green: 39.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0)
+        return UIColor(red: 255.0 / 255.0, green: 242.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
     }
 
+    //Dark Color Hex: #39275E
     static var dark: UIColor {
-        return UIColor(red: 31.0 / 255.0, green: 74.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0)
-    }
-
-	static var blue: UIColor {
-
-		return UIColor(red: 31.0 / 255.0, green: 74.0 / 255.0, blue: 181.0 / 255.0, alpha: 1.0)
-	}
-    static var lightBlue: UIColor {
-        return UIColor(red: 35.0 / 255.0, green: 169.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
-    }
-
-    static var cloudBlue: UIColor {
-
-        return UIColor(red: 232.0 / 255.0, green: 246.0 / 255.0, blue: 252.0 / 255.0, alpha: 1.0)
-
+         return UIColor(red: 57.0 / 255.0, green: 39.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0)
     }
 
 	static var red: UIColor {

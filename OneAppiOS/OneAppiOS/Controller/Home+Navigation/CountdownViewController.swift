@@ -10,6 +10,7 @@ import UIKit
 import Floaty
 import Firebase
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class CountdownViewController: UIViewController {
 
@@ -35,39 +36,58 @@ class CountdownViewController: UIViewController {
 
         self.navigationController?.navigationItem.title = "HackRU"
 
-        ref = Database.database().reference()
-        ref.observe(.value, with: { snapshot in
-            print(snapshot.value!)
+        let deadline = 1538926200000
+        Configuration.endDateEpoch = deadline/1000
 
-            let swiftJson = JSON(snapshot.value!)
+        // Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+        Configuration.startDateEpoch = Date().timeIntervalSince1970.exponent
+        if Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400 {
+            Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+        }
 
-            super.viewDidLoad()
+        self.configuration = Configuration()
 
-            if let deadline = swiftJson["deadline"].int {
-                //Configuration.endDateEpoch = deadline/1000
-                print(deadline)
-                Configuration.endDateEpoch = deadline/1000
+        self.tabBarItem.badgeColor = .white
 
-               // Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
-                Configuration.startDateEpoch = Date().timeIntervalSince1970.exponent
-                if Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400 {
-                    Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
-                }
+        // Uncomment this for screenshots
+        //progressIndicator.progressColor = UIColor.clear
+        //progressIndicator.progressColor = MHacksColor.blue
 
-                self.configuration = Configuration()
+        self.countdownLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 120.0, weight: UIFont.Weight.thin)
 
-                self.tabBarItem.badgeColor = .white
-
-                // Uncomment this for screenshots
-                //progressIndicator.progressColor = UIColor.clear
-                //progressIndicator.progressColor = MHacksColor.blue
-
-                self.countdownLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 120.0, weight: UIFont.Weight.thin)
-
-                //APIManager.shared.updateConfiguration()
-            }
-
-        })
+//        ref = Database.database().reference()
+//        ref.observe(.value, with: { snapshot in
+//            print(snapshot.value!)
+//
+//            let swiftJson = JSON(snapshot.value!)
+//
+//            super.viewDidLoad()
+//
+//            if let deadline = swiftJson["deadline"].int {
+//                //Configuration.endDateEpoch = deadline/1000
+//                print(deadline)
+//                Configuration.endDateEpoch = deadline/1000
+//
+//               // Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+//                Configuration.startDateEpoch = Date().timeIntervalSince1970.exponent
+//                if Configuration.endDateEpoch! - Configuration.startDateEpoch! > 86400 {
+//                    Configuration.startDateEpoch = Configuration.endDateEpoch!-86400
+//                }
+//
+//                self.configuration = Configuration()
+//
+//                self.tabBarItem.badgeColor = .white
+//
+//                // Uncomment this for screenshots
+//                //progressIndicator.progressColor = UIColor.clear
+//                //progressIndicator.progressColor = MHacksColor.blue
+//
+//                self.countdownLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 120.0, weight: UIFont.Weight.thin)
+//
+//                //APIManager.shared.updateConfiguration()
+//            }
+//
+//         })
 
 	}
 
@@ -82,6 +102,29 @@ class CountdownViewController: UIViewController {
 
 		beginUpdatingCountdownViews()
 	}
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        var indicate: NVActivityIndicatorView?
+
+        let centerFrame = CGRect(x: UIScreen.main.bounds.size.width*0.25, y: 0, width: self.view.bounds.width/2, height: self.view.bounds.height * 0.75)
+        indicate = NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2)
+
+        self.view.addSubview(indicate ?? NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2))
+
+        indicate?.startAnimating()
+
+        sharedMisc.getMiscData {
+
+            DispatchQueue.main.async {
+                indicate?.isHidden = true
+                indicate?.stopAnimating()
+            }
+
+        }
+
+    }
 
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)

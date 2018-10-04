@@ -9,8 +9,11 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class EventsTableViewController: UITableViewController {
+
+    var indicate: NVActivityIndicatorView?
 
     struct Event {
         let start: String
@@ -24,6 +27,15 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         events = NSMutableArray()
+
+        let centerFrame = CGRect(x: UIScreen.main.bounds.size.width*0.25, y: 0, width: self.view.bounds.width/2, height: self.view.bounds.height * 0.75)
+        indicate = NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2)
+
+        self.view.addSubview(indicate ?? NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2))
+
+        indicate?.startAnimating()
+
+        self.tableView.separatorColor = UIColor.clear
 
         let url: String = baseURL + "/dayof-events"
         Alamofire.request(url).responseJSON { response in
@@ -56,6 +68,9 @@ class EventsTableViewController: UITableViewController {
 
                             self.events?.add(Event.init(start: dateStringStart, end: dateStringEnd, summary: item["summary"].string!, location: item["location"].string ?? ""))
 
+                            self.tableView.separatorColor = HackRUColor.dark
+                            self.indicate?.stopAnimating()
+                            self.indicate?.isHidden = true
                             self.tableView.reloadData()
                         }
                     }

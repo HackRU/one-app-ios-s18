@@ -9,12 +9,17 @@
 import Foundation
 import Alamofire
 import Alamofire_Synchronous
+import NVActivityIndicatorView
 
+//API URLS
 //TEST API
-var baseURL = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/"
+//var baseURL = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test"
 
 //PRODUCTION API
-//var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest/"
+var baseURL = "https://m7cwj1fy7c.execute-api.us-west-2.amazonaws.com/mlhtest"
+
+//MISC URL
+var miscURL = "http://hackru-misc.s3-website-us-west-2.amazonaws.com"
 
 public class Authenticator {
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
@@ -178,5 +183,70 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return coloredImage!
+    }
+}
+
+let sharedMisc = Sync(miscURL: miscURL)
+
+public class Sync {
+
+    var miscURL: String?
+    var locations: [String]?
+
+    init(miscURL: String) {
+        self.miscURL = miscURL
+    }
+
+    func getMiscData(completionHandler: @escaping () -> Void) {
+
+        let url = URL(string: miscURL ?? "http://hackru-misc.s3-website-us-west-2.amazonaws.com")
+
+        if url != nil {
+
+            let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) -> Void in
+                guard let data = data else {
+                    return
+                }
+
+                if error == nil {
+
+                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue)! as String
+                    let arrSeperate = urlContent.components(separatedBy: "\n")
+                    print(arrSeperate.count)
+                    self.locations = arrSeperate
+                    completionHandler()
+                }
+            })
+            task.resume()
+        }
+
+    }
+
+    func getMiscIn(input: String, completionHandler: @escaping () -> Void) {
+
+        let buildURL = miscURL! + input
+        let url = URL(string: buildURL)
+
+        if url != nil {
+
+            let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) -> Void in
+                guard let data = data else {
+                    return
+                }
+
+                if error == nil {
+
+                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue)! as String
+                    let arrSeperate = urlContent.components(separatedBy: "\n")
+                    print(arrSeperate.count)
+
+                }
+            })
+            task.resume()
+        }
+
+    }
+
+    func getDataFromMiscDirect() {
     }
 }

@@ -11,6 +11,7 @@ import Floaty
 import QRCode
 import Alamofire
 import SwiftyJSON
+import FoldingTabBar
 
 class TabsViewController: UITabBarController {
     var organizer: Bool = Bool()
@@ -22,10 +23,14 @@ class TabsViewController: UITabBarController {
         let size = CGFloat(56)
 
         floaty = Floaty(frame: CGRect(x: (UIScreen.main.bounds.size.width) - size - 14, y: UIScreen.main.bounds.size.height - (size * 2) - self.tabBar.bounds.height, width: size, height: size))
-        floaty.openAnimationType = .pop
+        floaty.openAnimationType = .slideUp
         floaty.buttonColor = HackRUColor.main
+        floaty.buttonImage = UIImage(named: "baseline_menu_white")
+//        floaty.buttonImage?.scale = 0.5
+//        floaty.buttonImage?.size = CGSize(width: 56, height: 56)
         floaty.plusColor = .white
         floaty.itemButtonColor = HackRUColor.main
+        //organizer = true
 
         if organizer {
 
@@ -95,6 +100,9 @@ class TabsViewController: UITabBarController {
         self.view.addSubview(floaty)
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,24 +117,20 @@ class TabsViewController: UITabBarController {
         if user.string(forKey: "auth") == nil {
 
             guard let viewController = storyboard?.instantiateViewController(withIdentifier: "Login") as? ViewController else {
+                print("Didn't assign View Controller")
                 return
             }
-            self.present(viewController, animated: true, completion: nil)
+
+            present(viewController, animated: true, completion: nil)
+
         } else if (user.string(forKey: "organizer") == nil) || (!organizer) {
 
-            jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "auth")
-            jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "email")
-            jsonObject.setValue(["email": UserDefaults.standard.object(forKey: "email") as? String], forKey: "query")
-
-            do {
-                jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
-                let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-                print("json string = \(jsonString)")
-            } catch _ {
-                print ("JSON Failure")
-            }
+            createPOSTBody()
 
             var request = URLRequest(url: URL(string: baseURL + "/read")!)
+
+            //print(request.url?.absoluteString)
+
             request.httpMethod = HTTPMethod.post.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
@@ -135,7 +139,8 @@ class TabsViewController: UITabBarController {
 
             Alamofire.request(request).responseJSON { (response) in
 
-                //print(swiftJsonVar)
+                print("RESPONSE")
+                //print(response.result.value)
 
                 if let body = JSON(response.result.value!)["body"].array {
                     for item in body {
@@ -170,6 +175,37 @@ class TabsViewController: UITabBarController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func createPOSTBody() {
+        guard let emailString = UserDefaults.standard.object(forKey: "email") as? String else {
+            return
+        }
+
+        let queryObject: NSMutableDictionary = NSMutableDictionary()
+        queryObject.setValue(emailString, forKey: "email")
+        //            var queryData: Data = Data()
+        //            do {
+        //                queryData = try JSONSerialization.data(withJSONObject: queryObject, options: JSONSerialization.WritingOptions()) as Data
+        //                let jsonString = NSString(data: queryData, encoding: String.Encoding.utf8.rawValue)!
+        //                print("json string = \(jsonString)")
+        //
+        //            } catch _ {
+        //                print ("JSON Failure")
+        //            }
+
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "token")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "email")
+        jsonObject.setValue(queryObject, forKey: "query")
+
+        do {
+            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
+            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)!
+            print("json string = \(jsonString)")
+
+        } catch _ {
+            print ("JSON Failure")
+        }
     }
 
     /*

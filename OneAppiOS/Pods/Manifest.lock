@@ -539,6 +539,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
   - QRCode (2.0)
   - QRCodeReader.swift (8.1.1)
   - RippleEffectView (1.0.2)
@@ -552,6 +555,7 @@ DEPENDENCIES:
   - Floaty
   - FoldingTabBar
   - MaterialComponents
+  - NVActivityIndicatorView
   - QRCode
   - QRCodeReader.swift
   - RippleEffectView
@@ -578,6 +582,7 @@ SPEC REPOS:
     - MotionInterchange
     - MotionTransitioning
     - nanopb
+    - NVActivityIndicatorView
     - QRCode
     - QRCodeReader.swift
     - RippleEffectView
@@ -603,11 +608,12 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
   RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 7e3bc90668a04d97e1efd017bd1fa6eb7afbbdae
+PODFILE CHECKSUM: c16450930479ad53ecadc9c48aa25263ff94c250
 
 COCOAPODS: 1.5.0

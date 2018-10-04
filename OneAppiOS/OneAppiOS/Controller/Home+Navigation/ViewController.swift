@@ -10,6 +10,7 @@ import UIKit
 import MaterialComponents
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 

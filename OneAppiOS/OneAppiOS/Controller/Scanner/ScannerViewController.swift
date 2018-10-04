@@ -110,7 +110,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         let jsonObject: NSMutableDictionary = NSMutableDictionary()
         var jsonData: Data = Data()
 
-        ////print("TOKEN \(user.value(forKey: "auth") ?? "NONE")")
+//        print("TOKEN \(user.value(forKey: "token") ?? "NONE")")
 
         jsonObject.setValue(userString, forKey: "user_email")
         jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "auth_email")
@@ -122,8 +122,8 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
         do {
             jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
-            _ = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            //print("json string = \(jsonString)")
+            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+            print("json string = \(jsonString)")
         } catch _ {
             //print ("JSON Failure")
         }
@@ -211,7 +211,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     func checkIn(email: String) {
         let jsonObject = NSMutableDictionary()
         var jsonData: Data = Data()
-        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "auth")
+        jsonObject.setValue(UserDefaults.standard.object(forKey: "auth") as? String, forKey: "token")
         jsonObject.setValue(UserDefaults.standard.object(forKey: "email") as? String, forKey: "email")
         jsonObject.setValue(["email": email], forKey: "query")
 
@@ -359,9 +359,9 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             case 0:
                 self.checkIn(email: result.value)
             case 1:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.lunch_1": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["day_of.lunch-1": 1 as AnyObject]])
             case 2:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.day_of.dinner": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.day_of.dinner": 1 as AnyObject]])
             case 3:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.midnight_suprise": 1 as AnyObject]])
             case 4:
