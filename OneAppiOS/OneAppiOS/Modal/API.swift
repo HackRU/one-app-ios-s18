@@ -222,7 +222,33 @@ public class Sync {
 
     }
 
-    func getMiscIn(input: String, completionHandler: @escaping () -> Void) {
+//    func getMiscIn(input: String, completionHandler: @escaping () -> AnyObject) {
+//
+//        let buildURL = miscURL! + input
+//        let url = URL(string: buildURL)
+//
+//        if url != nil {
+//
+//            let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) -> Void in
+//                guard let data = data else {
+//                    return
+//                }
+//
+//                if error == nil {
+//
+//                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue)! as String
+//                    let arrSeperate = urlContent.components(separatedBy: "\n")
+//                    print(arrSeperate.count)
+//                    //completionHandler(arrSeperate)
+//
+//                }
+//            })
+//            task.resume()
+//        }
+//
+//    }
+
+    func getMiscScan(input: String, completionHandler: @escaping ([String]) -> Void) {
 
         let buildURL = miscURL! + input
         let url = URL(string: buildURL)
@@ -239,7 +265,7 @@ public class Sync {
                     let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue)! as String
                     let arrSeperate = urlContent.components(separatedBy: "\n")
                     print(arrSeperate.count)
-
+                    completionHandler(arrSeperate)
                 }
             })
             task.resume()

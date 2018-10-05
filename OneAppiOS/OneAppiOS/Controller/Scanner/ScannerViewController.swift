@@ -22,6 +22,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     var scanParam: [String: AnyObject]?
     var state: Int?
     var email: String?
+    var locations: [String]?
 
     @IBOutlet weak var btnScanner: MDCRaisedButton!
     @IBOutlet weak var btnScan: UILabel!
@@ -41,7 +42,10 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         changeScanning.backgroundColor = HackRUColor.main
         changeScanning.titleLabel?.textColor = .white
 
-        self.btnScanner.isHidden = true
+        sharedMisc.getMiscScan(input: "events.txt") { locations in
+            self.locations = locations
+            self.btnScanner.isHidden = true
+        }
 
     }
 
@@ -296,12 +300,13 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     @IBAction func changeBtnAction(_ sender: Any) {
         let alert = UIAlertController(title: "Change Scanner", message: "Select what you are scanning for", preferredStyle: .actionSheet)
 
+        /*
         alert.addAction(UIAlertAction(title: "Check-In", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Check-In"
             self.scanInPreviewAction((Any).self)
             self.state = 0
         }))
-
+        */
         alert.addAction(UIAlertAction(title: "Lunch 1", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Lunch 1"
             self.scanInPreviewAction((Any).self)
@@ -320,22 +325,28 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             self.state = 3
         }))
 
+        alert.addAction(UIAlertAction(title: "Midnight Meal", style: .default, handler: {_ in
+            self.btnScan.text = "Scanning For: Midnight Meal"
+            self.scanInPreviewAction((Any).self)
+            self.state = 4
+        }))
+
         alert.addAction(UIAlertAction(title: "T-Shirt", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: T-Shirt"
             self.scanInPreviewAction((Any).self)
-            self.state = 4
+            self.state = 5
         }))
 
         alert.addAction(UIAlertAction(title: "Breakfast", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: Breakfast"
             self.scanInPreviewAction((Any).self)
-            self.state = 5
+            self.state = 6
         }))
 
         alert.addAction(UIAlertAction(title: "Lunch 2", style: .default, handler: {_ in
              self.btnScan.text = "Scanning For: Lunch 2"
              self.scanInPreviewAction((Any).self)
-            self.state = 6
+            self.state = 7
         }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -363,13 +374,15 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             case 2:
                 self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.day_of.dinner": 1 as AnyObject]])
             case 3:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.midnight_suprise": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.midnight-suprise": 1 as AnyObject]])
             case 4:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.t_shirt": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.midnight-meal": 1 as AnyObject]])
             case 5:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.breakfast": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["day_of.t-shirt": 1 as AnyObject]])
             case 6:
-                self.apiCall(userString: result.value, dictUpdate: ["$inc": ["registration_status": "check-in" as AnyObject, "day_of.lunch_2": 1 as AnyObject]])
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.breakfast": 1 as AnyObject]])
+            case 7:
+                self.apiCall(userString: result.value, dictUpdate: ["$inc": [ "day_of.lunch-2": 1 as AnyObject]])
             default:
                 break
             }
