@@ -23,6 +23,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     var state: Int?
     var email: String?
     var locations: [String]?
+    var jsonObject: NSMutableDictionary?
 
     @IBOutlet weak var btnScanner: MDCRaisedButton!
     @IBOutlet weak var btnScan: UILabel!
@@ -170,9 +171,30 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     }
 
     func printQR(printEmail: String) {
-        let url: String = "https://labels.hackru.org/\(printEmail)"
+        let url: String = "http://bffeecf7.ngrok.io/print"
 
-        Alamofire.request(url).responseJSON { response in
+        let jsonObject: NSMutableDictionary = NSMutableDictionary()
+        var jsonData: Data = Data()
+
+        //        print("TOKEN \(user.value(forKey: "token") ?? "NONE")")
+
+        jsonObject.setValue(printEmail, forKey: "email")
+
+        do {
+            jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
+            let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)!
+            print("json string = \(jsonString)")
+
+        } catch _ {
+            print ("JSON Failure")
+        }
+
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        Alamofire.request(request).responseJSON { response in
 
             switch response.result {
             case .success:
@@ -210,7 +232,72 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
             }
 
         }
+
     }
+
+//    func createPOSTBody() {
+//        guard let emailString = UserDefaults.standard.object(forKey: "email") as? String else {
+//            return
+//        }
+//
+//
+//
+//        //            var queryData: Data = Data()
+//        //            do {
+//        //                queryData = try JSONSerialization.data(withJSONObject: queryObject, options: JSONSerialization.WritingOptions()) as Data
+//        //                let jsonString = NSString(data: queryData, encoding: String.Encoding.utf8.rawValue)!
+//        //                print("json string = \(jsonString)")
+//        //
+//        //            } catch _ {
+//        //                print ("JSON Failure")
+//        //            }
+//
+//
+//
+//    }
+
+//    func printQR(printEmail: String) {
+//        let url: String = "https://labels.hackru.org/\(printEmail)"
+//
+//        Alamofire.request(url).responseJSON { response in
+//
+//            switch response.result {
+//            case .success:
+//
+//                //print("SUCCESS SOMETHING SOMETHING")
+//                let swiftJson = JSON(response.result.value!)
+//
+//                    if swiftJson["statusCode"].int == 200 {
+//
+//                        print(printEmail)
+//                        self.apiCall(userString: printEmail, dictUpdate: ["$set": ["registration_status": "check-in" as AnyObject, "day_of.checked_in": true as AnyObject]])
+//
+//                    } else {
+//                        let alert = UIAlertController(title: "Error Printing \(printEmail)", message: swiftJson.description, preferredStyle: .alert)
+//
+//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+//                            //self.scanInPreviewAction((Any).self)
+//                            self.scanInPreviewAction((Any).self)
+//
+//                        }))
+//
+//                        self.present(alert, animated: true, completion: nil)
+//                    }
+//
+//            case .failure:
+//                    let alert = UIAlertController(title: "Error Printing \(printEmail)", message: " Error Connecting to Label Printer", preferredStyle: .alert)
+//
+//                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+//                        //self.scanInPreviewAction((Any).self)
+//                        self.scanInPreviewAction((Any).self)
+//
+//                    }))
+//
+//                    self.present(alert, animated: true, completion: nil)
+//            }
+//
+//        }
+//    }
 
     func checkIn(email: String) {
         let jsonObject = NSMutableDictionary()
@@ -300,13 +387,12 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     @IBAction func changeBtnAction(_ sender: Any) {
         let alert = UIAlertController(title: "Change Scanner", message: "Select what you are scanning for", preferredStyle: .actionSheet)
 
-        /*
         alert.addAction(UIAlertAction(title: "Check-In", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Check-In"
             self.scanInPreviewAction((Any).self)
             self.state = 0
         }))
-        */
+
         alert.addAction(UIAlertAction(title: "Lunch 1", style: .default, handler: {_ in
             self.btnScan.text = "Scanning For: Lunch 1"
             self.scanInPreviewAction((Any).self)
