@@ -195,17 +195,20 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         request.httpBody = jsonData
 
         Alamofire.request(request).responseJSON { response in
+            
+            print(response)
 
             switch response.result {
+
             case .success:
 
                 //print("SUCCESS SOMETHING SOMETHING")
                 let swiftJson = JSON(response.result.value!)
-
-                    if swiftJson["statusCode"].int == 200 {
+                    print(swiftJson)
+                if swiftJson["body"].string == "Success" {
 
                         print(printEmail)
-                        self.apiCall(userString: printEmail, dictUpdate: ["$set": ["registration_status": "check-in" as AnyObject, "day_of.checked_in": true as AnyObject]])
+                        self.apiCall(userString: printEmail, dictUpdate: ["$set": ["registration_status": "checked-in" as AnyObject, "day_of.check-in": true as AnyObject]])
 
                     } else {
                         let alert = UIAlertController(title: "Error Printing \(printEmail)", message: swiftJson.description, preferredStyle: .alert)
