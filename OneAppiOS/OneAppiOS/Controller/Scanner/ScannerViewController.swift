@@ -171,7 +171,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
     }
 
     func printQR(printEmail: String) {
-        let url: String = "http://bffeecf7.ngrok.io/print"
+        let url: String = "http://a13edee7.ngrok.io/print"
 
         let jsonObject: NSMutableDictionary = NSMutableDictionary()
         var jsonData: Data = Data()
