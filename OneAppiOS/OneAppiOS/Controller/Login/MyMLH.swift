@@ -6,6 +6,8 @@
 //  Copyright © 2018 Qasim Abbas. All rights reserved.
 //
 
+//Not in use as of F18
+
 import UIKit
 import WebKit
 import SwiftyJSON

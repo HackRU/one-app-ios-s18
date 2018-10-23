@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		027E8B5E51DC37D6559D09A4 /* Pods_OneAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095B8D1209A9FC87D910170 /* Pods_OneAppiOS.framework */; };
-		68E7F9288F08F976815FC3CC /* Pods_OneAppiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432FFDD14BA65285FE5087E9 /* Pods_OneAppiOSTests.framework */; };
+		219B91E6C0B732B2263E71A5 /* Pods_OneAppiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BB50A3CB7A2AA2E391CCE0 /* Pods_OneAppiOSTests.framework */; };
+		3A51FD4DCA32486AA5BBC0AA /* Pods_OneAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB06E0E2794067071C8489C /* Pods_OneAppiOS.framework */; };
+		4B3270C10C2FC4CDD6D06EAA /* Pods_OneAppiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD317679B46E164BDBDF28F /* Pods_OneAppiOSUITests.framework */; };
 		96025AB32079B92E00F6EFEB /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB22079B92E00F6EFEB /* CountdownViewController.swift */; };
 		96025AB92079B95700F6EFEB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025AB82079B95700F6EFEB /* Extensions.swift */; };
 		96025ABC2079B9FF00F6EFEB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96025ABA2079B9FF00F6EFEB /* CircleView.swift */; };
@@ -46,7 +47,6 @@
 		969856121FCE4ACF00A1D84C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969856101FCE4ACF00A1D84C /* LaunchScreen.storyboard */; };
 		9698561D1FCE4ACF00A1D84C /* OneAppiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698561C1FCE4ACF00A1D84C /* OneAppiOSTests.swift */; };
 		969856281FCE4ACF00A1D84C /* OneAppiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969856271FCE4ACF00A1D84C /* OneAppiOSUITests.swift */; };
-		F8232186E8B955396F9654D7 /* Pods_OneAppiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E611008E78189B62DCC00F88 /* Pods_OneAppiOSUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		314B6E34D1EA01E004CE32E8 /* Pods-OneAppiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		33F3C46021AF8C5A0682D7DB /* Pods-OneAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		391711F28CD5A15A21CD5477 /* Pods-OneAppiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		432FFDD14BA65285FE5087E9 /* Pods_OneAppiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57D1024FDE8CE88D065950FB /* Pods-OneAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.release.xcconfig"; sourceTree = "<group>"; };
-		798AC2F94EF4F87B4AE4A52E /* Pods-OneAppiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		127E8F3B8D6F72FC6DB03ACD /* Pods-OneAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.release.xcconfig"; sourceTree = "<group>"; };
+		1FF4CBF5A3645319E4BBB6AE /* Pods-OneAppiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3AD317679B46E164BDBDF28F /* Pods_OneAppiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		453C2CAF33DD46C0373350A0 /* Pods-OneAppiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		683F6DB866FD20587E4BE670 /* Pods-OneAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOS/Pods-OneAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7BFE463AA454B0F928850A3D /* Pods-OneAppiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSTests/Pods-OneAppiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		96025AB22079B92E00F6EFEB /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		96025AB82079B95700F6EFEB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96025ABA2079B9FF00F6EFEB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -116,9 +116,9 @@
 		969856231FCE4ACF00A1D84C /* OneAppiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneAppiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		969856271FCE4ACF00A1D84C /* OneAppiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneAppiOSUITests.swift; sourceTree = "<group>"; };
 		969856291FCE4ACF00A1D84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B095B8D1209A9FC87D910170 /* Pods_OneAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C834DB07EC1B57FB60D75DDC /* Pods-OneAppiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E611008E78189B62DCC00F88 /* Pods_OneAppiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE52A60A2C1A8BB3FB9FD29F /* Pods-OneAppiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneAppiOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneAppiOSUITests/Pods-OneAppiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E3BB50A3CB7A2AA2E391CCE0 /* Pods_OneAppiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB06E0E2794067071C8489C /* Pods_OneAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027E8B5E51DC37D6559D09A4 /* Pods_OneAppiOS.framework in Frameworks */,
+				3A51FD4DCA32486AA5BBC0AA /* Pods_OneAppiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E7F9288F08F976815FC3CC /* Pods_OneAppiOSTests.framework in Frameworks */,
+				219B91E6C0B732B2263E71A5 /* Pods_OneAppiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8232186E8B955396F9654D7 /* Pods_OneAppiOSUITests.framework in Frameworks */,
+				4B3270C10C2FC4CDD6D06EAA /* Pods_OneAppiOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,12 +152,12 @@
 		1F82F7613A5C99ABE1DA4F56 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33F3C46021AF8C5A0682D7DB /* Pods-OneAppiOS.debug.xcconfig */,
-				57D1024FDE8CE88D065950FB /* Pods-OneAppiOS.release.xcconfig */,
-				314B6E34D1EA01E004CE32E8 /* Pods-OneAppiOSTests.debug.xcconfig */,
-				798AC2F94EF4F87B4AE4A52E /* Pods-OneAppiOSTests.release.xcconfig */,
-				C834DB07EC1B57FB60D75DDC /* Pods-OneAppiOSUITests.debug.xcconfig */,
-				391711F28CD5A15A21CD5477 /* Pods-OneAppiOSUITests.release.xcconfig */,
+				683F6DB866FD20587E4BE670 /* Pods-OneAppiOS.debug.xcconfig */,
+				127E8F3B8D6F72FC6DB03ACD /* Pods-OneAppiOS.release.xcconfig */,
+				1FF4CBF5A3645319E4BBB6AE /* Pods-OneAppiOSTests.debug.xcconfig */,
+				7BFE463AA454B0F928850A3D /* Pods-OneAppiOSTests.release.xcconfig */,
+				453C2CAF33DD46C0373350A0 /* Pods-OneAppiOSUITests.debug.xcconfig */,
+				BE52A60A2C1A8BB3FB9FD29F /* Pods-OneAppiOSUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -344,9 +344,9 @@
 		D2CBBD14B657C289DE1775CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B095B8D1209A9FC87D910170 /* Pods_OneAppiOS.framework */,
-				432FFDD14BA65285FE5087E9 /* Pods_OneAppiOSTests.framework */,
-				E611008E78189B62DCC00F88 /* Pods_OneAppiOSUITests.framework */,
+				FEB06E0E2794067071C8489C /* Pods_OneAppiOS.framework */,
+				E3BB50A3CB7A2AA2E391CCE0 /* Pods_OneAppiOSTests.framework */,
+				3AD317679B46E164BDBDF28F /* Pods_OneAppiOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -835,7 +835,7 @@
 		};
 		9698562D1FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33F3C46021AF8C5A0682D7DB /* Pods-OneAppiOS.debug.xcconfig */;
+			baseConfigurationReference = 683F6DB866FD20587E4BE670 /* Pods-OneAppiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -856,7 +856,7 @@
 		};
 		9698562E1FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57D1024FDE8CE88D065950FB /* Pods-OneAppiOS.release.xcconfig */;
+			baseConfigurationReference = 127E8F3B8D6F72FC6DB03ACD /* Pods-OneAppiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -876,7 +876,7 @@
 		};
 		969856301FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 314B6E34D1EA01E004CE32E8 /* Pods-OneAppiOSTests.debug.xcconfig */;
+			baseConfigurationReference = 1FF4CBF5A3645319E4BBB6AE /* Pods-OneAppiOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -894,7 +894,7 @@
 		};
 		969856311FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 798AC2F94EF4F87B4AE4A52E /* Pods-OneAppiOSTests.release.xcconfig */;
+			baseConfigurationReference = 7BFE463AA454B0F928850A3D /* Pods-OneAppiOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -912,7 +912,7 @@
 		};
 		969856331FCE4ACF00A1D84C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C834DB07EC1B57FB60D75DDC /* Pods-OneAppiOSUITests.debug.xcconfig */;
+			baseConfigurationReference = 453C2CAF33DD46C0373350A0 /* Pods-OneAppiOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -929,7 +929,7 @@
 		};
 		969856341FCE4ACF00A1D84C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 391711F28CD5A15A21CD5477 /* Pods-OneAppiOSUITests.release.xcconfig */;
+			baseConfigurationReference = BE52A60A2C1A8BB3FB9FD29F /* Pods-OneAppiOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
