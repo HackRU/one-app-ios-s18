@@ -48,17 +48,17 @@ struct HackRUColor {
 
     //Main Color Hex: #7852C9
     static var main: UIColor {
-        return UIColor(red: 120.0 / 255.0, green: 82.0 / 255.0, blue: 201.0 / 255.0, alpha: 1.0)
+        return UIColor(hex: "444444")
     }
 
     //Secondary Color Hex: #FFF242
     static var secondary: UIColor {
-        return UIColor(red: 255.0 / 255.0, green: 242.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
+        return UIColor(hex: "26E8BD")
     }
 
     //Dark Color Hex: #39275E
     static var dark: UIColor {
-         return UIColor(red: 57.0 / 255.0, green: 39.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0)
+         return UIColor(hex: "26E8BD")
     }
 
 	static var red: UIColor {
@@ -80,4 +80,25 @@ struct HackRUColor {
 		return UIColor.gray
 		#endif
 	}
+}
+
+extension UIColor {
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.scanLocation = 0
+
+        var rgbValue: UInt64 = 0
+
+        scanner.scanHexInt64(&rgbValue)
+
+        let red = (rgbValue & 0xff0000) >> 16
+        let green = (rgbValue & 0xff00) >> 8
+        let blue = rgbValue & 0xff
+
+        self.init(
+            red: CGFloat(red) / 0xff,
+            green: CGFloat(green) / 0xff,
+            blue: CGFloat(blue) / 0xff, alpha: 1
+        )
+    }
 }

@@ -44,7 +44,6 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         txtEmail.resignFirstResponder()
         txtPass.resignFirstResponder()

@@ -570,5 +570,5 @@
         <segue reference="LzA-3f-0hw"/>
         <segue reference="b60-O3-mbz"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="0.94901960780000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" red="0.49006395530000002" green="0.63665492229999998" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

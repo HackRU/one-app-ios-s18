@@ -195,7 +195,7 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
         request.httpBody = jsonData
 
         Alamofire.request(request).responseJSON { response in
-            
+
             print(response)
 
             switch response.result {
