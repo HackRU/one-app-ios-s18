@@ -165,6 +165,8 @@
 #import "MaterialList.h"
 #import "MDCBaseCell.h"
 #import "MDCSelfSizingStereoCell.h"
+#import "MaterialList+TypographyThemer.h"
+#import "MDCSelfSizingStereoCellTypographyThemer.h"
 #import "MaterialMaskedTransition.h"
 #import "MDCMaskedTransitionController.h"
 #import "MaterialNavigationBar.h"

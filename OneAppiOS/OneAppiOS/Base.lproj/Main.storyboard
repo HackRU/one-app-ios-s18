@@ -561,14 +561,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_announcement_white" width="48" height="48"/>
-        <image name="ic_event_note_white" width="48" height="48"/>
-        <image name="ic_timer_white" width="48" height="48"/>
-        <image name="logo" width="750" height="472.5"/>
+        <image name="ic_announcement_white" width="24" height="24"/>
+        <image name="ic_event_note_white" width="24" height="24"/>
+        <image name="ic_timer_white" width="24" height="24"/>
+        <image name="logo" width="1000" height="630"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LzA-3f-0hw"/>
-        <segue reference="b60-O3-mbz"/>
+        <segue reference="iKx-9H-gFZ"/>
+        <segue reference="8IA-PB-qIE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.94901960780000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

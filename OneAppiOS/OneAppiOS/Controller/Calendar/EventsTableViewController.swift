@@ -29,9 +29,9 @@ class EventsTableViewController: UITableViewController {
         events = NSMutableArray()
 
         let centerFrame = CGRect(x: UIScreen.main.bounds.size.width*0.25, y: 0, width: self.view.bounds.width/2, height: self.view.bounds.height * 0.75)
-        indicate = NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2)
+        indicate = NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.ballScaleRippleMultiple, color: HackRUColor.main, padding: 2)
 
-        self.view.addSubview(indicate ?? NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.orbit, color: HackRUColor.main, padding: 2))
+        self.view.addSubview(indicate ?? NVActivityIndicatorView(frame: centerFrame, type: NVActivityIndicatorType.ballScaleRippleMultiple, color: HackRUColor.main, padding: 2))
 
         indicate?.startAnimating()
 
