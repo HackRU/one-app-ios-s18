@@ -1,0 +1,1706 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 16,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 18,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 31,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 37,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 43,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 47,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/AppDelegate.swift",
+      "line": 51,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 11,
+      "symbol": "EventDetailTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 20,
+      "symbol": "EventDetailTableViewController.mutArr",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 22,
+      "symbol": "EventDetailTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 32,
+      "symbol": "EventDetailTableViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 39,
+      "symbol": "EventDetailTableViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 44,
+      "symbol": "EventDetailTableViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventDetailTableViewController.swift",
+      "line": 49,
+      "symbol": "EventDetailTableViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewCell.swift",
+      "line": 11,
+      "symbol": "EventsTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewCell.swift",
+      "line": 13,
+      "symbol": "EventsTableViewCell.txtInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewCell.swift",
+      "line": 15,
+      "symbol": "EventsTableViewCell.txtTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewCell.swift",
+      "line": 16,
+      "symbol": "EventsTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewCell.swift",
+      "line": 21,
+      "symbol": "EventsTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 14,
+      "symbol": "EventsTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 16,
+      "symbol": "EventsTableViewController.indicate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 18,
+      "symbol": "EventsTableViewController.Event",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 19,
+      "symbol": "EventsTableViewController.Event.start",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 20,
+      "symbol": "EventsTableViewController.Event.end",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 21,
+      "symbol": "EventsTableViewController.Event.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 22,
+      "symbol": "EventsTableViewController.Event.location",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 25,
+      "symbol": "EventsTableViewController.events",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 27,
+      "symbol": "EventsTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 92,
+      "symbol": "EventsTableViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 99,
+      "symbol": "EventsTableViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 104,
+      "symbol": "EventsTableViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 109,
+      "symbol": "EventsTableViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Calendar/EventsTableViewController.swift",
+      "line": 127,
+      "symbol": "EventsTableViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 11,
+      "symbol": "Configuration",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 17,
+      "symbol": "Configuration.endDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 19,
+      "symbol": "Configuration.semaphoreGuard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 20,
+      "symbol": "Configuration.coalescer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 21,
+      "symbol": "Configuration.lastUpdated",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 29,
+      "symbol": "Configuration.startDateEpoch",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 30,
+      "symbol": "Configuration.endDateEpoch",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 32,
+      "symbol": "Configuration.init(startDate:endDate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 37,
+      "symbol": "Configuration.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 42,
+      "symbol": "Configuration.toSerializedRepresentation()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 52,
+      "symbol": "Configuration.updateWith(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 75,
+      "symbol": "Configuration.progress(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 95,
+      "symbol": "Configuration.timeRemainingDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 125,
+      "symbol": "Configuration.startDateDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 139,
+      "symbol": "Configuration.endDateDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Configuration.swift",
+      "line": 156,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/CoalescedCallbacks.swift",
+      "line": 11,
+      "symbol": "CoalescedCallbacks",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/CoalescedCallbacks.swift",
+      "line": 12,
+      "symbol": "CoalescedCallbacks.Callback",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/CoalescedCallbacks.swift",
+      "line": 17,
+      "symbol": "CoalescedCallbacks.registerCallback(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/CoalescedCallbacks.swift",
+      "line": 22,
+      "symbol": "CoalescedCallbacks.fire(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": null,
+      "symbol": "Serializable",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": null,
+      "symbol": "SerializableElement",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": null,
+      "symbol": "SerializableElementWithIdentifier",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 11,
+      "symbol": "SerializedRepresentation",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 12,
+      "symbol": "SerializableElement",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 13,
+      "symbol": "SerializableElement.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 14,
+      "symbol": "SerializableElement.toSerializedRepresentation()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 17,
+      "symbol": "SerializableElement.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 24,
+      "symbol": "SerializableElementWithIdentifier",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 25,
+      "symbol": "SerializableElementWithIdentifier.IDENTITY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 26,
+      "symbol": "SerializableElementWithIdentifier.resultsKey",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 30,
+      "symbol": "SerializableElementWithIdentifier.idKey",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 32,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 35,
+      "symbol": "<(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 39,
+      "symbol": "Serializable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 40,
+      "symbol": "Serializable.updateWith(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 42,
+      "symbol": "Serializable.semaphoreGuard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 43,
+      "symbol": "Serializable.coalescer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 44,
+      "symbol": "Serializable.lastUpdated",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 47,
+      "symbol": "Serializable.lastUpdatedKey",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownTimerConfiguration/Internals/Serializable.swift",
+      "line": 48,
+      "symbol": "Serializable.sinceDictionary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 15,
+      "symbol": "CountdownViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 17,
+      "symbol": "CountdownViewController.progressIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 18,
+      "symbol": "CountdownViewController.countdownLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 19,
+      "symbol": "CountdownViewController.startLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 20,
+      "symbol": "CountdownViewController.endLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 22,
+      "symbol": "CountdownViewController.configuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 23,
+      "symbol": "CountdownViewController.ref",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 26,
+      "symbol": "CountdownViewController.firstAppearanceDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 30,
+      "symbol": "CountdownViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 94,
+      "symbol": "CountdownViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 106,
+      "symbol": "CountdownViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 129,
+      "symbol": "CountdownViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 135,
+      "symbol": "CountdownViewController.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 141,
+      "symbol": "CountdownViewController.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 143,
+      "symbol": "CountdownViewController.beginUpdatingCountdownViews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 158,
+      "symbol": "CountdownViewController.timerFire(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 162,
+      "symbol": "CountdownViewController.stopUpdatingCountdownViews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 169,
+      "symbol": "CountdownViewController.updateCountdownViews(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/CountdownViewController.swift",
+      "line": 176,
+      "symbol": "CountdownViewController.updateCountdownViews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/HomeNavigationViewController.swift",
+      "line": 11,
+      "symbol": "HomeNavigationViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/HomeNavigationViewController.swift",
+      "line": 13,
+      "symbol": "HomeNavigationViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/HomeNavigationViewController.swift",
+      "line": 24,
+      "symbol": "HomeNavigationViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 16,
+      "symbol": "TabsViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 17,
+      "symbol": "TabsViewController.organizer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 18,
+      "symbol": "TabsViewController.jsonObject",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 19,
+      "symbol": "TabsViewController.jsonData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 20,
+      "symbol": "TabsViewController.floaty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 22,
+      "symbol": "TabsViewController.setFloaty()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 103,
+      "symbol": "TabsViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 107,
+      "symbol": "TabsViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 175,
+      "symbol": "TabsViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/TabsViewController.swift",
+      "line": 180,
+      "symbol": "TabsViewController.createPOSTBody()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 16,
+      "symbol": "ViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 18,
+      "symbol": "ViewController.jsonObject",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 19,
+      "symbol": "ViewController.jsonData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 20,
+      "symbol": "ViewController.txtEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 21,
+      "symbol": "ViewController.txtPass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 23,
+      "symbol": "ViewController.btnSubmit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 24,
+      "symbol": "ViewController.indicate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 25,
+      "symbol": "ViewController.btnMLH",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 28,
+      "symbol": "ViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 55,
+      "symbol": "ViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 65,
+      "symbol": "ViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 71,
+      "symbol": "ViewController.btnActionSubmit(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 76,
+      "symbol": "ViewController.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 86,
+      "symbol": "ViewController.setJson()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 102,
+      "symbol": "ViewController.auth()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Home+Navigation/ViewController.swift",
+      "line": 172,
+      "symbol": "ViewController.btnActionMyMLH(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 15,
+      "symbol": "MyMLH",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 17,
+      "symbol": "MyMLH.webView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 19,
+      "symbol": "MyMLH.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 34,
+      "symbol": "MyMLH.webView(_:didCommit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 68,
+      "symbol": "MyMLH.webView(_:didFinish:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 84,
+      "symbol": "MyMLH.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Login/MyMLH.swift",
+      "line": 89,
+      "symbol": "MyMLH.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": null,
+      "symbol": "ImageScrollView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 11,
+      "symbol": "ImageScrollView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 14,
+      "symbol": "ImageScrollView.frame",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 20,
+      "symbol": "ImageScrollView.init(image:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 36,
+      "symbol": "ImageScrollView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 42,
+      "symbol": "ImageScrollView.setZoomScale()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 54,
+      "symbol": "ImageScrollView.viewForZooming(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/ImageScrollView.swift",
+      "line": 58,
+      "symbol": "ImageScrollView.scrollViewDidZoom(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/MapViewController.swift",
+      "line": 11,
+      "symbol": "MapViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/MapViewController.swift",
+      "line": 15,
+      "symbol": "MapViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Map/MapViewController.swift",
+      "line": 34,
+      "symbol": "MapViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 17,
+      "symbol": "ScannerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 18,
+      "symbol": "ScannerViewController.changeScanning",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 19,
+      "symbol": "ScannerViewController.ref",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 20,
+      "symbol": "ScannerViewController.lblStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 21,
+      "symbol": "ScannerViewController.scanning",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 22,
+      "symbol": "ScannerViewController.scanParam",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 23,
+      "symbol": "ScannerViewController.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 24,
+      "symbol": "ScannerViewController.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 25,
+      "symbol": "ScannerViewController.locations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 26,
+      "symbol": "ScannerViewController.jsonObject",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 28,
+      "symbol": "ScannerViewController.btnScanner",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 29,
+      "symbol": "ScannerViewController.btnScan",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 31,
+      "symbol": "ScannerViewController.previewView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 36,
+      "symbol": "ScannerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 53,
+      "symbol": "ScannerViewController.reader",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 54,
+      "symbol": "ScannerViewController.readerVC",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 64,
+      "symbol": "ScannerViewController.reader(_:didScanResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 78,
+      "symbol": "ScannerViewController.readerDidCancel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 114,
+      "symbol": "ScannerViewController.apiCall(userString:dictUpdate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 173,
+      "symbol": "ScannerViewController.printQR(printEmail:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 305,
+      "symbol": "ScannerViewController.checkIn(email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 391,
+      "symbol": "ScannerViewController.changeBtnAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 448,
+      "symbol": "ScannerViewController.scanInPreviewAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Scanner/ScannerViewController.swift",
+      "line": 487,
+      "symbol": "ScannerViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 14,
+      "symbol": "SlackAnnouncmentViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 16,
+      "symbol": "SlackAnnouncmentViewController.indicate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 17,
+      "symbol": "SlackAnnouncmentViewController.Announce",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 18,
+      "symbol": "SlackAnnouncmentViewController.Announce.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 19,
+      "symbol": "SlackAnnouncmentViewController.Announce.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 20,
+      "symbol": "SlackAnnouncmentViewController.Announce.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 23,
+      "symbol": "SlackAnnouncmentViewController.announceArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 25,
+      "symbol": "SlackAnnouncmentViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 79,
+      "symbol": "SlackAnnouncmentViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 86,
+      "symbol": "SlackAnnouncmentViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 91,
+      "symbol": "SlackAnnouncmentViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 96,
+      "symbol": "SlackAnnouncmentViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 129,
+      "symbol": "SlackAnnouncmentViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Controller/Slack/SlackAnnouncmentViewController.swift",
+      "line": 133,
+      "symbol": "SlackAnnouncmentViewController.cleanString(str:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 16,
+      "symbol": "String.sentenceCapitalizedString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 35,
+      "symbol": "groupName",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 36,
+      "symbol": "defaults",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 37,
+      "symbol": "container",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 39,
+      "symbol": "cacheContainer",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 43,
+      "symbol": "remoteNotificationTokenKey",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 44,
+      "symbol": "remoteNotificationPreferencesKey",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 47,
+      "symbol": "HackRUColor",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 50,
+      "symbol": "HackRUColor.main",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 55,
+      "symbol": "HackRUColor.secondary",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 60,
+      "symbol": "HackRUColor.dark",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 64,
+      "symbol": "HackRUColor.red",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 67,
+      "symbol": "HackRUColor.yellow",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 70,
+      "symbol": "HackRUColor.orange",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 73,
+      "symbol": "HackRUColor.purple",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 76,
+      "symbol": "HackRUColor.plain",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Extensions.swift",
+      "line": 86,
+      "symbol": "UIColor.init(hex:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 19,
+      "symbol": "baseURL",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 22,
+      "symbol": "miscURL",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 24,
+      "symbol": "Authenticator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 25,
+      "symbol": "Authenticator.jsonObject",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 26,
+      "symbol": "Authenticator.jsonData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 27,
+      "symbol": "Authenticator.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 28,
+      "symbol": "Authenticator.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 30,
+      "symbol": "Authenticator.init(email:password:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 48,
+      "symbol": "Authenticator.authenticate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 93,
+      "symbol": "UIImage.imageWithSize(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 117,
+      "symbol": "UIAlertAction.init(title:style:image:handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 123,
+      "symbol": "UIAlertAction.init(title:style:imageNamed:handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 131,
+      "symbol": "UIAlertAction.actionImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 165,
+      "symbol": "UIImage.maskWithColor(color:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 189,
+      "symbol": "sharedMisc",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 191,
+      "symbol": "Sync",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 193,
+      "symbol": "Sync.miscURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 194,
+      "symbol": "Sync.locations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 196,
+      "symbol": "Sync.init(miscURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 200,
+      "symbol": "Sync.getMiscData(completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 251,
+      "symbol": "Sync.getMiscScan(input:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Modal/API.swift",
+      "line": 276,
+      "symbol": "Sync.getDataFromMiscDirect()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 11,
+      "symbol": "CircleView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 15,
+      "symbol": "CircleView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 25,
+      "symbol": "CircleView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 43,
+      "symbol": "CircleView.shapeLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 47,
+      "symbol": "CircleView.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 55,
+      "symbol": "CircleView.bounds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 61,
+      "symbol": "CircleView.fillColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 67,
+      "symbol": "CircleView.strokeWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircleView.swift",
+      "line": 73,
+      "symbol": "CircleView.strokeColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 12,
+      "symbol": "CircularProgressIndicator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 16,
+      "symbol": "CircularProgressIndicator.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 22,
+      "symbol": "CircularProgressIndicator.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 63,
+      "symbol": "CircularProgressIndicator.progress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 72,
+      "symbol": "CircularProgressIndicator.setProgress(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 90,
+      "symbol": "CircularProgressIndicator.lineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 96,
+      "symbol": "CircularProgressIndicator.trackColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 102,
+      "symbol": "CircularProgressIndicator.progressColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 110,
+      "symbol": "CircularProgressIndicator.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/CircularProgressIndicator.swift",
+      "line": 119,
+      "symbol": "CircularProgressIndicator.layoutSublayers(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 12,
+      "symbol": "SplashViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 14,
+      "symbol": "SplashViewController.CIFilterNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 25,
+      "symbol": "SplashViewController.rippleEffectView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 26,
+      "symbol": "SplashViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 57,
+      "symbol": "SplashViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS/OneAppiOS/Views/SplashViewController.swift",
+      "line": 61,
+      "symbol": "SplashViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/qasimabbas/Documents/one-app-ios-s18/OneAppiOS"
+}
