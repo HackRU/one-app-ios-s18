@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
 
+//login controller
 class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     let jsonObject: NSMutableDictionary = NSMutableDictionary()
@@ -22,10 +23,15 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
     @IBOutlet weak var btnSubmit: MDCRaisedButton!
     var indicate: NVActivityIndicatorView?
     @IBOutlet weak var btnMLH: UIButton!
+    
+    //when it actually loads into memory
     override func viewDidLoad() {
 
+        //loading general view before details
         super.viewDidLoad()
 
+        //protocol - like interfaces
+        //conform to UITextViewDelegate, UITextFieldDelegate and can use those methods
         txtPass.delegate = self
         txtEmail.delegate = self
 
@@ -43,8 +49,14 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 
         // Do any additional setup after loading the view, typically from a nib.
     }
+<<<<<<< HEAD
 
+=======
+  
+    //hides keyboard on return
+>>>>>>> master
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //first responder = text field that is the active one
         txtEmail.resignFirstResponder()
         txtPass.resignFirstResponder()
 
@@ -58,11 +70,12 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
         // Dispose of any resources that can be recreated.
     }
 
+    //press submit
     @IBAction func btnActionSubmit(_ sender: Any) {
         auth()
-
     }
 
+    //first entry into page = both resigned
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if touch.phase == .began {
@@ -72,11 +85,13 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
         }
     }
 
+    //taking email and password and make json messsage
     func setJson() {
 
         jsonObject.setValue(txtEmail.text, forKey: "email")
         jsonObject.setValue(txtPass.text, forKey: "password")
 
+        //converting to json
         do {
             jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions()) as Data
             let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
@@ -87,6 +102,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 
     }
 
+    
     func auth() {
         setJson()
 
@@ -97,13 +113,17 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 //
 //        indicate?.startAnimating()
 
+        //url request object - post request: server expecting info from us
         var request = URLRequest(url: URL(string: baseURL + "/authorize")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //json object
         request.httpBody = jsonData
 
+        //completion handler
         Alamofire.request(request).responseJSON { (response) in
-
+            //got response from server
+            
             let swiftJsonVar = JSON(response.result.value!)
             print(swiftJsonVar)
             if let status = swiftJsonVar["statusCode"].int {
@@ -112,8 +132,11 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 
                     if let body = JSON(parseJSON: swiftJsonVar["body"].string!).dictionary!["auth"] {
 
+                        //user default settings - entire app can access (cool)
+                        //remembers the user even when app closed (super cool)
                         let user = UserDefaults.standard
 
+                        //token: auth2.0, key tied to it
                         if let auth = body["token"].string {
                                 print(auth)
                             user.set(auth, forKey: "auth")
@@ -127,7 +150,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 
                     }
                 } else if status as Int? == 403 {
-
+                    //error alert
                     if let body = swiftJsonVar["body"].string {
                         let messageConstruction = body + " Please make sure you have an account on HackRU.org"
 
@@ -149,6 +172,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
 
     }
 
+    //hidden right now -> not using it right now
     @IBAction func btnActionMyMLH(_ sender: Any) {
 
         performSegue(withIdentifier: "segueMLH", sender: nil)

@@ -10,7 +10,7 @@ import UIKit
 
 class MapViewController: UIViewController {
 
-    private let scrollView = ImageScrollView(image: UIImage(named: "layout")!)
+    private let scrollView = ImageScrollView(image: UIImage(named: "updated_map")!)
 
     override func viewDidLoad() {
         view.backgroundColor = HackRUColor.dark

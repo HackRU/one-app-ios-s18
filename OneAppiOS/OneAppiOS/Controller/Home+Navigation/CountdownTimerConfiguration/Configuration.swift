@@ -24,11 +24,12 @@ final class Configuration: Serializable, Equatable {
     private static let lastUpdatedKey = "updatedAt_ts"
     private static let startDateKey = "start_date_ts"
     private static let endDateKey = "end_date_ts"
+    private static let const = 1524055301
 
     public static var startDateEpoch: Int?
     public static var endDateEpoch: Int?
 
-    init(startDate: Date = Date(timeIntervalSince1970: TimeInterval(Configuration.startDateEpoch ?? 1524055301)), endDate: Date = Date(timeIntervalSince1970: TimeInterval(Configuration.endDateEpoch ??  1524055301))) {
+    init(startDate: Date = Date(timeIntervalSince1970: TimeInterval(Configuration.startDateEpoch ?? const)), endDate: Date = Date(timeIntervalSince1970: TimeInterval(Configuration.endDateEpoch ??  const))) {
         self.startDate = startDate
         self.endDate = endDate
     }

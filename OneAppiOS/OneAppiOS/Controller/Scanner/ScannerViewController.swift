@@ -366,7 +366,8 @@ class ScannerViewController: UIViewController, QRCodeReaderViewControllerDelegat
 
                                 }
                             } else {
-                                let alert = UIAlertController(title: "Waitlist checkin has not opened up yet! \(email)", message: "Only people who are marked as coming are being scanned at the moment,Accepted and Coming is Being Checked In ", preferredStyle: .alert)
+                                let message = "Only people who are marked as coming are being scanned at the moment, Accepted and Coming is Being Checked In"
+                                let alert = UIAlertController(title: "Waitlist checkin has not opened up yet! \(email)", message: message, preferredStyle: .alert)
 
                                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
 
